@@ -1,0 +1,25 @@
+{
+  "name": "maristeastasia",
+  "version": "1.0.0",
+  "description": "A modern, professional website for the Marist Brothers of East Asia (MaristEastAsia) - a Catholic religious congregation dedicated to education and pastoral ministry serving young people across East Asia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broalbertfms/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/broalbertfms/website/issues"
+  },
+  "homepage": "https://github.com/broalbertfms/website#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  }
+}
