@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writings of St. Marcellin - Marist Brothers of East Asia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "var(--border)",
+                        background: "var(--background)",
+                        foreground: "var(--foreground)",
+                        primary: {
+                            DEFAULT: "var(--primary-color)",
+                            foreground: "var(--primary-foreground)",
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // Critical Anti-Flash Theme Script
+        (function() {
+            const savedTheme = localStorage.getItem('marist-theme') || 'system';
+            const isDark = savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-zinc-950 font-sans text-zinc-900 dark:text-white transition-colors duration-300">
+    <!-- Theme Selection Modal -->
+    <div id="theme-selection-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <h2 class="text-sm font-black uppercase tracking-[0.3em] text-[#c41e3a] mb-4">Visual Experience</h2>
+            <h3 class="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter">Choose Your Theme</h3>
+            <p class="text-zinc-500 dark:text-zinc-400 font-medium mb-12">Select how you'd like to explore the Marist East Asia mission.</p>
+            
+            <div class="theme-grid">
+                <!-- Light Mode -->
+                <div class="theme-option" data-theme="light" onclick="ThemeManager.setTheme('light')">
+                    <div class="icon-box">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h4>Light</h4>
+                </div>
+                
+                <!-- Auto Mode -->
+                <div class="theme-option" data-theme="system" onclick="ThemeManager.setTheme('system')">
+                    <div class="icon-box">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4>System</h4>
+                </div>
+
+                <!-- Dark Mode -->
+                <div class="theme-option" data-theme="dark" onclick="ThemeManager.setTheme('dark')">
+                    <div class="icon-box">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h4>Dark</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main-content" 
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold dark:text-white leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../pages/about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/vocation.html">Formation Stages</a>
+                            <a href="../vocation/formationteam.html">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="../pages/ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="../pages/news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/media.html">Videos</a>
+                            <a href="documents.html">Documents</a>
+                            <a href="../pages/calendar.html">Calendar</a>
+                            <a href="newsletter.html">Newsletter</a>
+                            <a href="archives.html">Archives</a>
+                            <a href="writingsogmarcellin.html" class="active">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="ThemeManager.showModal()" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-circle-half-stroke theme-toggle-icon dark:text-white"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-zinc-900 dark:text-white active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#c41e3a]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation" class="fixed inset-0 z-[2000] bg-zinc-950/98 backdrop-blur-3xl translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <div class="logo flex items-center gap-3">
+                    <img src="../assets/images/maristlogo.png" alt="logo" class="h-10 w-auto sm:h-12 object-contain">
+                    <div class="flex flex-col">
+                    <div class="text-xl font-bold dark:text-white leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+                </div>
+                <button id="closeMenuBtn" class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto no-scrollbar space-y-2">
+                <a href="../index.html" class="block py-4 text-2xl font-black uppercase tracking-tighter text-white border-b border-white/5">Home Portal</a>
+                
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black uppercase tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-400 font-bold">
+                            <a href="../pages/vocation.html" class="hover:text-white transition-colors">Formation Stages</a>
+                            <a href="../vocation/formationteam.html" class="hover:text-white transition-colors">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html" class="hover:text-white transition-colors">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html" class="hover:text-white transition-colors">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html" class="hover:text-white transition-colors">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html" class="hover:text-white transition-colors">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html" class="hover:text-white transition-colors">Scholasticate Formation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black uppercase tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-400 font-bold">
+                            <a href="#" class="hover:text-white transition-colors">Marist Mission</a>
+                            <a href="../pages/ministry.html" class="hover:text-white transition-colors">Schools and Non-Schools</a>
+                            <a href="../youthministry/youthministry.html" class="hover:text-white transition-colors">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html" class="hover:text-white transition-colors">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html" class="hover:text-white transition-colors">Ecology Ministry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../pages/news.html" class="block py-4 text-2xl font-black uppercase tracking-tighter text-white border-b border-white/5">News</a>
+
+                <!-- Media Accordion (Active) -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header active w-full flex justify-between items-center py-4 text-2xl font-black uppercase tracking-tighter text-[#c41e3a] border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 rotate-180"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-[500px] transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-400 font-bold">
+                            <a href="../pages/media.html" class="hover:text-white transition-colors">Videos</a>
+                            <a href="documents.html" class="hover:text-white transition-colors">Documents</a>
+                            <a href="../pages/calendar.html" class="hover:text-white transition-colors">Calendar</a>
+                            <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                            <a href="archives.html" class="hover:text-white transition-colors">Archives</a>
+                            <a href="writingsogmarcellin.html" class="text-white">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 mt-auto border-t border-white/10">
+                <button onclick="ThemeManager.showModal()" class="w-full py-4 bg-white/5 rounded-2xl text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3">
+                    <i class="fas fa-circle-half-stroke"></i> Appearance Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Standardized Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4 overflow-x-auto no-scrollbar whitespace-nowrap">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-[#c41e3a] transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#c41e3a]">Writings of St. Marcellin</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Cinematic Hero Section -->
+        <section class="relative py-32 overflow-hidden bg-zinc-950 text-center">
+            <!-- Background Bloom -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c41e3a]/5 rounded-full blur-[160px] pointer-events-none"></div>
+            
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <span class="text-[#c41e3a] text-sm font-black uppercase tracking-[0.4em] mb-6 block animate-fade-in">Founder's Legacy</span>
+                    <h1 class="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] animate-slide-up">
+                        Writings of <br>
+                        <span class="text-zinc-500">St. Marcellin</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-400 font-bold max-w-2xl mx-auto normal-case tracking-normal animate-fade-in-up">
+                        Explore the spiritual guidance, letters, and timeless wisdom of our founder, Saint Marcellin Champagnat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-zinc-950">
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">Letters & Publications</h2>
+                    <p class="text-zinc-500 text-[10px] font-black uppercase tracking-[0.3em]">Institutional Heritage Collection</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- The Letters Card -->
+                    <div class="premium-pillar-card group">
+                        <div class="pillar-icon-box group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-envelope-open-text text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-6">The Letters</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-10 font-medium">
+                            A collection of letters written by St. Marcellin to the first Brothers and various correspondents across France, detailing the early mission.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-[#c41e3a] hover:text-white transition-all group/link">
+                            Explore Letters <i class="fas fa-arrow-right text-[8px] group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Spiritual Notes Card -->
+                    <div class="premium-pillar-card group">
+                        <div class="pillar-icon-box group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-book-open text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-6">Spiritual Notes</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-10 font-medium">
+                            Deep insights into the spiritual life and the foundational charism of the Marist mission worldwide, preserved for modern formation.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-[#c41e3a] hover:text-white transition-all group/link">
+                            Read More <i class="fas fa-arrow-right text-[8px] group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- Maxims & Sayings Card -->
+                    <div class="premium-pillar-card group">
+                        <div class="pillar-icon-box group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-quote-left text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-6">Maxims & Sayings</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-10 font-medium">
+                            Timeless wisdom and practical spiritual guidance for living the Marist vocation in the modern world through the lens of Champagnat.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-[#c41e3a] hover:text-white transition-all group/link">
+                            Discover Maxims <i class="fas fa-arrow-right text-[8px] group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <!-- Global Footer -->
+    <footer class="bg-zinc-950 text-white pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-20">
+                <!-- Mission Pillar -->
+                <div class="space-y-8">
+                    <div class="logo flex items-center gap-3">
+                        <img src="../assets/images/maristlogo.png" alt="marist logo" class="h-10 w-auto sm:h-12 object-contain">
+                        <div class="flex flex-col">
+                    <div class="text-xl font-bold leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+                    </div>
+                    <p class="text-zinc-500 text-sm leading-relaxed font-bold normal-case tracking-normal">
+                        Continuing the charism of St. Marcellin Champagnat through transformative education and pastoral care across the East Asia Province.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Hub -->
+                <div class="space-y-8">
+                    <h4 class="text-[#c41e3a] text-[10px] font-black uppercase tracking-[0.3em]">Navigation Hub</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Home Portal</a></li>
+                        <li><a href="../pages/about.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">About Mission</a></li>
+                        <li><a href="../pages/vocation.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Formation</a></li>
+                        <li><a href="../pages/news.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">News Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Strategic Resources -->
+                <div class="space-y-8">
+                    <h4 class="text-[#c41e3a] text-[10px] font-black uppercase tracking-[0.3em]">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="archives.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Archival Repository</a></li>
+                        <li><a href="documents.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Public Documents</a></li>
+                        <li><a href="newsletter.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Region Newsletter</a></li>
+                        <li><a href="../pages/calendar.html" class="text-zinc-500 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Global Presence -->
+                <div class="space-y-8">
+                    <h4 class="text-[#c41e3a] text-[10px] font-black uppercase tracking-[0.3em]">Connect</h4>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <i class="fas fa-map-marker-alt text-[#c41e3a] mt-1"></i>
+                            <span class="text-zinc-500 text-xs font-bold leading-relaxed">Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-envelope text-[#c41e3a]"></i>
+                            <a href="mailto:info@maristeastasia.org" class="text-zinc-500 hover:text-white text-xs font-bold transition-colors">info@maristeastasia.org</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-700">
+                    &copy; 2026 Marist Brothers of East Asia. Institutional Heritage.
+                </p>
+                <div class="flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-700">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script>
+        // High-Performance Theme Manager
+        const ThemeManager = {
+            setTheme(theme) {
+                if (theme === 'system') {
+                    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.classList.toggle('dark', isDark);
+                    localStorage.setItem('marist-theme', 'system');
+                } else {
+                    document.documentElement.classList.toggle('dark', theme === 'dark');
+                    localStorage.setItem('marist-theme', theme);
+                }
+                this.hideModal();
+                this.updateActiveUI();
+            },
+            showModal() {
+                document.getElementById('theme-selection-modal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            },
+            hideModal() {
+                document.getElementById('theme-selection-modal').classList.remove('active');
+                document.body.style.overflow = '';
+            },
+            updateActiveUI() {
+                const current = localStorage.getItem('marist-theme') || 'system';
+                document.querySelectorAll('.theme-option').forEach(opt => {
+                    opt.classList.toggle('active', opt.dataset.theme === current);
+                });
+            }
+        };
+
+        // Navigation Controller
+        const NavController = {
+            mobileMenu: document.getElementById('mobileMenuOverlay'),
+            btn: document.getElementById('mobileMenuBtn'),
+            closeBtn: document.getElementById('closeMenuBtn'),
+            
+            toggle(open) {
+                this.mobileMenu.classList.toggle('translate-x-full', !open);
+                document.body.style.overflow = open ? 'hidden' : '';
+                this.btn.setAttribute('aria-expanded', open);
+            }
+        };
+
+        if (NavController.btn) NavController.btn.onclick = () => NavController.toggle(true);
+        if (NavController.closeBtn) NavController.closeBtn.onclick = () => NavController.toggle(false);
+
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = btn.classList.toggle('active');
+            
+            content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0';
+            icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0)';
+        }
+
+        // Initialize UI
+        ThemeManager.updateActiveUI();
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Portal - Marist Brothers of East Asia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .hide-controls { opacity: 0 !important; cursor: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-zinc-950 font-sans text-white">
+    <a href="#main-content" 
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+    
+    <header>
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="vocation.html">Formation Stages</a>
+                            <a href="../vocation/formationteam.html">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="media.html" class="active">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="calendar.html">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon theme-toggle-icon"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-[var(--nav-text)] active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#1e3a5f]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation" class="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden text-white">
+        <div class="flex flex-col h-full p-8 overflow-y-auto">
+            <button id="closeMenuBtn" aria-label="Close Navigation Menu" class="self-end w-12 h-12 flex items-center justify-center text-white active:scale-90 transition-transform mb-8 focus:ring-2 focus:ring-white">
+                <i class="fa-solid fa-xmark text-3xl" aria-hidden="true"></i>
+            </button>
+            <div class="flex flex-col gap-2 text-xl font-bold text-white mb-12">
+                <a href="../index.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Home</a>
+                <a href="about.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Identity</a>
+                
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400">
+                        <a href="vocation.html">Formation Stages</a>
+                        <a href="../vocation/formationteam.html">Formation Team</a>
+                        <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                        <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                        <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                        <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                        <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400">
+                        <a href="../pages/maristmission.html">Marist Mission</a>
+                        <a href="ministry.html">School Ministry</a>
+                        <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                        <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                        <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                    </div>
+                </div>
+
+                <a href="news.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400">
+                        <a href="champagnat.html">Charism</a>
+                        <a href="#">Marist Spirituality</a>
+                        <a href="#">Founding the Marist Brothers</a>
+                        <a href="#">Champagnat's Vocation</a>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400">
+                        <a href="maristcommunities.html">Marist Communities</a>
+                        <a href="../childsrights/childrensrights.html">Child Rights</a>
+                        <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left text-red-500 transition-colors active" onclick="toggleAccordion(this)">
+                        <span>Media (Videos)</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform rotate-180"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400" style="max-height: 500px;">
+                        <a href="media.html" class="text-white font-bold">Videos</a>
+                        <a href="../resources/documents.html">Documents</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="../resources/newsletter.html">Newsletter</a>
+                        <a href="../resources/archives.html">Archives</a>
+                    </div>
+                </div>
+
+                <!-- Links Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg font-normal text-zinc-400">
+                        <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                        <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                        <a href="../maristlinks/japan.html">Marist Japan</a>
+                        <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                        <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                        <a href="../maristlinks/china.html">Marist China</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="py-3 text-lg text-zinc-500">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb bg-zinc-900 border-b border-white/5 py-4">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-red-500">Media Portal</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-[1700px] mx-auto p-6 lg:p-12 lg:flex lg:gap-12 min-h-screen">
+        
+        <!-- Player Section -->
+        <section class="lg:w-[70%]">
+            <div id="videoContainer" class="relative w-full aspect-video bg-black rounded-[3rem] overflow-hidden shadow-2xl border border-zinc-900 group">
+                <div id="playerContainer" class="absolute inset-0">
+                    <video id="mainVideo" class="w-full h-full hidden" playsinline controlslist="nodownload">
+                        <source id="videoSource" src="" type="video/mp4">
+                    </video>
+                    <div id="youtubePlayer" class="w-full h-full"></div>
+                </div>
+
+                <!-- Custom Controls Overlay -->
+                <div id="customControlsOverlay" class="absolute inset-x-0 bottom-0 z-50 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="bg-gradient-to-t from-black/90 via-black/40 to-transparent p-12 pt-24">
+                        <div class="flex items-center gap-6 pointer-events-auto">
+                            <!-- Play button -->
+                            <button id="playPauseBtn" aria-label="Play video" class="w-16 h-16 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full text-white hover:bg-red-600 transition-all scale-100 hover:scale-110 active:scale-95">
+                                <i class="fas fa-play text-xl"></i>
+                            </button>
+
+                            <!-- Progress Track -->
+                            <div class="flex-grow group/progress cursor-pointer h-1 relative">
+                                <div id="progressBar" class="absolute inset-0 bg-white/10 h-1 overflow-hidden">
+                                    <div id="progressFill" class="h-full bg-red-600 w-0 relative">
+                                        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 rounded-full scale-0 group-hover/progress:scale-100 transition-transform shadow-xl"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-6">
+                                <div class="text-[10px] font-black tracking-widest text-white/50">
+                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                </div>
+                                <button id="fullscreenBtn" class="text-white hover:text-red-500 transition-colors">
+                                    <i class="fas fa-expand text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-8">
+                    <div class="space-y-2">
+                        <h1 id="mainTitle" class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">Marist Education Excellence</h1>
+                        <div id="mainViewsDate" class="text-xs font-bold text-zinc-500 uppercase tracking-widest">120K views • 1 month ago</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="px-8 py-3 bg-white text-black rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition-all shadow-xl">Subscribe</button>
+                        <button class="w-12 h-12 flex items-center justify-center bg-zinc-900 text-white rounded-full hover:bg-zinc-800 transition-all"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                
+                <div class="p-10 bg-zinc-900/50 backdrop-blur-md rounded-[3rem] border border-zinc-800/50">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 bg-[#c41e3a] rounded-full flex items-center justify-center text-white font-black text-xs">M</div>
+                        <div>
+                            <p class="text-xs font-black uppercase tracking-widest text-white">Marist East Asia</p>
+                            <p class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Verified Channel</p>
+                        </div>
+                    </div>
+                    <p id="mainDesc" class="text-zinc-500 text-sm leading-relaxed">Exploring the educational mission and excellence of Marist Brothers in East Asia. From our humble beginnings to our regional network of schools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="lg:w-[30%] mt-20 lg:mt-0 space-y-12">
+            <div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 mb-2">Up Next</p>
+                <h2 class="text-3xl font-black uppercase tracking-tighter">Related Content</h2>
+            </div>
+            
+            <div id="categoryFilter" class="flex gap-2 overflow-x-auto pb-4 no-scrollbar whitespace-nowrap">
+                <button onclick="filterVideos('All')" class="category-btn px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5 bg-white text-black transition-all">All</button>
+                <button onclick="filterVideos('Education')" class="category-btn px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5 hover:bg-white hover:text-black transition-all">Education</button>
+                <button onclick="filterVideos('Vocation')" class="category-btn px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5 hover:bg-white hover:text-black transition-all">Vocation</button>
+                <button onclick="filterVideos('Community')" class="category-btn px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5 hover:bg-white hover:text-black transition-all">Community</button>
+            </div>
+            
+            <div id="videoList" class="space-y-8">
+                <!-- Video Item 1 -->
+                <div class="video-item flex gap-6 group cursor-pointer" 
+                    onclick="updatePlayer(this)"
+                    data-category="Education" 
+                    data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    data-type="youtube"
+                    data-title="Marist Education Excellence"
+                    data-desc="Exploring the educational mission and excellence of Marist Brothers in East Asia."
+                    data-views="120K views"
+                    data-date="1 month ago">
+                    <div class="relative w-40 h-28 flex-none rounded-[2rem] overflow-hidden shadow-xl">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-[8px] font-black px-2 py-1 rounded-full text-white">05:20</span>
+                    </div>
+                    <div class="space-y-2 py-2">
+                        <h3 class="text-sm font-black line-clamp-2 uppercase tracking-tighter group-hover:text-red-500 transition-colors">Marist Education Excellence</h3>
+                        <p class="text-[9px] font-black uppercase tracking-widest text-zinc-600">120K views • 1 month ago</p>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="video-item flex gap-6 group cursor-pointer" 
+                    onclick="updatePlayer(this)"
+                    data-category="Vocation" 
+                    data-src="https://www.youtube.com/embed/T5fijeozgXc" 
+                    data-type="youtube"
+                    data-title="Hear from Marist Lay Partners"
+                    data-desc="Marist lay partners share their experiences and vocation stories."
+                    data-views="45K views"
+                    data-date="3 weeks ago">
+                    <div class="relative w-40 h-28 flex-none rounded-[2rem] overflow-hidden shadow-xl">
+                        <img src="https://img.youtube.com/vi/T5fijeozgXc/mqdefault.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-[8px] font-black px-2 py-1 rounded-full text-white">08:15</span>
+                    </div>
+                    <div class="space-y-2 py-2">
+                        <h3 class="text-sm font-black line-clamp-2 uppercase tracking-tighter group-hover:text-red-500 transition-colors">Hear from Marist Lay Partners</h3>
+                        <p class="text-[9px] font-black uppercase tracking-widest text-zinc-600">45K views • 3 weeks ago</p>
+                    </div>
+                </div>
+
+                <!-- Video Item 3 -->
+                <div class="video-item flex gap-6 group cursor-pointer" 
+                    onclick="updatePlayer(this)"
+                    data-category="Vocation" 
+                    data-src="https://www.youtube.com/embed/6v2L2UGZJAM" 
+                    data-type="youtube"
+                    data-title="Reflections from our Marist Brothers"
+                    data-desc="Our brothers reflect on their journey and daily mission work."
+                    data-views="32K views"
+                    data-date="2 weeks ago">
+                    <div class="relative w-40 h-28 flex-none rounded-[2rem] overflow-hidden shadow-xl">
+                        <img src="https://img.youtube.com/vi/6v2L2UGZJAM/mqdefault.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                        <span class="absolute bottom-3 right-3 bg-black/80 text-[8px] font-black px-2 py-1 rounded-full text-white">12:10</span>
+                    </div>
+                    <div class="space-y-2 py-2">
+                        <h3 class="text-sm font-black line-clamp-2 uppercase tracking-tighter group-hover:text-red-500 transition-colors">Reflections from our Marist Brothers</h3>
+                        <p class="text-[9px] font-black uppercase tracking-widest text-zinc-600">32K views • 2 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="loadMore()" class="w-full py-6 bg-zinc-900 border border-zinc-800 rounded-[2rem] text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all">Load More Videos</button>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" target="_blank">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-[#c41e3a]"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-[#c41e3a]"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-[#c41e3a]"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let ytPlayer;
+        let isYTReady = false;
+        let currentSourceType = 'youtube';
+        let inactivityTimer;
+
+        const videoEl = document.getElementById('mainVideo');
+        const controlsOverlay = document.getElementById('customControlsOverlay');
+        const videoContainer = document.getElementById('videoContainer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const mainTitle = document.getElementById('mainTitle');
+        const mainDesc = document.getElementById('mainDesc');
+        const mainViewsDate = document.getElementById('mainViewsDate');
+        const progressFill = document.getElementById('progressFill');
+
+        // YouTube API Ready
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('youtubePlayer', {
+                height: '100%',
+                width: '100%',
+                videoId: 'dQw4w9WgXcQ',
+                playerVars: { 
+                    'controls': 0, 'rel': 0, 'modestbranding': 1, 'iv_load_policy': 3, 'showinfo': 0, 'disablekb': 1
+                },
+                events: {
+                    'onReady': () => { isYTReady = true; startProgressUpdate(); },
+                    'onStateChange': (e) => {
+                        const icon = playPauseBtn.querySelector('i');
+                        if (e.data == YT.PlayerState.PLAYING) {
+                            icon.className = 'fas fa-pause';
+                            resetInactivityTimer();
+                        } else {
+                            icon.className = 'fas fa-play';
+                            controlsOverlay.classList.remove('hide-controls');
+                            videoContainer.style.cursor = 'default';
+                        }
+                    }
+                }
+            });
+        }
+
+        function resetInactivityTimer() {
+            controlsOverlay.classList.remove('hide-controls');
+            videoContainer.style.cursor = 'default';
+            clearTimeout(inactivityTimer);
+            
+            const isPlaying = (currentSourceType === 'youtube' && isYTReady && ytPlayer.getPlayerState() === YT.PlayerState.PLAYING);
+            
+            if (isPlaying) {
+                inactivityTimer = setTimeout(() => {
+                    controlsOverlay.classList.add('hide-controls');
+                    videoContainer.style.cursor = 'none';
+                }, 3000);
+            }
+        }
+
+        videoContainer.onmousemove = resetInactivityTimer;
+        videoContainer.onclick = resetInactivityTimer;
+
+        playPauseBtn.onclick = () => {
+            if (currentSourceType === 'youtube' && isYTReady) {
+                (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) ? ytPlayer.pauseVideo() : ytPlayer.playVideo();
+            }
+        };
+
+        document.getElementById('fullscreenBtn').onclick = () => {
+            if (!document.fullscreenElement) videoContainer.requestFullscreen();
+            else document.exitFullscreen();
+        };
+
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        function startProgressUpdate() {
+            setInterval(() => {
+                let pct = 0;
+                let current = 0;
+                let total = 0;
+
+                if (currentSourceType === 'youtube' && isYTReady) {
+                    total = ytPlayer.getDuration();
+                    current = ytPlayer.getCurrentTime();
+                    if (total > 0) pct = (current / total) * 100;
+                }
+
+                progressFill.style.width = pct + '%';
+                document.getElementById('currentTime').innerText = formatTime(current);
+                document.getElementById('duration').innerText = total > 0 ? formatTime(total) : '0:00';
+            }, 500);
+        }
+
+        function updatePlayer(element) {
+            const title = element.getAttribute('data-title');
+            const desc = element.getAttribute('data-desc');
+            const src = element.getAttribute('data-src');
+            const views = element.getAttribute('data-views');
+            const date = element.getAttribute('data-date');
+
+            mainTitle.innerText = title;
+            mainDesc.innerText = desc;
+            mainViewsDate.innerText = `${views} • ${date}`;
+
+            const vId = src.split('embed/')[1]?.split('?')[0] || src;
+            if (isYTReady) ytPlayer.loadVideoById(vId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu(isOpen) {
+            const overlay = document.getElementById('mobileMenuOverlay');
+            if (isOpen) {
+                overlay.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                overlay.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            if (isActive) {
+                header.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                header.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        document.getElementById('mobileMenuBtn').onclick = () => toggleMobileMenu(true);
+        document.getElementById('closeMenuBtn').onclick = () => toggleMobileMenu(false);
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

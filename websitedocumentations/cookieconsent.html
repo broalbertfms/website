@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent | Marist East Asia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .cookie-consent {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background: #18181b; /* Zinc-900 */
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 2.5rem;
+            z-index: 10000;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .cookie-consent.show {
+            display: block;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes slideUp {
+            from { transform: translate(-50%, 100%); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+        .font-sans { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-transparent font-sans selection:bg-red-600/30">
+    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-labelledby="consentTitle" aria-describedby="consentDesc">
+        <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-4 px-8">
+                <div class="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-cookie-bite text-red-600 text-xl"></i>
+                </div>
+                <h4 id="consentTitle" class="text-xl font-black text-white uppercase tracking-tighter">We Respect Your Privacy</h4>
+            </div>
+            
+            <p id="consentDesc" class="text-zinc-400 text-sm font-bold leading-relaxed px-8">
+                This website uses cookies to enhance your mission experience and analyze our traffic. By continuing, you agree to our 
+                <a href="dataprivacypolicy.html" target="_top" class="text-red-500 hover:underline">Data Privacy Policy</a>.
+            </p>
+            
+            <div class="flex gap-4 px-8">
+                <button id="acceptCookies" class="flex-grow bg-red-600 text-white py-4 rounded-full font-black hover:bg-red-700 transition-all active:scale-95 text-xs uppercase tracking-widest">
+                    Accept All
+                </button>
+                <a href="dataprivacypolicy.html" target="_top" class="bg-zinc-800 text-white border border-white/5 px-8 py-4 rounded-full font-black hover:bg-zinc-700 transition-all active:scale-95 text-[10px] uppercase tracking-widest flex items-center">
+                    Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The script path assumes it is in the same directory or assets/js/ -->
+    <script src="../assets/js/cookieconsent.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+/* ===================================
+   MARIST BROTHERS OF EAST ASIA
+   Professional & Modern Website
+   =================================== */
+
+:root {
+    --primary-color: #1e3a5f;
+    --secondary-color: #c41e3a;
+    --accent-color: #f5a623;
+    --light-bg: #f8f9fa;
+    --dark-text: #333333;
+    --light-text: #666666;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+    --success-color: #27ae60;
+    --warning-color: #e74c3c;
+}
+/* ===== DROPDOWN STYLES ===== */
+/* ===== STYLE: VOCATION ===== */
+/* Dropdown Button */
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-weight: 1000;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ffffff;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ffffff;}
+
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', Roboto Bold, sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color:rgb(0, 0, 0)
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgb(255, 111, 0);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-weight: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeInUp 2s ease;
+}
+
+.logo-text {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: var(--primary-color);
+    animation: fadeInDown 1.5s ease;
+}
+
+.logo-subtitle {
+    display: flex;
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    font-weight: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 1000;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary-color);
+    font-style: bold;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+    box-shadow: 0 2px 10px rgba(179, 77, 0, 0.1);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+    font-weight: 600;
+    font-style: bold;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #4f3c46 100%);
+    color: var(--white);
+    padding: 6rem 2rem;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.4s ease;
+    color:rgb(255, 242, 0);
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+
+}
+
+.hero h6 {
+    font-size: 10rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.4s ease;
+    color:rgb(255, 242, 0);
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+
+}
+.hero h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease;
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+    
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    animation: fadeInUp 0.8s ease;
+    color:#ffffff
+}
+
+.hero .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 900;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #a01530;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 255, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #e09a1e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* ===== CONTAINER & SECTIONS ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 4rem 2rem;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 1rem;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    font-family: roboto, sans-serif;
+    font-style: normal;
+}

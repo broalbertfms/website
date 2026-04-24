@@ -1,0 +1,106 @@
+/* ============================= */
+/* ROOT VARIABLES                */
+/* ============================= */
+:root {
+    --marist-blue-dark: #003366;
+    --marist-blue-light: #00509e;
+    --marist-bg: linear-gradient(135deg, #003366, #00509e);
+    --text-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --marist-blue-dark: #002244;
+        --marist-blue-light: #0073e6;
+        --marist-bg: linear-gradient(135deg, #001a33, #003366);
+        --text-color: #ffffff;
+    }
+}
+
+/* ============================= */
+/* FULLSCREEN LOADER            */
+/* ============================= */
+#marist-loader {
+    position: fixed;
+    inset: 0;
+    background: var(--marist-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#marist-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ============================= */
+/* LOADER CONTENT               */
+/* ============================= */
+.loader-wrapper {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.loader-logo {
+    width: 110px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.loader-text {
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+/* ============================= */
+/* PROGRESS BAR                 */
+/* ============================= */
+.loader-progress {
+    width: 250px;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-bar {
+    width: 0%;
+    height: 100%;
+    background: #ffffff;
+    transition: width 0.4s ease;
+}
+
+/* ============================= */
+/* AJAX TOP BAR                 */
+/* ============================= */
+#marist-ajax-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--marist-blue-light);
+    z-index: 10000;
+    transition: width 0.3s ease;
+}
+
+/* ============================= */
+/* ANIMATIONS                   */
+/* ============================= */
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ============================= */
+/* REDUCED MOTION ACCESSIBILITY */
+/* ============================= */
+@media (prefers-reduced-motion: reduce) {
+    .loader-logo {
+        animation: none;
+    }
+}

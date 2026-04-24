@@ -1,0 +1,29 @@
+/* comments.css */
+.comments-section { background: #f9f9f9; border-radius: 8px; padding: 2rem; margin: 2rem 0; }
+.comments-section h3 { margin-bottom: 1rem; }
+#comments-controls { margin-bottom: 1rem; }
+#comments-list { margin-bottom: 1.5rem; }
+.comment-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; }
+.comment-header { display: flex; align-items: center; margin-bottom: 0.5rem; }
+.comment-avatar { width: 36px; height: 36px; border-radius: 50%; background: #d2e3f3; margin-right: 0.75rem; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #2c4a73; }
+.comment-meta { font-size: 0.9em; color: #888; }
+.comment-body { margin-bottom: 0.5rem; }
+.comment-actions { font-size: 0.9em; }
+.comment-actions button { background: none; border: none; color: #2c4a73; cursor: pointer; margin-right: 0.5rem; }
+.comment-actions button:hover { text-decoration: underline; }
+.comment-children { margin-left: 2rem; border-left: 2px solid #e0e0e0; padding-left: 1rem; }
+#comment-form-wrapper { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1.5rem; }
+#comment-form .form-group { margin-bottom: 1rem; }
+#comment-form label { display: block; margin-bottom: 0.3rem; }
+#comment-form input, #comment-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+#comment-form textarea { min-height: 80px; }
+#comment-form button[type="submit"] { background: #2c4a73; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 4px; cursor: pointer; }
+#comment-form button[type="submit"]:hover { background: #265f1e; }
+.captcha-group { display: flex; align-items: center; gap: 0.5rem; }
+#refresh-captcha { background: none; border: none; font-size: 1.2em; cursor: pointer; color: #2c4a73; }
+#comment-form-message { margin-top: 0.5rem; color: #c00; }
+.community-guidelines { margin-top: 1rem; font-size: 0.95em; color: #555; background: #f1f1f1; padding: 0.7rem; border-radius: 4px; }
+@media (max-width: 600px) {
+  .comments-section, #comment-form-wrapper { padding: 1rem; }
+  .comment-children { margin-left: 1rem; padding-left: 0.5rem; }
+}

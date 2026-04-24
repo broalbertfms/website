@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholasticate - Vocation | Marist Brothers of East Asia</title>
+    <meta name="description" content="The Scholasticate stage of Marist formation combines academic studies, apostolic work, and continued spiritual formation.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Critical Anti-Flash Theme Script
+        (function() {
+            const savedTheme = localStorage.getItem('marist-theme') || 'system';
+            const isDark = savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) document.documentElement.classList.add('dark');
+        })();
+    </script>
+
+    <style>
+        /* ============================================================
+           BEAM-INSPIRED THEME — Scholasticate Formation
+           Aesthetic: deep olive-black · lime-green glow · grid lines
+        ============================================================ */
+
+        :root {
+            --beam-bg:      #0b0e07;
+            --beam-surface: #111509;
+            --beam-card:    #141a0c;
+            --beam-border:  rgba(168, 240, 0, 0.12);
+            --beam-glow:    rgba(168, 240, 0, 0.2);
+            --beam-accent:  #a8f000;
+            --beam-accent2: #c8f135;
+            --beam-dim:     rgba(168, 240, 0, 0.55);
+            --beam-text:    #e8f5d0;
+            --beam-muted:   #7a8f6a;
+        }
+
+        /* Base */
+        body {
+            background-color: var(--beam-bg);
+            color: var(--beam-text);
+            font-family: 'Inter', 'Roboto', sans-serif;
+        }
+
+        /* Subtle dot-grid background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                radial-gradient(circle at 20% 10%, rgba(168,240,0,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168,240,0,0.04) 0%, transparent 50%),
+                radial-gradient(var(--beam-border) 1px, transparent 1px);
+            background-size: auto, auto, 32px 32px;
+            pointer-events: none;
+        }
+
+        main, header, footer, section, .breadcrumb { position: relative; z-index: 1; }
+
+        /* ---- Breadcrumb ---- */
+        .beam-breadcrumb {
+            background: rgba(11, 14, 7, 0.85);
+            border-bottom: 1px solid var(--beam-border);
+            backdrop-filter: blur(8px);
+        }
+
+        /* ---- Hero Section ---- */
+        .beam-hero {
+            background: var(--beam-bg);
+            padding: 7rem 0 6rem;
+        }
+        .beam-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(168,240,0,0.08);
+            border: 1px solid var(--beam-border);
+            color: var(--beam-accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 2rem;
+        }
+        .beam-hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--beam-accent);
+            border-radius: 50%;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+        .beam-h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: #fff;
+        }
+        .beam-h1 .accent { color: var(--beam-accent); }
+        .beam-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--beam-accent);
+            margin: 1.25rem 0;
+        }
+        .beam-body-text {
+            color: var(--beam-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* Hero image panel */
+        .beam-image-wrap {
+            position: relative;
+        }
+        .beam-image-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(ellipse at center, rgba(168,240,0,0.18) 0%, transparent 70%);
+            border-radius: 2rem;
+            z-index: 0;
+            animation: glow-breathe 4s ease-in-out infinite;
+        }
+        @keyframes glow-breathe {
+            0%, 100% { opacity: 0.6; }
+            50%       { opacity: 1; }
+        }
+        .beam-image-wrap img {
+            position: relative;
+            z-index: 1;
+            border-radius: 1.25rem;
+            border: 1px solid var(--beam-border);
+            filter: brightness(0.9) contrast(1.1);
+            transition: filter 0.6s ease, transform 0.6s ease;
+            width: 100%;
+        }
+        .beam-image-wrap:hover img {
+            filter: brightness(1) contrast(1.05);
+            transform: scale(1.01);
+        }
+        .beam-img-badge {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            z-index: 2;
+            background: rgba(11,14,7,0.85);
+            border: 1px solid var(--beam-border);
+            backdrop-filter: blur(12px);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .beam-img-badge i { color: var(--beam-accent); }
+        .beam-img-badge span { font-size: 0.8rem; font-weight: 700; color: #fff; }
+
+        /* ---- Divider Line ---- */
+        .beam-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--beam-border), transparent);
+            margin: 0;
+        }
+
+        /* ---- Key Dimensions Section ---- */
+        .beam-section {
+            background: var(--beam-surface);
+            padding: 6rem 0;
+            border-top: 1px solid var(--beam-border);
+            border-bottom: 1px solid var(--beam-border);
+        }
+        .beam-section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--beam-accent);
+            margin-bottom: 0.75rem;
+        }
+        .beam-section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin-bottom: 4rem;
+        }
+        .beam-card {
+            background: var(--beam-card);
+            border: 1px solid var(--beam-border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+            cursor: default;
+        }
+        .beam-card:hover {
+            border-color: var(--beam-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 0 40px rgba(168,240,0,0.12), 0 24px 48px rgba(0,0,0,0.4);
+        }
+        .beam-icon-box {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(168,240,0,0.08);
+            border: 1px solid var(--beam-border);
+            border-radius: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+            transition: background 0.35s ease, border-color 0.35s ease;
+        }
+        .beam-card:hover .beam-icon-box {
+            background: var(--beam-accent);
+            border-color: var(--beam-accent);
+        }
+        .beam-icon-box i {
+            font-size: 1.35rem;
+            color: var(--beam-accent);
+            transition: color 0.35s ease;
+        }
+        .beam-card:hover .beam-icon-box i { color: #0b0e07; }
+        .beam-card-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #e8f5d0;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .beam-card-text {
+            font-size: 0.95rem;
+            color: var(--beam-muted);
+            line-height: 1.7;
+        }
+
+        /* ---- Formation Stages Nav Section ---- */
+        .beam-nav-section {
+            background: var(--beam-bg);
+            padding: 6rem 0;
+        }
+        .beam-nav-card {
+            display: block;
+            background: var(--beam-card);
+            border: 1px solid var(--beam-border);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            text-decoration: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .beam-nav-card:hover {
+            border-color: var(--beam-accent);
+            box-shadow: 0 0 30px rgba(168,240,0,0.1), 0 16px 32px rgba(0,0,0,0.4);
+            transform: translateY(-3px);
+        }
+        .beam-nav-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--beam-muted);
+            margin-bottom: 0.5rem;
+        }
+        .beam-nav-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #e8f5d0;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .beam-nav-card:hover .beam-nav-title { color: var(--beam-accent); }
+        .beam-nav-text {
+            font-size: 0.9rem;
+            color: var(--beam-muted);
+            line-height: 1.6;
+        }
+        .beam-nav-icon {
+            color: var(--beam-accent);
+            margin-right: 0.5rem;
+        }
+
+        /* ---- CTA Banner ---- */
+        .beam-cta {
+            background: var(--beam-surface);
+            border-top: 1px solid var(--beam-border);
+            border-bottom: 1px solid var(--beam-border);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .beam-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(168,240,0,0.08), transparent 70%);
+            pointer-events: none;
+        }
+        .beam-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--beam-accent);
+            color: #0b0e07;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.875rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .beam-btn:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 24px rgba(168,240,0,0.4);
+        }
+        .beam-btn-ghost {
+            background: transparent;
+            color: var(--beam-accent);
+            border: 1px solid var(--beam-border);
+            padding: 0.875rem 2rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .beam-btn-ghost:hover {
+            border-color: var(--beam-accent);
+            background: rgba(168,240,0,0.06);
+        }
+
+        /* ---- Footer tweaks ---- */
+        footer {
+            background: #080b05 !important;
+            border-top: 1px solid var(--beam-border) !important;
+        }
+
+        /* Fade-in animation */
+        .beam-fade {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .beam-fade.in { opacity: 1; transform: none; }
+        .beam-fade[data-delay="1"] { transition-delay: 0.1s; }
+        .beam-fade[data-delay="2"] { transition-delay: 0.2s; }
+        .beam-fade[data-delay="3"] { transition-delay: 0.3s; }
+    </style>
+
+</head>
+<body class="font-sans" style="background: var(--beam-bg); color: var(--beam-text);">
+
+    <!-- Theme Selection Modal (matches site pattern) -->
+    <div id="theme-selection-modal">
+        <div class="modal-backdrop" onclick="ThemeManager.toggleModal(false)"></div>
+        <div class="modal-card">
+            <h2 class="text-sm font-black uppercase tracking-[0.3em] text-[#c41e3a] mb-4">Visual Experience</h2>
+            <h3 class="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter">Choose Your Theme</h3>
+            <p class="text-zinc-500 dark:text-zinc-400 font-medium mb-12">Select how you'd like to explore the Marist East Asia mission.</p>
+            <div class="theme-grid">
+                <div class="theme-option" data-theme="light" onclick="ThemeManager.setTheme('light')">
+                    <div class="icon-box"><i class="fas fa-sun"></i></div>
+                    <h4>Light</h4>
+                </div>
+                <div class="theme-option" data-theme="system" onclick="ThemeManager.setTheme('system')">
+                    <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                    <h4>System</h4>
+                </div>
+                <div class="theme-option" data-theme="dark" onclick="ThemeManager.setTheme('dark')">
+                    <div class="icon-box"><i class="fas fa-moon"></i></div>
+                    <h4>Dark</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main-content"
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-[3000] bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-white/5 transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../pages/about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/vocation.html">Formation Stages</a>
+                            <a href="formationteam.html">Formation Team</a>
+                            <a href="vocationtalks.html">Vocation Talks</a>
+                            <a href="vocationmaterials.html">Vocation Materials</a>
+                            <a href="aspirancy.html">Aspirancy Formation</a>
+                            <a href="novitiate.html">Novitiate Formation</a>
+                            <a href="scholasticate.html" class="active">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="../pages/ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="../pages/news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/media.html">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="../pages/calendar.html">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="ThemeManager.toggleModal(true)" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="theme-toggle-icon fas fa-moon"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button — UNTOUCHED -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-[var(--nav-text)] active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#1e3a5f]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay — UNTOUCHED -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation"
+        class="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-8 overflow-y-auto">
+            <button id="closeMenuBtn" aria-label="Close Navigation Menu"
+                class="self-end w-12 h-12 flex items-center justify-center text-white active:scale-90 transition-transform mb-8 focus:ring-2 focus:ring-white">
+                <i class="fa-solid fa-xmark text-3xl" aria-hidden="true"></i>
+            </button>
+            <div class="flex flex-col gap-2 text-xl font-bold text-white mb-12">
+                <a href="../index.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Home</a>
+                <a href="../pages/about.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Identity</a>
+
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/vocation.html">Formation Stages</a>
+                        <a href="formationteam.html">Formation Team</a>
+                        <a href="vocationtalks.html">Vocation Talks</a>
+                        <a href="vocationmaterials.html">Vocation Materials</a>
+                        <a href="aspirancy.html">Aspirancy Formation</a>
+                        <a href="novitiate.html">Novitiate Formation</a>
+                        <a href="scholasticate.html" class="text-red-500">Scholasticate Formation</a>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristmission.html">Marist Mission</a>
+                        <a href="../pages/ministry.html">School Ministry</a>
+                        <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                        <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                        <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                    </div>
+                </div>
+
+                <a href="../pages/news.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/champagnat.html">Charism</a>
+                        <a href="#">Marist Spirituality</a>
+                        <a href="#">Founding the Marist Brothers</a>
+                        <a href="#">Champagnat's Vocation</a>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristcommunities.html">Marist Communities</a>
+                        <a href="../childsrights/childrensrights.html">Child Rights</a>
+                        <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/media.html">Videos</a>
+                        <a href="../resources/documents.html">Documents</a>
+                        <a href="../pages/calendar.html">Calendar of Activities</a>
+                        <a href="../resources/newsletter.html">Newsletter</a>
+                        <a href="../resources/archives.html">Archives</a>
+                        <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                    </div>
+                </div>
+
+                <!-- Links Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                        <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                        <a href="../maristlinks/japan.html">Marist Japan</a>
+                        <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                        <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                        <a href="../maristlinks/china.html">Marist China</a>
+                    </div>
+                </div>
+
+                <a href="../pages/contact.html" class="py-3 text-lg text-zinc-500">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-red-500 transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li><a href="../pages/vocation.html" class="hover:text-red-500 transition-colors">Vocation</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#c41e3a]">Scholasticate</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ═══ HERO SECTION ═══ -->
+        <section class="beam-hero">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <!-- Text -->
+                    <div class="beam-fade" id="hero-text">
+                        <div class="beam-hero-badge">
+                            <span class="dot"></span>
+                            Formation Stage · Scholasticate
+                        </div>
+                        <h1 class="beam-h1">Scholasticate<span class="accent"></span></h1>
+                        <p class="beam-subtitle">Growing in Wisdom, Service, and Marist Identity</p>
+                        <div class="space-y-5 beam-body-text">
+                            <p>After professing first vows in the Novitiate, young Brothers enter the Scholasticate — a multi-year phase of ongoing formation that integrates academic preparation, apostolic experience, and continued spiritual growth.</p>
+                            <p>Scholastics pursue university studies in education, theology, or related fields while living in a formation community and engaging in supervised apostolic work, usually in Marist schools or youth ministries. This phase prepares them for a lifetime of mission in the Marist spirit.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-4 mt-10">
+                            <a href="../pages/vocation.html" class="beam-btn">
+                                <i class="fas fa-arrow-right text-xs"></i> Explore Vocation
+                            </a>
+                            <a href="vocationtalks.html" class="beam-btn-ghost">
+                                <i class="fas fa-comments text-xs"></i> Vocation Talks
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Image -->
+                    <div class="beam-image-wrap beam-fade" id="hero-img" data-delay="2">
+                        <img src="../assets/images/goyo_scholasticate.jpg" alt="Scholasticate Formation">
+                        <div class="beam-img-badge">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Marist Formation · East Asia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="beam-divider"></div>
+
+        <!-- ═══ KEY DIMENSIONS ═══ -->
+        <section class="beam-section">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="text-center mb-16 beam-fade">
+                    <p class="beam-section-label">Three Pillars of Formation</p>
+                    <h2 class="beam-section-title">Key Dimensions</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="beam-card beam-fade" data-delay="1">
+                        <div class="beam-icon-box">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="beam-card-title">Academic Formation</h3>
+                        <p class="beam-card-text">University studies equip young Brothers with professional competencies in education, theology, and pastoral work for our mission centres.</p>
+                    </div>
+                    <div class="beam-card beam-fade" data-delay="2">
+                        <div class="beam-icon-box">
+                            <i class="fas fa-hands-praying"></i>
+                        </div>
+                        <h3 class="beam-card-title">Spiritual Deepening</h3>
+                        <p class="beam-card-text">Regular retreats, spiritual accompaniment, and intense community life sustain the interior fire of the scholastic's religious vocation.</p>
+                    </div>
+                    <div class="beam-card beam-fade" data-delay="3">
+                        <div class="beam-icon-box">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="beam-card-title">Apostolic Work</h3>
+                        <p class="beam-card-text">Supervised ministry in classrooms and youth programs builds practical skills for the Marist educator-brother as a sign of God's presence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="beam-divider"></div>
+
+        <!-- ═══ FORMATION STAGES NAV ═══ -->
+        <section class="beam-nav-section">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="beam-fade mb-12">
+                    <p class="beam-section-label">Journey of Formation</p>
+                    <h2 class="beam-section-title" style="margin-bottom: 0;">Explore Formation Stages</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <a href="aspirancy.html" class="beam-nav-card beam-fade" data-delay="1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-seedling beam-nav-icon"></i>
+                            <span class="beam-nav-label">Initial Discernment</span>
+                        </div>
+                        <h4 class="beam-nav-title">Aspirancy</h4>
+                        <p class="beam-nav-text">Experience the Marist way of life through encounter and initial discernment.</p>
+                    </a>
+                    <a href="novitiate.html" class="beam-nav-card beam-fade" data-delay="2">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-hands-holding beam-nav-icon"></i>
+                            <span class="beam-nav-label">Canonical Year</span>
+                        </div>
+                        <h4 class="beam-nav-title">Novitiate</h4>
+                        <p class="beam-nav-text">Deep spiritual immersion and formal entry into the Institute of the Marist Brothers.</p>
+                    </a>
+                    <a href="formationteam.html" class="beam-nav-card beam-fade" data-delay="3">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-users-cog beam-nav-icon"></i>
+                            <span class="beam-nav-label">Our Mentors</span>
+                        </div>
+                        <h4 class="beam-nav-title">Formation Team</h4>
+                        <p class="beam-nav-text">Meet the Brothers who accompany scholastics and post-novices in their journey.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CTA BANNER ═══ -->
+        <section class="beam-cta beam-fade">
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <p class="beam-section-label" style="justify-content: center; display: flex;">Ready to Begin?</p>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-4" style="color: #fff;">Called to a Life of Mission?</h2>
+                <p class="beam-body-text max-w-xl mx-auto mb-10">"Touch the hearts of young people and you change the world." — St. Marcellin Champagnat</p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="vocationtalks.html" class="beam-btn">
+                        <i class="fas fa-microphone text-xs"></i> Request a Vocation Talk
+                    </a>
+                    <a href="../pages/contact.html" class="beam-btn-ghost">
+                        <i class="fas fa-envelope text-xs"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer — consistent with index.html structure -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="../pages/about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="../pages/vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="../pages/news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                        <li><a href="../pages/ministry.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Ministry</a></li>
+                        <li><a href="../pages/calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../pages/champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="https://champagnat.org/en/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">General House - Rome</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="../pages/presence.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Our Presence</a></li>
+                        <li><a href="../pages/links.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Related Links</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-[#c41e3a]"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-[#c41e3a]"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-[#c41e3a]"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved. No part of this website may be reproduced without prior written permission.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        /* Beam fade-in on scroll */
+        const beamEls = document.querySelectorAll('.beam-fade');
+        const beamObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    beamObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        beamEls.forEach(el => beamObs.observe(el));
+    </script>
+</body>
+</html>

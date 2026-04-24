@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar of Activities - Marist Brothers of East Asia</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "var(--border)",
+                        background: "var(--background)",
+                        foreground: "var(--foreground)",
+                        primary: {
+                            DEFAULT: "var(--primary-color)",
+                            foreground: "var(--primary-foreground)",
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // Critical Anti-Flash Theme Script
+        (function() {
+            const savedTheme = localStorage.getItem('marist-theme') || 'system';
+            const isDark = savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="bg-white font-sans text-zinc-900 transition-colors duration-300">
+
+    <!-- Theme Selection Modal -->
+    <div id="theme-selection-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <h2 class="text-sm font-black uppercase tracking-[0.3em] text-[#c41e3a] mb-4">Visual Experience</h2>
+            <h3 class="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter">Choose Your Theme</h3>
+            <p class="text-zinc-500 dark:text-zinc-400 font-medium mb-12">Select how you'd like to explore the Marist East Asia mission.</p>
+            
+            <div class="theme-grid">
+                <!-- Light Mode -->
+                <div class="theme-option" data-theme="light" onclick="ThemeManager.setTheme('light')">
+                    <div class="icon-box">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h4>Light</h4>
+                </div>
+                
+                <!-- Auto Mode -->
+                <div class="theme-option" data-theme="system" onclick="ThemeManager.setTheme('system')">
+                    <div class="icon-box">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4>System</h4>
+                </div>
+
+                <!-- Dark Mode -->
+                <div class="theme-option" data-theme="dark" onclick="ThemeManager.setTheme('dark')">
+                    <div class="icon-box">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h4>Dark</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main-content"
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent" style="display:none;">
+        <h4>We use cookies in this Website</h4>
+        <p>This website uses cookies to ensure you get the best experience. By continuing to use this site, you agree to our <a href="../websitedocumentations/dataprivacypolicy.html">Data Privacy Policy</a>.</p>
+        <button id="acceptCookies">Accept</button>
+    </div>
+
+    <header>
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold dark:text-white leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="vocation.html">Formation Stages</a>
+                            <a href="../vocation/formationteam.html">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="media.html">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="calendar.html" class="active">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="ThemeManager.showModal()" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-circle-half-stroke theme-toggle-icon dark:text-white"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-zinc-900 dark:text-white active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#c41e3a]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation"
+        class="fixed inset-0 z-[2000] bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-8 overflow-y-auto">
+            <button id="closeMenuBtn" aria-label="Close Navigation Menu"
+                class="self-end w-12 h-12 flex items-center justify-center text-zinc-900 dark:text-white active:scale-90 transition-transform mb-8 focus:ring-2 focus:ring-[#c41e3a]">
+                <i class="fa-solid fa-xmark text-3xl" aria-hidden="true"></i>
+            </button>
+            <div class="flex flex-col gap-2 text-xl font-bold text-zinc-900 dark:text-white mb-12">
+                <a href="../index.html" class="py-3 border-b border-zinc-100 dark:border-white/5 hover:text-[#c41e3a] transition-colors">Home</a>
+                <a href="about.html" class="py-3 border-b border-zinc-100 dark:border-white/5 hover:text-[#c41e3a] transition-colors">Identity</a>
+
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="vocation.html">Formation Stages</a>
+                        <a href="../vocation/formationteam.html">Formation Team</a>
+                        <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                        <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                        <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                        <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                        <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="../pages/maristmission.html">Marist Mission</a>
+                        <a href="ministry.html">School Ministry</a>
+                        <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                        <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                        <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                    </div>
+                </div>
+
+                <a href="news.html" class="py-3 border-b border-zinc-100 dark:border-white/5 hover:text-[#c41e3a] transition-colors">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="champagnat.html">Charism</a>
+                        <a href="#">Marist Spirituality</a>
+                        <a href="#">Founding the Marist Brothers</a>
+                        <a href="#">Champagnat's Vocation</a>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="maristcommunities.html">Marist Communities</a>
+                        <a href="../childsrights/childrensrights.html">Child Rights</a>
+                        <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="media.html">Videos</a>
+                        <a href="../resources/documents.html">Documents</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="../resources/newsletter.html">Newsletter</a>
+                        <a href="../resources/archives.html">Archives</a>
+                        <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                    </div>
+                </div>
+
+                <!-- Links Accordion -->
+                <div class="mobile-accordion border-b border-zinc-100 dark:border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-[#c41e3a] transition-colors" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-500 dark:text-zinc-400">
+                        <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                        <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                        <a href="../maristlinks/japan.html">Marist Japan</a>
+                        <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                        <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                        <a href="../maristlinks/china.html">Marist China</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="py-3 text-lg text-zinc-500 dark:text-zinc-400">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Standardized Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4 overflow-x-auto no-scrollbar whitespace-nowrap">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-[#c41e3a] transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#c41e3a]">Calendar of Activities</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Cinematic Hero Section -->
+        <section class="relative py-32 overflow-hidden bg-zinc-950 text-center">
+            <!-- Background Bloom -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c41e3a]/5 rounded-full blur-[160px] pointer-events-none animate-pulse"></div>
+            
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <span class="text-[#c41e3a] text-sm font-black uppercase tracking-[0.4em] mb-6 block animate-fade-in">Events and Celebrations</span>
+                    <h1 class="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] animate-slide-up">
+                        Regional <br>
+                        <span class="text-zinc-500">Calendar</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-400 font-bold max-w-2xl mx-auto normal-case tracking-normal animate-fade-in-up">
+                        Stay informed about our community activities and liturgical celebrations across East Asia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Tailwind Calendar Section -->
+        <section class="bg-zinc-950 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+            <div class="max-w-[1200px] mx-auto bg-zinc-900/30 rounded-[32px] border border-white/5 p-8 shadow-2xl backdrop-blur-xl">
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
+                    <h2 id="calendar-header" class="text-4xl font-black text-white uppercase tracking-tighter">January 2026</h2>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <!-- Navigation Group -->
+                        <div class="flex items-center bg-zinc-950 border border-white/5 rounded-xl overflow-hidden shadow-inner">
+                            <button id="prevBtn" class="px-5 py-3 hover:bg-zinc-900 text-zinc-400 transition-colors border-r border-white/5">
+                                <i class="fas fa-chevron-left text-xs text-red-500"></i>
+                            </button>
+                            <button id="todayBtn" class="px-8 py-3 hover:bg-zinc-900 text-white font-bold text-xs uppercase tracking-widest transition-colors">Today</button>
+                            <button id="nextBtn" class="px-5 py-3 hover:bg-zinc-900 text-zinc-400 transition-colors border-l border-white/5">
+                                <i class="fas fa-chevron-right text-xs text-red-500"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- View Dropdown (Visual Only) -->
+                        <div class="relative hidden sm:block">
+                            <button class="flex items-center gap-2 bg-zinc-950 border border-white/5 rounded-xl px-6 py-3 text-white font-bold text-xs uppercase tracking-widest hover:bg-zinc-900 transition-colors">
+                                Month view <i class="fas fa-chevron-down text-[8px] text-zinc-600"></i>
+                            </button>
+                        </div>
+
+                        <!-- Add Event Button -->
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest px-8 py-3 rounded-xl transition-all shadow-[0_0_30px_rgba(220,38,38,0.2)] hover:scale-105 active:scale-95">
+                            Add event
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Content -->
+                <div class="rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                    <!-- Weekday headers (Mon-Sun) -->
+                    <div class="grid grid-cols-7 bg-zinc-950/50 backdrop-blur-sm">
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Mon</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Tue</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Wed</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Thu</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Fri</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 border-r border-white/5">Sat</div>
+                        <div class="py-4 text-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500">Sun</div>
+                    </div>
+
+                    <!-- Dynamic Grid -->
+                    <div id="calendar-body" class="grid grid-cols-7 bg-zinc-900/10">
+                        <!-- Cells injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Major Events -->
+        <section class="py-24 bg-zinc-950 border-t border-white/5 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-[#c41e3a]/5 rounded-full blur-[100px]"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="space-y-4">
+                        <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Major Events 2026</h2>
+                        <div class="h-1.5 w-24 bg-[#c41e3a]"></div>
+                    </div>
+                    <p class="text-zinc-500 font-bold text-sm uppercase tracking-widest">Region-wide Gatherings</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Founder's Day -->
+                    <div class="p-8 rounded-[2.5rem] bg-zinc-900/50 border border-white/5 flex flex-col items-start shadow-2xl hover:border-[#c41e3a]/30 transition-all duration-500 group backdrop-blur-sm">
+                        <div class="flex gap-4 items-start mb-8">
+                            <div class="w-14 h-14 bg-[#c41e3a]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                <i class="fas fa-calendar-check text-2xl text-[#c41e3a]"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white mb-1">Founder's Day</h3>
+                                <p class="text-[10px] text-zinc-500 font-black uppercase tracking-widest">May 6, 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 font-medium leading-relaxed mb-8 flex-grow">Celebrate the feast of St. Marcellin Champagnat with special regional masses and community gatherings.</p>
+                        <div class="w-full pt-6 border-t border-white/5">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-[#c41e3a]/60">Location: All Communities</span>
+                        </div>
+                    </div>
+
+                    <!-- Lenten Retreat -->
+                    <div class="p-8 rounded-[2.5rem] bg-zinc-900/50 border border-white/5 flex flex-col items-start shadow-2xl hover:border-[#c41e3a]/30 transition-all duration-500 group backdrop-blur-sm">
+                        <div class="flex gap-4 items-start mb-8">
+                            <div class="w-14 h-14 bg-[#c41e3a]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                <i class="fas fa-pray text-2xl text-[#c41e3a]"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white mb-1">Lenten Retreat</h3>
+                                <p class="text-[10px] text-zinc-500 font-black uppercase tracking-widest">March 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 font-medium leading-relaxed mb-8 flex-grow">Spiritual renewal and reflection programs across all formation houses in East Asia.</p>
+                        <div class="w-full pt-6 border-t border-white/5">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-[#c41e3a]/60">Location: Various Centers</span>
+                        </div>
+                    </div>
+
+                    <!-- Graduations -->
+                    <div class="p-8 rounded-[2.5rem] bg-zinc-900/50 border border-white/5 flex flex-col items-start shadow-2xl hover:border-[#c41e3a]/30 transition-all duration-500 group backdrop-blur-sm">
+                        <div class="flex gap-4 items-start mb-8">
+                            <div class="w-14 h-14 bg-[#c41e3a]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                <i class="fas fa-graduation-cap text-2xl text-[#c41e3a]"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white mb-1">Graduations</h3>
+                                <p class="text-[10px] text-zinc-500 font-black uppercase tracking-widest">June 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 font-medium leading-relaxed mb-8 flex-grow">Commencement exercises for our schools in Hong Kong, Singapore, and across the region.</p>
+                        <div class="w-full pt-6 border-t border-white/5">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-[#c41e3a]/60">Location: Marist Schools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Timeline -->
+        <section class="py-24 bg-zinc-950 border-t border-white/5">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="text-center mb-20 space-y-4">
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Academic Terms</h2>
+                    <p class="text-zinc-500 font-bold text-sm tracking-[0.2em] uppercase">School Cycle Overview</p>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto pl-12 space-y-8">
+                    <div class="absolute left-0 top-0 bottom-0 w-px bg-white/10"></div>
+
+                    <!-- Term 1 -->
+                    <div class="relative group">
+                        <div class="absolute -left-12 top-0 w-6 h-6 bg-[#c41e3a] rounded-full border-4 border-zinc-950 shadow-[0_0_20px_rgba(196,30,58,0.3)]"></div>
+                        <div class="bg-zinc-900/30 p-10 rounded-[2rem] border border-white/5 hover:border-[#c41e3a]/20 transition-all duration-500">
+                            <h4 class="text-xl font-black text-white mb-3">First Term: Jan - Mar</h4>
+                            <p class="text-zinc-400 font-medium leading-relaxed">Orientation, mid-term examinations, and foundation assemblies across all colleges.</p>
+                        </div>
+                    </div>
+
+                    <!-- Term 2 -->
+                    <div class="relative group">
+                        <div class="absolute -left-12 top-0 w-6 h-6 bg-zinc-800 rounded-full border-4 border-zinc-950 group-hover:bg-[#c41e3a] transition-colors duration-500"></div>
+                        <div class="bg-zinc-900/30 p-10 rounded-[2rem] border border-white/5 hover:border-[#c41e3a]/20 transition-all duration-500">
+                            <h4 class="text-xl font-black text-white mb-3">Second Term: Apr - Jun</h4>
+                            <p class="text-zinc-400 font-medium leading-relaxed">Final term examinations, graduation ceremonies, and summer mission preparations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Term 3 -->
+                    <div class="relative group">
+                        <div class="absolute -left-12 top-0 w-6 h-6 bg-zinc-800 rounded-full border-4 border-zinc-950 group-hover:bg-[#c41e3a] transition-colors duration-500"></div>
+                        <div class="bg-zinc-900/30 p-10 rounded-[2rem] border border-white/5 hover:border-[#c41e3a]/20 transition-all duration-500">
+                            <h4 class="text-xl font-black text-white mb-3">Third Term: Jul - Sep</h4>
+                            <p class="text-zinc-400 font-medium leading-relaxed">New academic cycle for primary institutions and regional youth leadership congress.</p>
+                        </div>
+                    </div>
+
+                    <!-- Term 4 -->
+                    <div class="relative group">
+                        <div class="absolute -left-12 top-0 w-6 h-6 bg-zinc-800 rounded-full border-4 border-zinc-950 group-hover:bg-[#c41e3a] transition-colors duration-500"></div>
+                        <div class="bg-zinc-900/30 p-10 rounded-[2rem] border border-white/5 hover:border-[#c41e3a]/20 transition-all duration-500">
+                            <h4 class="text-xl font-black text-white mb-3">Fourth Term: Oct - Dec</h4>
+                            <p class="text-zinc-400 font-medium leading-relaxed">Year-end evaluations, Christmas community gatherings, and regional mission planning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                        <li><a href="ministry.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Ministry</a></li>
+                        <li><a href="calendar.html" class="text-white hover:text-[#c41e3a] text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                        <li><a href="maristcommunities.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Our Presence</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-[#c41e3a]"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-[#c41e3a]"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-[#c41e3a]"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/cookieconsent.js"></script>
+
+    <!-- User Script Logic -->
+    <script>
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const today = new Date();
+        let currentYear = today.getFullYear();
+        let currentMonth = today.getMonth();
+
+        // Event data for visualization
+        const mockEvents = {
+            "2026-3-3": [
+                { title: "Design review", color: "text-indigo-400" },
+                { title: "Sales meeting", color: "text-emerald-400" }
+            ],
+            "2026-3-7": [
+                { title: "Date night", color: "text-amber-400" }
+            ],
+            "2026-3-12": [
+                { title: "Sam's birthday party", color: "text-white" }
+            ],
+            "2026-3-22": [
+                { title: "Maple syrup museum", color: "text-white" },
+                { title: "Hockey game", color: "text-white" }
+            ],
+            "2026-4-4": [
+                { title: "Cinema with friends", color: "text-zinc-400" }
+            ]
+        };
+
+        function renderCalendar(year, month) {
+            const calendarHeader = document.getElementById("calendar-header");
+            const calendarBody = document.getElementById("calendar-body");
+            
+            calendarHeader.textContent = `${monthNames[month]} ${year}`;
+            calendarBody.innerHTML = "";
+
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            // Adjust to Mon-Sun grid (Mon=0)
+            const adjustedFirstDay = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
+            
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+            // Previous month buffer
+            for (let i = adjustedFirstDay - 1; i >= 0; i--) {
+                const day = daysInPrevMonth - i;
+                calendarBody.appendChild(createDayCell(day, true, false, month === 0 ? year-1 : year, month === 0 ? 11 : month - 1));
+            }
+
+            // Current month
+            for (let i = 1; i <= daysInMonth; i++) {
+                const isToday = i === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+                calendarBody.appendChild(createDayCell(i, false, isToday, year, month));
+            }
+
+            // Next month buffer
+            const totalCells = calendarBody.children.length;
+            const remainingCells = 42 - totalCells;
+            for (let i = 1; i <= remainingCells; i++) {
+                calendarBody.appendChild(createDayCell(i, true, false, month === 11 ? year+1 : year, month === 11 ? 0 : month + 1));
+            }
+        }
+
+        function createDayCell(day, isOverflow, isToday, year, month) {
+            const cell = document.createElement("div");
+            cell.className = `min-h-[120px] p-4 border-r border-b border-white/5 transition-all hover:bg-zinc-800/40 relative group ${isOverflow ? 'bg-zinc-950 text-zinc-800' : 'bg-zinc-900/10 text-zinc-400 font-bold'}`;
+            
+            const eventKey = `${year}-${month}-${day}`;
+            const events = mockEvents[eventKey] || [];
+
+            let content = `
+                <div class="flex items-start justify-between">
+                    <span class="text-sm ${isToday ? 'bg-red-600 text-white w-7 h-7 rounded-full flex items-center justify-center font-black shadow-[0_0_15px_rgba(220,38,38,0.5)]' : isOverflow ? 'text-zinc-700' : 'text-zinc-400'}">${day}</span>
+                </div>
+                <div class="mt-2 space-y-1.5 overflow-hidden">
+                    ${events.map(e => `
+                        <div class="text-[10px] font-black uppercase tracking-tighter leading-tight ${e.color} truncate">
+                            ${e.title}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            cell.innerHTML = content;
+            return cell;
+        }
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            renderCalendar(currentYear, currentMonth);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            renderCalendar(currentYear, currentMonth);
+        });
+
+        document.getElementById("todayBtn").addEventListener("click", () => {
+            currentYear = today.getFullYear();
+            currentMonth = today.getMonth();
+            renderCalendar(currentYear, currentMonth);
+        });
+
+        renderCalendar(currentYear, currentMonth);
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

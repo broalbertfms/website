@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirancy - Vocation | Marist Brothers of East Asia</title>
+    <meta name="description" content="Learn about the Aspirancy stage of Marist formation — the first step towards religious life as a Marist Brother.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-zinc-950 font-sans text-white text-selection-red">
+
+    <a href="#main-content"
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../pages/about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/vocation.html">Formation Stages</a>
+                            <a href="formationteam.html">Formation Team</a>
+                            <a href="vocationtalks.html">Vocation Talks</a>
+                            <a href="vocationmaterials.html">Vocation Materials</a>
+                            <a href="aspirancy.html" class="active">Aspirancy Formation</a>
+                            <a href="novitiate.html">Novitiate Formation</a>
+                            <a href="scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="../pages/ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="../pages/news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/media.html">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="../pages/calendar.html">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon theme-toggle-icon"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-[var(--nav-text)] active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#1e3a5f]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation"
+        class="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-8 overflow-y-auto">
+            <button id="closeMenuBtn" aria-label="Close Navigation Menu"
+                class="self-end w-12 h-12 flex items-center justify-center text-white active:scale-90 transition-transform mb-8 focus:ring-2 focus:ring-white">
+                <i class="fa-solid fa-xmark text-3xl" aria-hidden="true"></i>
+            </button>
+            <div class="flex flex-col gap-2 text-xl font-bold text-white mb-12">
+                <a href="../index.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Home</a>
+                <a href="../pages/about.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Identity</a>
+
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/vocation.html">Formation Stages</a>
+                        <a href="formationteam.html">Formation Team</a>
+                        <a href="vocationtalks.html">Vocation Talks</a>
+                        <a href="vocationmaterials.html">Vocation Materials</a>
+                        <a href="aspirancy.html" class="text-red-500">Aspirancy Formation</a>
+                        <a href="novitiate.html">Novitiate Formation</a>
+                        <a href="scholasticate.html">Scholasticate Formation</a>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristmission.html">Marist Mission</a>
+                        <a href="../pages/ministry.html">School Ministry</a>
+                        <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                        <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                        <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                    </div>
+                </div>
+
+                <a href="../pages/news.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/champagnat.html">Charism</a>
+                        <a href="#">Marist Spirituality</a>
+                        <a href="#">Founding the Marist Brothers</a>
+                        <a href="#">Champagnat's Vocation</a>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristcommunities.html">Marist Communities</a>
+                        <a href="../childsrights/childrensrights.html">Child Rights</a>
+                        <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/media.html">Videos</a>
+                        <a href="../resources/documents.html">Documents</a>
+                        <a href="../pages/calendar.html">Calendar of Activities</a>
+                        <a href="../resources/newsletter.html">Newsletter</a>
+                        <a href="../resources/archives.html">Archives</a>
+                        <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                    </div>
+                </div>
+
+                <!-- Links Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                        <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                        <a href="../maristlinks/japan.html">Marist Japan</a>
+                        <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                        <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                        <a href="../maristlinks/china.html">Marist China</a>
+                    </div>
+                </div>
+
+                <a href="../pages/contact.html" class="py-3 text-lg text-zinc-500">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+
+        <!-- Modernized Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-red-500 transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li><a href="../pages/vocation.html" class="hover:text-red-500 transition-colors">Vocation</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#c41e3a]">Aspirancy</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="py-24 bg-zinc-950">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tight">Aspirancy</h1>
+                        <p class="text-2xl text-red-600 font-bold mb-8">The First Step on the Marist Journey</p>
+                        <div class="space-y-6 text-zinc-400 text-lg leading-relaxed font-medium">
+                            <p>Aspirancy is the initial phase of Marist formation where young men who feel drawn to religious life begin to explore and discern their vocation in a structured, supportive environment. It is a period of encounter — with God, with the Marist community, and with oneself.</p>
+                            <p>During this time, aspirants live and study in a Marist community, participating in prayer, communal life, ministry, and spiritual direction. They are accompanied by experienced brothers who help them understand the Marist charism and test their readiness for the next steps of formation.</p>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-red-600/20 rounded-3xl blur-2xl group-hover:bg-red-600/30 transition-all"></div>
+                        <img src="../assets/images/Brothers-SignsofMercy-370x540.jpg" alt="Aspirancy Formation" class="relative rounded-2xl shadow-2xl border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-28 bg-zinc-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.04),transparent_70%)] pointer-events-none"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center mb-20">
+                    <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">Life at the Aspirancy House</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">What Aspirants Experience</h2>
+                    <p class="text-zinc-400 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+                        Every day in the Aspirancy is an invitation — to grow deeper, to serve more generously, and to discover the beauty of a life given for God and the young.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Spiritual Formation -->
+                    <div class="bg-zinc-950 p-12 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-bible text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 tracking-tight">Spiritual Formation</h3>
+                        <p class="text-zinc-400 leading-relaxed font-medium mb-5">Rooted in the rhythm of daily prayer, Holy Mass, Lectio Divina, and personal spiritual direction, aspirants are led into a living, transformative relationship with God. Each morning begins with stillness, and each evening closes with gratitude — cultivating the interior life that sustains a Marist vocation for a lifetime.</p>
+                        <div class="h-0.5 w-10 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </div>
+                    <!-- Card 2: Community Life -->
+                    <div class="bg-zinc-950 p-12 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-users text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 tracking-tight">Community Life</h3>
+                        <p class="text-zinc-400 leading-relaxed font-medium mb-5">The Aspirancy house is more than a residence — it is a school of love. Living alongside fellow aspirants and seasoned Brothers, young men learn the art of deep listening, joyful sacrifice, and authentic brotherhood. Shared meals, house duties, recreation, and honest conversation forge bonds that mirror the family spirit at the heart of Champagnat's vision.</p>
+                        <div class="h-0.5 w-10 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </div>
+                    <!-- Card 3: Apostolic Experience -->
+                    <div class="bg-zinc-950 p-12 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1">
+                        <div class="w-16 h-16 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-child text-3xl text-red-500 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 tracking-tight">Apostolic Experience</h3>
+                        <p class="text-zinc-400 leading-relaxed font-medium mb-5">Theory finds its fire in action. Aspirants are immersed in Marist schools, youth programs, and community outreach — standing beside Brothers as they teach, accompany, and uplift the young. These apostolic encounters do not merely train future educators; they ignite a passion for mission that no classroom alone can awaken.</p>
+                        <div class="h-0.5 w-10 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-28 bg-zinc-950 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+
+        <!-- ===== MEET OUR ASPIRANTS ===== -->
+        <section class="py-28 bg-zinc-900 relative overflow-hidden">
+            <!-- Decorative glow -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="mb-20 text-center">
+                    <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">Current Formation Year</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">Meet Our Aspirants</h2>
+                    <p class="text-zinc-400 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+                        Young men answering the call — walking their first steps with Champagnat's spirit of faith, presence, and service.
+                    </p>
+                </div>
+
+                <!-- Aspirant Profile Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Aspirant Card 1 -->
+                    <div class="group bg-zinc-950 rounded-3xl border border-white/5 hover:border-red-500/40 transition-all duration-500 overflow-hidden hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <!-- Photo -->
+                        <div class="relative overflow-hidden h-64">
+                            <img src="../assets/images/aspirant-placeholder.png"
+                                 alt="Aspirant Profile Photo"
+                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+                            <!-- Aspirant badge -->
+                            <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Aspirant</span>
+                        </div>
+                        <!-- Info -->
+                        <div class="p-8">
+                            <h3 class="text-xl font-black text-white tracking-tight mb-1">[Aspirant Full Name]</h3>
+                            <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">
+                                A young man from [hometown] with a deep love for the youth and a growing call to serve as a Marist Brother. He finds joy in community life and daily prayer.
+                            </p>
+                            <!-- Academic Details -->
+                            <div class="space-y-3 border-t border-white/5 pt-6">
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-school text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Previous School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Previous School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-university text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Current School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Current School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-6 pt-1">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-layer-group text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Year Level</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Year Level]</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-graduation-cap text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Course</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Course]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aspirant Card 2 -->
+                    <div class="group bg-zinc-950 rounded-3xl border border-white/5 hover:border-red-500/40 transition-all duration-500 overflow-hidden hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="../assets/images/aspirant-placeholder.png"
+                                 alt="Aspirant Profile Photo"
+                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Aspirant</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-black text-white tracking-tight mb-1">[Aspirant Full Name]</h3>
+                            <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">
+                                Coming from a family of deep faith, he is drawn to the Marist mission of education and presence among young people, especially those most in need.
+                            </p>
+                            <div class="space-y-3 border-t border-white/5 pt-6">
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-school text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Previous School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Previous School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-university text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Current School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Current School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-6 pt-1">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-layer-group text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Year Level</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Year Level]</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-graduation-cap text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Course</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Course]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aspirant Card 3 -->
+                    <div class="group bg-zinc-950 rounded-3xl border border-white/5 hover:border-red-500/40 transition-all duration-500 overflow-hidden hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="../assets/images/aspirant-placeholder.png"
+                                 alt="Aspirant Profile Photo"
+                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Aspirant</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-black text-white tracking-tight mb-1">[Aspirant Full Name]</h3>
+                            <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">
+                                He joined the Aspirancy after feeling a persistent nudge from God during his senior high school years. He sees teaching as a form of love and discipleship.
+                            </p>
+                            <div class="space-y-3 border-t border-white/5 pt-6">
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-school text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Previous School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Previous School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-university text-red-500 text-sm mt-0.5 w-4 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-0.5">Current School</p>
+                                        <p class="text-zinc-300 text-sm font-semibold">[Current School Name]</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-6 pt-1">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-layer-group text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Year Level</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Year Level]</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-graduation-cap text-red-500 text-sm"></i>
+                                        <div>
+                                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Course</p>
+                                            <p class="text-zinc-300 text-sm font-semibold">[Course]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end grid -->
+            </div>
+        </section>
+
+        <!-- ===== VOICES & REFLECTIONS ===== -->
+        <section class="py-28 bg-zinc-950 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <!-- Header -->
+                <div class="mb-20 text-center">
+                    <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">From the Heart</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">Voices and Reflections</h2>
+                    <p class="text-zinc-400 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+                        In their own words — aspirants share what this journey of faith and discernment means to them.
+                    </p>
+                </div>
+
+                <!-- Reflection Cards -->
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Reflection 1 -->
+                    <div class="group relative bg-zinc-900 rounded-3xl border border-white/5 hover:border-red-500/40 transition-all duration-500 p-10 hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-700 via-red-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <!-- Quote icon -->
+                        <div class="w-12 h-12 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-quote-left text-red-500 text-lg"></i>
+                        </div>
+                        <!-- Quote text -->
+                        <blockquote class="text-zinc-300 text-base leading-relaxed font-medium italic mb-8">
+                            "Being an aspirant opened my eyes to what it really means to be present — not just physically, but with your whole heart. Every small act of service feels like a response to God's call."
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                            <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-red-600/40 flex-shrink-0">
+                                <img src="../assets/images/aspirant-placeholder.png" alt="Aspirant" class="w-full h-full object-cover object-top grayscale">
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-black leading-none mb-1">[Aspirant Full Name]</p>
+                                <p class="text-zinc-500 text-[11px] font-bold uppercase tracking-widest">[Course] · [Year Level]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reflection 2 (Featured) -->
+                    <div class="group relative bg-red-600 rounded-3xl p-10 hover:shadow-[0_0_50px_rgba(220,38,38,0.3)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+                        <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-white/5 rounded-full"></div>
+                        <div class="absolute -top-8 -left-8 w-28 h-28 bg-black/10 rounded-full"></div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-8">
+                                <i class="fas fa-quote-left text-white text-lg"></i>
+                            </div>
+                            <blockquote class="text-white text-base leading-relaxed font-medium italic mb-8">
+                                "I did not expect that community life would change me this much. Living with the Brothers and fellow aspirants taught me how to listen, how to forgive, and how to truly love without conditions."
+                            </blockquote>
+                            <div class="flex items-center gap-4 border-t border-white/20 pt-6">
+                                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-white/40 flex-shrink-0">
+                                    <img src="../assets/images/aspirant-placeholder.png" alt="Aspirant" class="w-full h-full object-cover object-top grayscale">
+                                </div>
+                                <div>
+                                    <p class="text-white text-sm font-black leading-none mb-1">[Aspirant Full Name]</p>
+                                    <p class="text-white/60 text-[11px] font-bold uppercase tracking-widest">[Course] · [Year Level]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reflection 3 -->
+                    <div class="group relative bg-zinc-900 rounded-3xl border border-white/5 hover:border-red-500/40 transition-all duration-500 p-10 hover:shadow-[0_0_40px_rgba(220,38,38,0.08)] hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-700 via-red-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-12 h-12 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-quote-left text-red-500 text-lg"></i>
+                        </div>
+                        <blockquote class="text-zinc-300 text-base leading-relaxed font-medium italic mb-8">
+                            "The Aspirancy is not just a program — it is an encounter with God. Every retreat, every ministry experience, every conversation with a Brother has deepened my desire to give my life for the mission."
+                        </blockquote>
+                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                            <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-red-600/40 flex-shrink-0">
+                                <img src="../assets/images/aspirant-placeholder.png" alt="Aspirant" class="w-full h-full object-cover object-top grayscale">
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-black leading-none mb-1">[Aspirant Full Name]</p>
+                                <p class="text-zinc-500 text-[11px] font-bold uppercase tracking-widest">[Course] · [Year Level]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end reflection cards -->
+            </div>
+        </section>
+
+        <!-- ===== IS THIS PATH FOR YOU ===== -->
+        <section class="py-28 bg-zinc-950 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="text-center mb-20">
+                    <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">Joining the Marist Journey</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">Is This Path for You?</h2>
+                    <p class="text-zinc-400 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+                        You don't have to be perfect — you just have to be willing. If your heart is restless and you sense a call to something more, the Marist Aspirancy may be exactly where God is leading you.
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-zinc-900 p-12 rounded-3xl border border-white/5 hover:border-red-500/20 transition-all duration-500">
+                        <h3 class="text-3xl font-black mb-4 flex items-center gap-4">
+                            <span class="w-12 h-1 bg-red-600 flex-shrink-0"></span>
+                            Who Can Apply?
+                        </h3>
+                        <p class="text-zinc-400 font-medium leading-relaxed mb-10">We welcome young men who carry a genuine hunger for God and a heart inclined toward service. No prior formation experience is necessary — only sincerity, openness, and readiness to discern.</p>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4 items-start text-zinc-300"><i class="fas fa-check-circle text-red-600 text-xl mt-0.5 flex-shrink-0"></i><div><span class="text-base font-black text-white block mb-0.5">Male, Catholic individuals aged 16–25</span><span class="text-zinc-500 text-sm font-medium">In the prime years of discernment and youthful generosity.</span></div></li>
+                            <li class="flex gap-4 items-start text-zinc-300"><i class="fas fa-check-circle text-red-600 text-xl mt-0.5 flex-shrink-0"></i><div><span class="text-base font-black text-white block mb-0.5">Completion of at least secondary education</span><span class="text-zinc-500 text-sm font-medium">A foundation of study that will deepen throughout formation.</span></div></li>
+                            <li class="flex gap-4 items-start text-zinc-300"><i class="fas fa-check-circle text-red-600 text-xl mt-0.5 flex-shrink-0"></i><div><span class="text-base font-black text-white block mb-0.5">Endorsement from a parish priest or spiritual director</span><span class="text-zinc-500 text-sm font-medium">A trusted witness to your character and active faith life.</span></div></li>
+                            <li class="flex gap-4 items-start text-zinc-300"><i class="fas fa-check-circle text-red-600 text-xl mt-0.5 flex-shrink-0"></i><div><span class="text-base font-black text-white block mb-0.5">Good physical and mental health</span><span class="text-zinc-500 text-sm font-medium">The wholeness needed to sustain an active, community-based life.</span></div></li>
+                            <li class="flex gap-4 items-start text-zinc-300"><i class="fas fa-check-circle text-red-600 text-xl mt-0.5 flex-shrink-0"></i><div><span class="text-base font-black text-white block mb-0.5">An open heart and genuine desire to serve God's people</span><span class="text-zinc-500 text-sm font-medium">The one requirement that matters most — a willing and available soul.</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-600 p-12 rounded-3xl flex flex-col justify-center items-center text-center relative overflow-hidden">
+                        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 rounded-full pointer-events-none"></div>
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-black/10 rounded-full pointer-events-none"></div>
+                        <div class="relative z-10 w-full">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8"><i class="fas fa-paper-plane text-white text-2xl"></i></div>
+                            <h3 class="text-4xl font-black mb-4 text-white">How to Apply</h3>
+                            <p class="text-lg font-medium mb-4 text-white/90 max-w-sm mx-auto leading-relaxed">Taking the first step is simpler than you think. Reach out to our Vocation Office to request an application form, and we will walk you through the rest.</p>
+                            <p class="text-sm font-bold text-white/70 mb-10 max-w-xs mx-auto">An initial interview and home visit are part of the process — an opportunity for us to get to know you and for you to get to know us.</p>
+                            <div class="space-y-4 w-full max-w-sm mx-auto">
+                                <a href="mailto:vocations@maristeastasia.org" class="flex items-center justify-center gap-3 w-full bg-white text-red-600 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-zinc-100 transition-colors shadow-lg"><i class="fas fa-envelope"></i> Email Us</a>
+                                <a href="../pages/contact.html" class="flex items-center justify-center gap-3 w-full bg-zinc-950 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-zinc-900 transition-colors"><i class="fas fa-comment-dots"></i> Send Message</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PHOTO GALLERY ===== -->
+        <style>
+            @keyframes marquee-left  { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+            @keyframes marquee-right { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+            .marquee-track-left  { display: flex; width: max-content; animation: marquee-left  40s linear infinite; }
+            .marquee-track-right { display: flex; width: max-content; animation: marquee-right 44s linear infinite; }
+            .gallery-section:hover .marquee-track-left,
+            .gallery-section:hover .marquee-track-right { animation-play-state: paused; }
+            .gallery-card { position: relative; flex-shrink: 0; width: 340px; height: 240px; border-radius: 20px; overflow: hidden; margin-right: 16px; cursor: pointer; }
+            .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.5s ease; filter: grayscale(20%); }
+            .gallery-card:hover img { transform: scale(1.10); filter: grayscale(0%); }
+            .gallery-card .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.10) 50%, transparent 100%); opacity: 0; transition: opacity 0.4s ease; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+            .gallery-card:hover .overlay { opacity: 1; }
+            .gallery-card .overlay-tag { font-size: 9px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: #ef4444; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); padding: 4px 10px; border-radius: 100px; display: inline-block; margin-bottom: 8px; width: fit-content; }
+            .gallery-card .overlay-label { font-size: 15px; font-weight: 900; color: #fff; line-height: 1.3; letter-spacing: -0.02em; }
+            /* Wider cards for row 2 */
+            .gallery-card.wide { width: 420px; height: 240px; }
+        </style>
+        <section class="gallery-section bg-zinc-950 py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(220,38,38,0.04),transparent_70%)] pointer-events-none"></div>
+            <!-- Section Header -->
+            <div class="max-w-[1400px] mx-auto px-8 mb-16 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">Life in Motion</p>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white">Aspirancy in Pictures</h2>
+                    </div>
+                    <p class="text-zinc-400 font-medium max-w-md text-base leading-relaxed md:text-right">
+                        Glimpses of a life that is ordinary in its routine yet extraordinary in its meaning — caught in moments of prayer, laughter, service, and growth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row 1 — scrolls LEFT -->
+            <div class="overflow-hidden mb-4">
+                <div class="marquee-track-left">
+                    <!-- set A -->
+                    <div class="gallery-card"><img src="../assets/images/gallery/prayer.png" alt="Prayer"><div class="overlay"><span class="overlay-tag">Spiritual Life</span><p class="overlay-label">Daily Prayer &amp; Mass</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/community.png" alt="Community"><div class="overlay"><span class="overlay-tag">Community</span><p class="overlay-label">Breaking Bread Together</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/teaching.png" alt="Teaching"><div class="overlay"><span class="overlay-tag">Apostolate</span><p class="overlay-label">Teaching the Young</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/retreat.png" alt="Retreat"><div class="overlay"><span class="overlay-tag">Formation</span><p class="overlay-label">Hilltop Retreat</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/mass.png" alt="Mass"><div class="overlay"><span class="overlay-tag">Eucharist</span><p class="overlay-label">Sunday Celebration</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/brotherhood.png" alt="Brotherhood"><div class="overlay"><span class="overlay-tag">Brotherhood</span><p class="overlay-label">Walking Together</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/service.png" alt="Service"><div class="overlay"><span class="overlay-tag">Service</span><p class="overlay-label">Hands for Others</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/group-photo.png" alt="Group"><div class="overlay"><span class="overlay-tag">Community</span><p class="overlay-label">The Aspirancy Family</p></div></div>
+                    <!-- set B (duplicate for seamless loop) -->
+                    <div class="gallery-card"><img src="../assets/images/gallery/prayer.png" alt="Prayer"><div class="overlay"><span class="overlay-tag">Spiritual Life</span><p class="overlay-label">Daily Prayer &amp; Mass</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/community.png" alt="Community"><div class="overlay"><span class="overlay-tag">Community</span><p class="overlay-label">Breaking Bread Together</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/teaching.png" alt="Teaching"><div class="overlay"><span class="overlay-tag">Apostolate</span><p class="overlay-label">Teaching the Young</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/retreat.png" alt="Retreat"><div class="overlay"><span class="overlay-tag">Formation</span><p class="overlay-label">Hilltop Retreat</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/mass.png" alt="Mass"><div class="overlay"><span class="overlay-tag">Eucharist</span><p class="overlay-label">Sunday Celebration</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/brotherhood.png" alt="Brotherhood"><div class="overlay"><span class="overlay-tag">Brotherhood</span><p class="overlay-label">Walking Together</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/service.png" alt="Service"><div class="overlay"><span class="overlay-tag">Service</span><p class="overlay-label">Hands for Others</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/group-photo.png" alt="Group"><div class="overlay"><span class="overlay-tag">Community</span><p class="overlay-label">The Aspirancy Family</p></div></div>
+                </div>
+            </div>
+
+            <!-- Row 2 — scrolls RIGHT -->
+            <div class="overflow-hidden">
+                <div class="marquee-track-right">
+                    <!-- set A -->
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/study.png" alt="Study"><div class="overlay"><span class="overlay-tag">Formation</span><p class="overlay-label">Evening Study Hours</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/youth-ministry.png" alt="Youth Ministry"><div class="overlay"><span class="overlay-tag">Ministry</span><p class="overlay-label">Youth Apostolate</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/chapel.png" alt="Chapel"><div class="overlay"><span class="overlay-tag">Prayer</span><p class="overlay-label">Quiet Adoration</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/outdoor-formation.png" alt="Outdoor Formation"><div class="overlay"><span class="overlay-tag">Learning</span><p class="overlay-label">Under the Tree</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/night-prayer.png" alt="Night Prayer"><div class="overlay"><span class="overlay-tag">Night Prayer</span><p class="overlay-label">Stars &amp; Candles</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/mission.png" alt="Mission"><div class="overlay"><span class="overlay-tag">Mission</span><p class="overlay-label">Going to the Peripheries</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/morning-run.png" alt="Morning Run"><div class="overlay"><span class="overlay-tag">Discipline</span><p class="overlay-label">Dawn Formation Run</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/goyo_formation_stages.jpg" alt="Formation Stages"><div class="overlay"><span class="overlay-tag">Stages</span><p class="overlay-label">Milestones of Formation</p></div></div>
+                    <!-- set B (duplicate) -->
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/study.png" alt="Study"><div class="overlay"><span class="overlay-tag">Formation</span><p class="overlay-label">Evening Study Hours</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/youth-ministry.png" alt="Youth Ministry"><div class="overlay"><span class="overlay-tag">Ministry</span><p class="overlay-label">Youth Apostolate</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/chapel.png" alt="Chapel"><div class="overlay"><span class="overlay-tag">Prayer</span><p class="overlay-label">Quiet Adoration</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/outdoor-formation.png" alt="Outdoor Formation"><div class="overlay"><span class="overlay-tag">Learning</span><p class="overlay-label">Under the Tree</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/night-prayer.png" alt="Night Prayer"><div class="overlay"><span class="overlay-tag">Night Prayer</span><p class="overlay-label">Stars &amp; Candles</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/gallery/mission.png" alt="Mission"><div class="overlay"><span class="overlay-tag">Mission</span><p class="overlay-label">Going to the Peripheries</p></div></div>
+                    <div class="gallery-card wide"><img src="../assets/images/gallery/morning-run.png" alt="Morning Run"><div class="overlay"><span class="overlay-tag">Discipline</span><p class="overlay-label">Dawn Formation Run</p></div></div>
+                    <div class="gallery-card"><img src="../assets/images/goyo_formation_stages.jpg" alt="Formation Stages"><div class="overlay"><span class="overlay-tag">Stages</span><p class="overlay-label">Milestones of Formation</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED STORY ===== -->
+        <section class="py-0 bg-zinc-950 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-8 py-28 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_80px_rgba(0,0,0,0.6)]">
+                    <!-- Left: Image -->
+                    <div class="relative h-[520px] lg:h-auto overflow-hidden">
+                        <img src="../assets/images/gallery/brotherhood.png" alt="Featured Story"
+                             class="w-full h-full object-cover transition-transform duration-[10s] hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-zinc-950/80"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent"></div>
+                        <!-- Floating tag -->
+                        <div class="absolute top-8 left-8">
+                            <span class="bg-red-600 text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full shadow-lg">Featured Story</span>
+                        </div>
+                    </div>
+                    <!-- Right: Content -->
+                    <div class="bg-zinc-900 flex flex-col justify-center p-14 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-red-600/5 blur-[80px] rounded-full pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-6">Formation &amp; Vocation · April 2025</p>
+                            <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-white mb-6 leading-tight">
+                                "I Didn't Know I Was Looking — Until I Found It Here"
+                            </h2>
+                            <p class="text-zinc-400 font-medium leading-relaxed mb-4 text-base">
+                                For many young men, the Aspirancy begins not with a dramatic moment of clarity, but with a quiet restlessness — a persistent sense that ordinary life was not quite enough. Three of our current aspirants share what brought them here, what surprised them, and what keeps them staying.
+                            </p>
+                            <p class="text-zinc-500 font-medium leading-relaxed mb-10 text-sm">
+                                It begins with a question and ends, perhaps, with a commitment — but the journey between is filled with friendship, silence, laughter, and the slow discovery that one's deepest desires and the world's greatest needs are not as far apart as they once seemed.
+                            </p>
+                            <!-- Meta -->
+                            <div class="flex items-center gap-6 mb-10 pb-10 border-b border-white/5">
+                                <div class="flex items-center gap-2 text-zinc-500 text-sm font-semibold">
+                                    <i class="fas fa-clock text-red-500 text-xs"></i> 8 min read
+                                </div>
+                                <div class="flex items-center gap-2 text-zinc-500 text-sm font-semibold">
+                                    <i class="fas fa-map-marker-alt text-red-500 text-xs"></i> Davao, Philippines
+                                </div>
+                                <div class="flex items-center gap-2 text-zinc-500 text-sm font-semibold">
+                                    <i class="fas fa-users text-red-500 text-xs"></i> 3 Aspirants
+                                </div>
+                            </div>
+                            <!-- CTA -->
+                            <div class="flex items-center gap-4">
+                                <a href="#" class="group flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white font-black uppercase tracking-widest text-sm px-7 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-red-600/30 hover:shadow-2xl">
+                                    Read the Story
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                                <a href="../vocation/aspirancy.html" class="text-zinc-400 hover:text-white font-black uppercase tracking-widest text-xs transition-colors flex items-center gap-2">
+                                    <i class="fas fa-images text-red-500"></i> View Gallery
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===== OTHER FORMATION STAGES ===== -->
+        <section class="py-28 bg-zinc-900 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-[600px] h-[400px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="mb-20">
+                    <p class="text-xs font-black uppercase tracking-[0.4em] text-red-500 mb-4">The Road Ahead</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">Other Formation Stages</h2>
+                    <p class="text-zinc-400 font-medium max-w-2xl text-lg leading-relaxed">
+                        The Aspirancy is only the beginning. Each stage of formation deepens the call, refines the person, and draws the young man ever closer to a life fully consecrated to God and the young.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <a href="novitiate.html" class="group block bg-zinc-950 p-10 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-red-500 text-[10px] font-black uppercase tracking-widest bg-red-500/10 px-3 py-1.5 rounded-full">Next Stage</span>
+                            <i class="fas fa-arrow-right text-zinc-600 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300"></i>
+                        </div>
+                        <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-cross text-2xl text-red-500"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 tracking-tight group-hover:text-red-500 transition-colors">Novitiate</h4>
+                        <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">The Novitiate marks a decisive threshold — the formal entry into Marist religious life. For two years, novices immerse themselves in prayer, study of the Rule, and guided apostolic experience under the close accompaniment of a Novice Master. It culminates in the profession of first vows of poverty, chastity, and obedience.</p>
+                        <div class="h-0.5 w-8 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </a>
+                    <a href="scholasticate.html" class="group block bg-zinc-950 p-10 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-zinc-400 text-[10px] font-black uppercase tracking-widest bg-zinc-800 px-3 py-1.5 rounded-full">Advanced Stage</span>
+                            <i class="fas fa-arrow-right text-zinc-600 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300"></i>
+                        </div>
+                        <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-graduation-cap text-2xl text-red-500"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 tracking-tight group-hover:text-red-500 transition-colors">Scholasticate</h4>
+                        <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">Following the Novitiate, scholastics enter a rich period of integrated formation combining rigorous academic study — typically in education, theology, or philosophy — with active apostolic engagement. It is the season of becoming: learning not only what to teach, but how to be a Marist Brother in the fullest sense.</p>
+                        <div class="h-0.5 w-8 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </a>
+                    <a href="formationteam.html" class="group block bg-zinc-950 p-10 rounded-3xl border border-white/5 hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-zinc-400 text-[10px] font-black uppercase tracking-widest bg-zinc-800 px-3 py-1.5 rounded-full">Our Mentors</span>
+                            <i class="fas fa-arrow-right text-zinc-600 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300"></i>
+                        </div>
+                        <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-red-600/20 transition-colors">
+                            <i class="fas fa-hands-helping text-2xl text-red-500"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 tracking-tight group-hover:text-red-500 transition-colors">Formation Team</h4>
+                        <p class="text-zinc-400 text-sm font-medium leading-relaxed mb-6">Behind every aspirant, novice, and scholastic stands a dedicated team of Marist Brothers — men of wisdom, prayer, and pastoral sensitivity who walk the journey alongside those they form. They are not just guides; they are witnesses, companions, and embodiments of the Marist life they are called to transmit.</p>
+                        <div class="h-0.5 w-8 bg-red-600 group-hover:w-full transition-all duration-700"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="../pages/about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="../pages/vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="../pages/news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../pages/champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="../pages/calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-red-600"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-red-600"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-red-600"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const statusAnnouncer = document.getElementById('status-announcer');
+
+        function updateStatus(message) {
+            statusAnnouncer.textContent = message;
+        }
+
+        function toggleMobileMenu(isOpen) {
+            if (isOpen) {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                updateStatus("Navigation menu opened");
+            } else {
+                mobileMenuOverlay.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                updateStatus("Navigation menu closed");
+                document.querySelectorAll('.mobile-accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                    h.nextElementSibling.style.maxHeight = null;
+                });
+            }
+        }
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close other accordions
+            document.querySelectorAll('.mobile-accordion-header').forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                    h.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            if (isActive) {
+                header.classList.remove('active');
+                content.style.maxHeight = null;
+                updateStatus(header.textContent.trim() + " section collapsed");
+            } else {
+                header.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+                updateStatus(header.textContent.trim() + " section expanded");
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.onclick = () => toggleMobileMenu(true);
+        if (closeMenuBtn) closeMenuBtn.onclick = () => toggleMobileMenu(false);
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+                link.onclick = () => toggleMobileMenu(false);
+            });
+        }
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

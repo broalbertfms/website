@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocation Talks - Marist Brothers of East Asia</title>
+    <meta name="description" content="Watch and listen to Marist Brothers share their stories of vocation, formation, and life in the service of young people.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-zinc-950 font-sans text-white">
+
+    <a href="#main-content"
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex items-center gap-4">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../pages/about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/vocation.html">Formation Stages</a>
+                            <a href="formationteam.html">Formation Team</a>
+                            <a href="vocationtalks.html" class="active">Vocation Talks</a>
+                            <a href="vocationmaterials.html">Vocation Materials</a>
+                            <a href="aspirancy.html">Aspirancy Formation</a>
+                            <a href="novitiate.html">Novitiate Formation</a>
+                            <a href="scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristmission.html">Marist Mission</a>
+                            <a href="../pages/ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="../pages/news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../pages/media.html">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="../pages/calendar.html">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon theme-toggle-icon"></i>
+                </button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                    class="lg:hidden w-12 h-12 flex items-center justify-center text-[var(--nav-text)] active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#1e3a5f]">
+                    <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation"
+        class="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full p-8 overflow-y-auto">
+            <button id="closeMenuBtn" aria-label="Close Navigation Menu"
+                class="self-end w-12 h-12 flex items-center justify-center text-white active:scale-90 transition-transform mb-8 focus:ring-2 focus:ring-white">
+                <i class="fa-solid fa-xmark text-3xl" aria-hidden="true"></i>
+            </button>
+            <div class="flex flex-col gap-2 text-xl font-bold text-white mb-12">
+                <a href="../index.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Home</a>
+                <a href="../pages/about.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">Identity</a>
+
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/vocation.html">Formation Stages</a>
+                        <a href="formationteam.html">Formation Team</a>
+                        <a href="vocationtalks.html" class="text-red-500">Vocation Talks</a>
+                        <a href="vocationmaterials.html">Vocation Materials</a>
+                        <a href="aspirancy.html">Aspirancy Formation</a>
+                        <a href="novitiate.html">Novitiate Formation</a>
+                        <a href="scholasticate.html">Scholasticate Formation</a>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristmission.html">Marist Mission</a>
+                        <a href="../pages/ministry.html">School Ministry</a>
+                        <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                        <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                        <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                    </div>
+                </div>
+
+                <a href="../pages/news.html" class="py-3 border-b border-white/5 hover:text-red-500 transition-colors">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/champagnat.html">Charism</a>
+                        <a href="#">Marist Spirituality</a>
+                        <a href="#">Founding the Marist Brothers</a>
+                        <a href="#">Champagnat's Vocation</a>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/maristcommunities.html">Marist Communities</a>
+                        <a href="../childsrights/childrensrights.html">Child Rights</a>
+                        <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../pages/media.html">Videos</a>
+                        <a href="../resources/documents.html">Documents</a>
+                        <a href="../pages/calendar.html">Calendar of Activities</a>
+                        <a href="../resources/newsletter.html">Newsletter</a>
+                        <a href="../resources/archives.html">Archives</a>
+                        <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                    </div>
+                </div>
+
+                <!-- Links Accordion -->
+                <div class="mobile-accordion border-b border-white/5">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-3 text-left hover:text-red-500 transition-colors" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                    </button>
+                    <div class="mobile-accordion-content flex flex-col gap-4 pl-4 pb-4 text-lg text-zinc-400">
+                        <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                        <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                        <a href="../maristlinks/japan.html">Marist Japan</a>
+                        <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                        <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                        <a href="../maristlinks/china.html">Marist China</a>
+                    </div>
+                </div>
+
+                <a href="../pages/contact.html" class="py-3 text-lg text-zinc-500">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+
+        <!-- Modernized Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-red-500 transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li><a href="../pages/vocation.html" class="hover:text-red-500 transition-colors">Vocation</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#c41e3a]">Vocation Talks</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="py-20 bg-zinc-950">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight">Vocation Talks</h1>
+                    <p class="text-xl text-zinc-400 leading-relaxed font-medium">Stories of Brothers Sharing Their Faith and Mission Journey</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                    <!-- Talk 1 -->
+                    <div class="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-all p-8">
+                        <div class="flex items-center justify-center bg-zinc-800 rounded-xl aspect-video mb-6 relative group">
+                            <i class="fas fa-play-circle text-6xl text-red-600 transition-transform group-hover:scale-110"></i>
+                            <span class="absolute bottom-4 right-4 bg-black/80 text-[10px] font-bold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">"Why I Became a Marist Brother"</h3>
+                        <p class="text-red-500 text-xs font-black uppercase tracking-widest mb-4">Br. Michael Tan &bull; Philippines</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Brother Michael shares his journey from a Catholic school student to a Marist educator, and the moment God's call became unmistakable.</p>
+                    </div>
+
+                    <!-- Talk 2 -->
+                    <div class="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-all p-8">
+                        <div class="flex items-center justify-center bg-zinc-800 rounded-xl aspect-video mb-6 relative group">
+                            <i class="fas fa-play-circle text-6xl text-red-600 transition-transform group-hover:scale-110"></i>
+                            <span class="absolute bottom-4 right-4 bg-black/80 text-[10px] font-bold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">"Finding Purpose in Marist Community"</h3>
+                        <p class="text-red-500 text-xs font-black uppercase tracking-widest mb-4">Br. David Kim &bull; South Korea</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Brother David reflects on how the Marist community gave him a sense of belonging, mission, and joy he had been searching for.</p>
+                    </div>
+
+                    <!-- Talk 3 -->
+                    <div class="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-all p-8">
+                        <div class="flex items-center justify-center bg-zinc-800 rounded-xl aspect-video mb-6 relative group">
+                            <i class="fas fa-play-circle text-6xl text-red-600 transition-transform group-hover:scale-110"></i>
+                            <span class="absolute bottom-4 right-4 bg-black/80 text-[10px] font-bold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">"The Novitiate Year Changed Everything"</h3>
+                        <p class="text-red-500 text-xs font-black uppercase tracking-widest mb-4">Br. Jerome Santos &bull; Philippines</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">A young scholastic talks candidly about the challenges and graces of the novitiate year, and why he wouldn't trade it for anything.</p>
+                    </div>
+
+                    <!-- Talk 4 -->
+                    <div class="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-all p-8">
+                        <div class="flex items-center justify-center bg-zinc-800 rounded-xl aspect-video mb-6 relative group">
+                            <i class="fas fa-play-circle text-6xl text-red-600 transition-transform group-hover:scale-110"></i>
+                            <span class="absolute bottom-4 right-4 bg-black/80 text-[10px] font-bold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">"Mission in East Asia"</h3>
+                        <p class="text-red-500 text-xs font-black uppercase tracking-widest mb-4">Br. Joseph Lee &bull; Singapore</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">An experienced Brother reflects on decades of service across East Asia and the meaning of living the Marist charism in this region.</p>
+                    </div>
+                </div>
+
+                <!-- ===== VOCATALK SECTION ===== -->
+                <style>
+                    /* ---- VocaTalk Section ---- */
+                    #vocatalk { position: relative; }
+                    .vt-badge {
+                        display: inline-flex; align-items: center; gap: 8px;
+                        background: rgba(196,30,58,0.12); border: 1px solid rgba(196,30,58,0.35);
+                        border-radius: 999px; padding: 6px 16px;
+                        font-size: 10px; font-weight: 900; letter-spacing: .18em;
+                        text-transform: uppercase; color: #f87171; margin-bottom: 1.5rem;
+                    }
+                    .vt-badge .live-dot {
+                        width: 8px; height: 8px; background: #ef4444;
+                        border-radius: 50%; animation: livePulse 1.4s infinite;
+                    }
+                    @keyframes livePulse {
+                        0%,100%{ opacity:1; transform:scale(1); }
+                        50%{ opacity:.4; transform:scale(1.5); }
+                    }
+                    .vt-wrapper {
+                        display: grid; grid-template-columns: 1fr 1.6fr; gap: 0;
+                        background: rgba(24,24,27,0.96);
+                        border: 1px solid rgba(255,255,255,0.06);
+                        border-radius: 24px; overflow: hidden;
+                        min-height: 580px;
+                    }
+                    @media(max-width:900px){ .vt-wrapper{ grid-template-columns:1fr; } }
+
+                    /* --- Thread List --- */
+                    .vt-threads {
+                        border-right: 1px solid rgba(255,255,255,0.05);
+                        display: flex; flex-direction: column;
+                    }
+                    .vt-threads-header {
+                        padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.05);
+                        display:flex; align-items:center; justify-content:space-between;
+                    }
+                    .vt-threads-header h3 { font-size:13px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:#a1a1aa; }
+                    .vt-threads-list { flex: 1; overflow-y: auto; padding: 12px; display:flex; flex-direction:column; gap:4px; }
+                    .vt-threads-list::-webkit-scrollbar { width:4px; }
+                    .vt-threads-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius:4px; }
+                    .vt-thread-item {
+                        padding: 14px 16px; border-radius: 14px; cursor: pointer;
+                        transition: background .18s, border-color .18s;
+                        border: 1px solid transparent;
+                        display: flex; flex-direction: column; gap: 4px;
+                    }
+                    .vt-thread-item:hover { background: rgba(255,255,255,0.04); border-color:rgba(255,255,255,.06); }
+                    .vt-thread-item.active { background: rgba(196,30,58,0.10); border-color:rgba(196,30,58,0.30); }
+                    .vt-thread-topic { font-size: 12px; font-weight: 800; color: #e4e4e7; line-height:1.4; }
+                    .vt-thread-item.active .vt-thread-topic { color: #f87171; }
+                    .vt-thread-meta { font-size: 10px; color: #71717a; font-weight:600; display:flex; align-items:center; gap:8px; }
+                    .vt-thread-count { display:inline-flex; align-items:center; gap:4px; }
+                    .vt-new-thread-btn {
+                        margin: 12px; padding: 10px 16px; border-radius: 10px;
+                        background: rgba(196,30,58,0.15); border: 1px dashed rgba(196,30,58,0.4);
+                        color: #f87171; font-size: 11px; font-weight: 800; cursor: pointer;
+                        text-align: center; transition: background .2s;
+                        letter-spacing:.06em;
+                    }
+                    .vt-new-thread-btn:hover { background: rgba(196,30,58,0.25); }
+
+                    /* --- Chat Panel --- */
+                    .vt-chat { display: flex; flex-direction: column; }
+                    .vt-chat-header {
+                        padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.05);
+                        display: flex; align-items: center; gap: 14px;
+                    }
+                    .vt-chat-avatar {
+                        width:40px; height:40px; border-radius:50%;
+                        background: linear-gradient(135deg,#c41e3a,#7f1d1d);
+                        display:flex; align-items:center; justify-content:center;
+                        font-size:14px; font-weight:900; color:#fff; flex-shrink:0;
+                    }
+                    .vt-chat-title { font-weight:800; font-size:14px; color:#e4e4e7; }
+                    .vt-chat-subtitle { font-size:10px; color:#52525b; font-weight:600; letter-spacing:.06em; }
+                    .vt-messages {
+                        flex: 1; overflow-y: auto; padding: 24px 28px;
+                        display: flex; flex-direction: column; gap: 20px;
+                        min-height: 340px; max-height: 380px;
+                    }
+                    .vt-messages::-webkit-scrollbar { width:4px; }
+                    .vt-messages::-webkit-scrollbar-thumb { background:rgba(255,255,255,.08); border-radius:4px; }
+
+                    /* Message bubbles */
+                    .vt-msg { display:flex; gap:12px; align-items:flex-start; }
+                    .vt-msg.own { flex-direction:row-reverse; }
+                    .vt-msg-avatar {
+                        width:34px; height:34px; border-radius:50%; flex-shrink:0;
+                        display:flex; align-items:center; justify-content:center;
+                        font-size:12px; font-weight:900; color:#fff;
+                    }
+                    .vt-msg-body { max-width: 75%; display:flex; flex-direction:column; gap:4px; }
+                    .vt-msg.own .vt-msg-body { align-items:flex-end; }
+                    .vt-msg-sender { font-size:10px; font-weight:800; color:#71717a; letter-spacing:.06em; }
+                    .vt-msg-bubble {
+                        padding: 12px 16px; border-radius: 18px;
+                        font-size:13px; font-weight:500; line-height:1.55; color:#d4d4d8;
+                        border: 1px solid rgba(255,255,255,0.05);
+                        background: rgba(39,39,42,0.95);
+                        position:relative;
+                    }
+                    .vt-msg.own .vt-msg-bubble {
+                        background: rgba(196,30,58,0.18);
+                        border-color: rgba(196,30,58,0.30);
+                        color: #fca5a5;
+                    }
+                    .vt-msg-time { font-size:9px; color:#3f3f46; font-weight:600; }
+                    .vt-reactions { display:flex; gap:6px; flex-wrap:wrap; margin-top:4px; }
+                    .vt-reaction-btn {
+                        background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);
+                        border-radius:999px; padding:3px 10px; font-size:11px; cursor:pointer;
+                        transition: background .15s, border-color .15s; color:#a1a1aa; font-weight:700;
+                    }
+                    .vt-reaction-btn:hover, .vt-reaction-btn.reacted {
+                        background:rgba(196,30,58,0.18); border-color:rgba(196,30,58,0.4); color:#fca5a5;
+                    }
+                    .vt-reaction-btn .count { font-size:10px; }
+
+                    /* Input */
+                    .vt-input-area {
+                        padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.05);
+                        display: flex; gap: 10px; align-items: flex-end;
+                    }
+                    .vt-username-input {
+                        background: rgba(39,39,42,0.8); border: 1px solid rgba(255,255,255,0.08);
+                        border-radius: 10px; padding: 10px 14px; color: #e4e4e7;
+                        font-size: 12px; font-weight:600; font-family:inherit;
+                        width: 120px; flex-shrink:0; outline:none; transition:border-color .2s;
+                    }
+                    .vt-username-input:focus { border-color:rgba(196,30,58,0.5); }
+                    .vt-text-input {
+                        flex: 1; background: rgba(39,39,42,0.8); border: 1px solid rgba(255,255,255,0.08);
+                        border-radius: 14px; padding: 12px 16px; color: #e4e4e7;
+                        font-size: 13px; font-family:inherit; resize:none; outline:none;
+                        transition: border-color .2s; min-height:44px; max-height:100px; font-weight:500;
+                    }
+                    .vt-text-input:focus { border-color: rgba(196,30,58,0.5); }
+                    .vt-text-input::placeholder { color:#3f3f46; }
+                    .vt-send-btn {
+                        width:44px; height:44px; border-radius:12px; flex-shrink:0;
+                        background: linear-gradient(135deg,#c41e3a,#991b1b);
+                        border:none; cursor:pointer; display:flex; align-items:center;
+                        justify-content:center; color:#fff; font-size:16px;
+                        transition: transform .15s, opacity .15s;
+                    }
+                    .vt-send-btn:hover { transform:scale(1.05); }
+                    .vt-send-btn:active { transform:scale(.95); opacity:.8; }
+                    .vt-hint { font-size:10px; color:#3f3f46; padding:0 24px 12px; font-weight:600; }
+
+                    /* New Thread Modal */
+                    .vt-modal-backdrop {
+                        position:fixed; inset:0; z-index:3000;
+                        background:rgba(0,0,0,.78); backdrop-filter:blur(8px);
+                        display:none; align-items:center; justify-content:center;
+                        padding: 16px;
+                    }
+                    .vt-modal-backdrop.open { display:flex; }
+                    .vt-modal {
+                        background:#18181b; border:1px solid rgba(255,255,255,.08);
+                        border-radius:24px; padding:32px 36px; max-width:520px; width:100%;
+                        display:flex; flex-direction:column; gap:14px;
+                        max-height:92vh; overflow-y:auto;
+                    }
+                    .vt-modal::-webkit-scrollbar{width:4px;}
+                    .vt-modal::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:4px;}
+                    .vt-modal h3 { font-size:18px; font-weight:900; color:#e4e4e7; margin-bottom:2px; }
+                    .vt-modal .vt-modal-subtitle { font-size:11px; color:#52525b; font-weight:600; letter-spacing:.04em; }
+                    .vt-modal input, .vt-modal textarea {
+                        background:rgba(39,39,42,.9); border:1px solid rgba(255,255,255,.08);
+                        border-radius:12px; padding:12px 16px; color:#e4e4e7; font-size:13px;
+                        font-family:inherit; outline:none; transition:border-color .2s; font-weight:500; width:100%;
+                    }
+                    .vt-modal input.error, .vt-modal textarea.error { border-color:rgba(239,68,68,.6); }
+                    .vt-modal input:focus, .vt-modal textarea:focus { border-color:rgba(196,30,58,.5); }
+                    .vt-modal textarea { resize:vertical; min-height:90px; }
+                    .vt-modal-divider { border:none; border-top:1px solid rgba(255,255,255,.06); margin:4px 0; }
+                    /* Captcha box */
+                    .vt-captcha-box {
+                        background:rgba(39,39,42,.7); border:1px solid rgba(255,255,255,.08);
+                        border-radius:14px; padding:14px 18px;
+                        display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+                    }
+                    .vt-captcha-box label { font-size:12px; font-weight:700; color:#a1a1aa; flex:1; min-width:160px; }
+                    .vt-captcha-box input {
+                        width:80px !important; text-align:center; font-size:15px; font-weight:800;
+                        padding:8px 10px !important; border-radius:10px !important;
+                    }
+                    .vt-captcha-eq { font-size:16px; font-weight:900; color:#f87171; min-width:100px; }
+                    .vt-captcha-refresh {
+                        background:none; border:none; color:#52525b; cursor:pointer;
+                        font-size:14px; padding:4px; transition:color .15s;
+                    }
+                    .vt-captcha-refresh:hover { color:#f87171; }
+                    /* Checkboxes */
+                    .vt-check-row {
+                        display:flex; gap:10px; align-items:flex-start;
+                        padding:10px 14px; border-radius:12px;
+                        background:rgba(39,39,42,.5); border:1px solid rgba(255,255,255,.05);
+                    }
+                    .vt-check-row input[type=checkbox] {
+                        width:16px !important; height:16px; flex-shrink:0; margin-top:2px;
+                        accent-color:#c41e3a; border-radius:4px; cursor:pointer;
+                        padding:0 !important;
+                    }
+                    .vt-check-row label { font-size:11px; color:#a1a1aa; font-weight:600; line-height:1.55; cursor:pointer; }
+                    .vt-check-row label a { color:#f87171; text-decoration:underline; }
+                    .vt-modal-actions { display:flex; gap:10px; justify-content:flex-end; margin-top:4px; }
+                    .vt-modal-cancel {
+                        padding:10px 20px; border-radius:10px; font-size:12px; font-weight:800;
+                        background:transparent; border:1px solid rgba(255,255,255,.1);
+                        color:#71717a; cursor:pointer; transition:background .15s;
+                    }
+                    .vt-modal-cancel:hover { background:rgba(255,255,255,.05); }
+                    .vt-modal-post {
+                        padding:10px 24px; border-radius:10px; font-size:12px; font-weight:800;
+                        background:linear-gradient(135deg,#c41e3a,#991b1b); color:#fff;
+                        border:none; cursor:pointer; transition:opacity .15s; display:flex; align-items:center; gap:8px;
+                    }
+                    .vt-modal-post:hover { opacity:.9; }
+                    .vt-modal-post:disabled { opacity:.5; cursor:not-allowed; }
+                    /* Success screen */
+                    .vt-success-screen {
+                        display:none; flex-direction:column; align-items:center;
+                        text-align:center; padding:20px 10px; gap:16px;
+                    }
+                    .vt-success-screen.show { display:flex; }
+                    .vt-success-icon {
+                        width:72px; height:72px; border-radius:50%;
+                        background:rgba(196,30,58,.15); border:2px solid rgba(196,30,58,.4);
+                        display:flex; align-items:center; justify-content:center;
+                        font-size:28px; animation:successPop .4s cubic-bezier(.34,1.56,.64,1);
+                    }
+                    @keyframes successPop {
+                        from{ transform:scale(0); opacity:0; }
+                        to{ transform:scale(1); opacity:1; }
+                    }
+                    .vt-success-screen h4 { font-size:20px; font-weight:900; color:#e4e4e7; }
+                    .vt-success-screen p { font-size:13px; color:#71717a; font-weight:600; max-width:340px; line-height:1.65; }
+                    .vt-success-badge {
+                        display:inline-flex; align-items:center; gap:8px;
+                        background:rgba(234,179,8,.1); border:1px solid rgba(234,179,8,.3);
+                        border-radius:999px; padding:6px 16px;
+                        font-size:10px; font-weight:900; letter-spacing:.14em;
+                        text-transform:uppercase; color:#fbbf24;
+                    }
+                    /* Reply pending notice */
+                    .vt-pending-notice {
+                        background:rgba(234,179,8,.08); border:1px solid rgba(234,179,8,.2);
+                        border-radius:14px; padding:12px 16px; font-size:12px;
+                        font-weight:700; color:#fbbf24; display:none; align-items:center; gap:10px;
+                    }
+                    .vt-pending-notice.show { display:flex; }
+                    /* Reply modal (for sending a reply with full verification) */
+                    .vt-reply-modal-backdrop {
+                        position:fixed; inset:0; z-index:3100;
+                        background:rgba(0,0,0,.78); backdrop-filter:blur(8px);
+                        display:none; align-items:center; justify-content:center; padding:16px;
+                    }
+                    .vt-reply-modal-backdrop.open { display:flex; }
+                </style>
+
+                <section id="vocatalk" class="mb-20">
+                    <div class="vt-badge">
+                        <span class="live-dot"></span>
+                        VocaTalk — Open Discussion
+                    </div>
+                    <div class="mb-10">
+                        <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+                            VocaTalk <span class="text-red-500">Forum</span>
+                        </h2>
+                        <p class="text-zinc-400 text-lg font-medium max-w-2xl">
+                            A community space for questions, reflections, and conversations about Marist vocation. Ask a Brother, share a thought, or simply listen in.
+                        </p>
+                    </div>
+
+                    <div class="vt-wrapper">
+                        <!-- Thread List -->
+                        <div class="vt-threads">
+                            <div class="vt-threads-header">
+                                <h3>Discussions</h3>
+                                <span style="font-size:10px;color:#52525b;font-weight:700;background:rgba(255,255,255,.04);padding:3px 10px;border-radius:999px;">
+                                    <i class="fas fa-comments" style="font-size:9px;"></i> Community
+                                </span>
+                            </div>
+                            <div class="vt-threads-list" id="vtThreadList">
+                                <!-- Threads injected by JS -->
+                            </div>
+                            <div class="vt-new-thread-btn" id="vtNewThreadBtn">
+                                <i class="fas fa-plus" style="font-size:10px;margin-right:6px;"></i>
+                                Start a New Discussion
+                            </div>
+                        </div>
+
+                        <!-- Chat Panel -->
+                        <div class="vt-chat">
+                            <div class="vt-chat-header">
+                                <div class="vt-chat-avatar" id="vtChatAvatar">VT</div>
+                                <div>
+                                    <div class="vt-chat-title" id="vtChatTitle">Select a discussion</div>
+                                    <div class="vt-chat-subtitle" id="vtChatSubtitle">VOCATALK · MARIST BROTHERS EAST ASIA</div>
+                                </div>
+                            </div>
+                            <div class="vt-messages" id="vtMessages">
+                                <div style="margin:auto;text-align:center;color:#3f3f46;">
+                                    <i class="fas fa-comments" style="font-size:2rem;margin-bottom:12px;display:block;"></i>
+                                    <p style="font-size:13px;font-weight:600;">Choose a thread to read the conversation.</p>
+                                </div>
+                            </div>
+                            <p class="vt-hint" id="vtHint" style="display:none;">
+                                <i class="fas fa-info-circle" style="margin-right:4px;"></i>
+                                Enter your name then type your message. Be respectful and kind.
+                            </p>
+                            <div class="vt-input-area" id="vtInputArea" style="display:none;">
+                                <input class="vt-username-input" id="vtUsername" type="text" placeholder="Your name" maxlength="24">
+                                <textarea class="vt-text-input" id="vtTextInput" placeholder="Share your thought or question…" rows="1"></textarea>
+                                <button class="vt-send-btn" id="vtSendBtn" title="Send">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== New Discussion Modal ===== -->
+                <div class="vt-modal-backdrop" id="vtModalBackdrop">
+                    <div class="vt-modal" id="vtModalBox">
+
+                        <!-- ---- Form view ---- -->
+                        <div id="vtModalForm">
+                            <h3><i class="fas fa-comments" style="color:#f87171;margin-right:10px;font-size:15px;"></i>Start a New Discussion</h3>
+                            <p class="vt-modal-subtitle">All submissions are reviewed by the Marist Vocation Team before being published.</p>
+
+                            <input type="text" id="vtNewThreadTitle" placeholder="Discussion topic / question…" maxlength="90">
+                            <input type="text" id="vtNewThreadName" placeholder="Your full name" maxlength="60">
+                            <input type="email" id="vtNewThreadEmail" placeholder="Your email address (for validation)" maxlength="120">
+                            <textarea id="vtNewThreadBody" placeholder="Write your opening message or question…" rows="4" maxlength="500"></textarea>
+
+                            <hr class="vt-modal-divider">
+
+                            <!-- Math CAPTCHA -->
+                            <div class="vt-captcha-box">
+                                <i class="fas fa-robot" style="color:#52525b;font-size:18px;"></i>
+                                <label id="vtCaptchaLabel">What is <strong id="vtCaptchaEqDisplay"></strong>?</label>
+                                <input type="number" id="vtCaptchaAnswer" placeholder="?" min="0" max="99">
+                                <button class="vt-captcha-refresh" id="vtCaptchaRefresh" title="New question" type="button">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+
+                            <hr class="vt-modal-divider">
+
+                            <!-- Checkboxes -->
+                            <div class="vt-check-row">
+                                <input type="checkbox" id="vtCheckTerms">
+                                <label for="vtCheckTerms">
+                                    I agree to the <a href="../websitedocumentations/termsofservice.html" target="_blank">Terms of Service</a>
+                                    and <a href="../websitedocumentations/dataprivacypolicy.html" target="_blank">Privacy Policy</a>.
+                                    I understand my submission will be moderated before publication.
+                                </label>
+                            </div>
+                            <div class="vt-check-row">
+                                <input type="checkbox" id="vtCheckIP">
+                                <label for="vtCheckIP">
+                                    I acknowledge and consent that my <strong style="color:#e4e4e7;">IP address</strong> will be
+                                    recorded for legitimacy and moderation purposes in compliance with the Marist Data Privacy Policy.
+                                </label>
+                            </div>
+
+                            <div class="vt-modal-actions">
+                                <button class="vt-modal-cancel" id="vtModalCancel">Cancel</button>
+                                <button class="vt-modal-post" id="vtModalPost">
+                                    <i class="fas fa-paper-plane"></i> Submit for Review
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ---- Success view ---- -->
+                        <div class="vt-success-screen" id="vtModalSuccess">
+                            <div class="vt-success-icon"><i class="fas fa-check" style="color:#f87171;"></i></div>
+                            <h4>Submission Received!</h4>
+                            <p>Thank you for joining the conversation. Your discussion topic has been submitted and is <strong style="color:#fbbf24;">pending review</strong> by the Marist Vocation Team. It will appear once approved.</p>
+                            <span class="vt-success-badge"><i class="fas fa-hourglass-half"></i> Pending Administrator Approval</span>
+                            <button class="vt-modal-cancel" id="vtSuccessClose" style="margin-top:8px;">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== Reply Modal (for thread replies with full verification) ===== -->
+                <div class="vt-reply-modal-backdrop" id="vtReplyModalBackdrop">
+                    <div class="vt-modal" id="vtReplyModalBox">
+
+                        <div id="vtReplyModalForm">
+                            <h3><i class="fas fa-reply" style="color:#f87171;margin-right:10px;font-size:14px;"></i>Post a Reply</h3>
+                            <p class="vt-modal-subtitle">Replies are subject to moderation and will appear after administrator approval.</p>
+
+                            <input type="text" id="vtReplyName" placeholder="Your full name" maxlength="60">
+                            <input type="email" id="vtReplyEmail" placeholder="Your email address (for validation)" maxlength="120">
+                            <textarea id="vtReplyBody" placeholder="Your reply or question…" rows="4" maxlength="500"></textarea>
+
+                            <hr class="vt-modal-divider">
+
+                            <!-- Math CAPTCHA -->
+                            <div class="vt-captcha-box">
+                                <i class="fas fa-robot" style="color:#52525b;font-size:18px;"></i>
+                                <label>What is <strong id="vtReplyCaptchaEqDisplay"></strong>?</label>
+                                <input type="number" id="vtReplyCaptchaAnswer" placeholder="?" min="0" max="99">
+                                <button class="vt-captcha-refresh" id="vtReplyCaptchaRefresh" title="New question" type="button">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+
+                            <hr class="vt-modal-divider">
+
+                            <div class="vt-check-row">
+                                <input type="checkbox" id="vtReplyCheckTerms">
+                                <label for="vtReplyCheckTerms">
+                                    I agree to the <a href="../websitedocumentations/termsofservice.html" target="_blank">Terms of Service</a>
+                                    and <a href="../websitedocumentations/dataprivacypolicy.html" target="_blank">Privacy Policy</a>.
+                                    I understand my reply will be moderated before publication.
+                                </label>
+                            </div>
+                            <div class="vt-check-row">
+                                <input type="checkbox" id="vtReplyCheckIP">
+                                <label for="vtReplyCheckIP">
+                                    I acknowledge and consent that my <strong style="color:#e4e4e7;">IP address</strong> will be
+                                    recorded for legitimacy and moderation purposes.
+                                </label>
+                            </div>
+
+                            <div class="vt-modal-actions">
+                                <button class="vt-modal-cancel" id="vtReplyModalCancel">Cancel</button>
+                                <button class="vt-modal-post" id="vtReplySendBtn">
+                                    <i class="fas fa-paper-plane"></i> Submit Reply
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Reply success -->
+                        <div class="vt-success-screen" id="vtReplyModalSuccess">
+                            <div class="vt-success-icon"><i class="fas fa-check" style="color:#f87171;"></i></div>
+                            <h4>Reply Submitted!</h4>
+                            <p>Your reply has been sent for review. The Marist Vocation Team will publish it once it has been approved. Thank you for participating!</p>
+                            <span class="vt-success-badge"><i class="fas fa-hourglass-half"></i> Pending Administrator Approval</span>
+                            <button class="vt-modal-cancel" id="vtReplySuccessClose" style="margin-top:8px;">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script>
+                (function(){
+                    /* ======================================================
+                       SUPABASE CONFIG
+                    ====================================================== */
+                    const SB_URL  = 'https://musprkvxzsnfcgkcstgv.supabase.co';
+                    const SB_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11c3Bya3Z4enNuZmNna2NzdGd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3MDYwMjYsImV4cCI6MjA5MTI4MjAyNn0.mnkNdhOiRR7D2866vmL44ZXo8rge4kEvmbUmCQXM79E';
+
+                    async function sbInsert(table, payload){
+                        const res = await fetch(`${SB_URL}/rest/v1/${table}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'apikey': SB_KEY,
+                                'Authorization': `Bearer ${SB_KEY}`,
+                                'Prefer': 'return=minimal'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+                        return res.ok;
+                    }
+
+                    /* Try to get approximate client IP via public API */
+                    let clientIP = 'unknown';
+                    fetch('https://api.ipify.org?format=json')
+                        .then(r=>r.json()).then(d=>{ clientIP=d.ip; }).catch(()=>{});
+
+                    /* ======================================================
+                       CAPTCHA HELPERS
+                    ====================================================== */
+                    function genCaptcha(){
+                        const a = Math.floor(Math.random()*10)+1;
+                        const b = Math.floor(Math.random()*9)+1;
+                        const ops = ['+','-','×'];
+                        const op = ops[Math.floor(Math.random()*ops.length)];
+                        let ans;
+                        if(op==='+') ans=a+b;
+                        else if(op==='-') ans=Math.abs(a-b), (a<b ? true : false); // always positive
+                        else ans=a*b;
+                        if(op==='-') return {a:Math.max(a,b), b:Math.min(a,b), op, ans:Math.max(a,b)-Math.min(a,b)};
+                        return {a,b,op,ans};
+                    }
+
+                    /* New Thread captcha */
+                    let captchaQ = genCaptcha();
+                    function refreshCaptcha(){
+                        captchaQ = genCaptcha();
+                        document.getElementById('vtCaptchaEqDisplay').textContent = `${captchaQ.a} ${captchaQ.op} ${captchaQ.b}`;
+                        document.getElementById('vtCaptchaAnswer').value='';
+                    }
+
+                    /* Reply captcha */
+                    let replyCaptchaQ = genCaptcha();
+                    function refreshReplyCaptcha(){
+                        replyCaptchaQ = genCaptcha();
+                        document.getElementById('vtReplyCaptchaEqDisplay').textContent = `${replyCaptchaQ.a} ${replyCaptchaQ.op} ${replyCaptchaQ.b}`;
+                        document.getElementById('vtReplyCaptchaAnswer').value='';
+                    }
+
+                    /* ======================================================
+                       VALIDATION HELPERS
+                    ====================================================== */
+                    function isValidEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+                    function markError(el){ el.classList.add('error'); el.focus(); }
+                    function clearError(el){ el.classList.remove('error'); }
+
+                    /* ---- Seed Data ---- */
+                    const AVATARS = ['#c41e3a','#b45309','#047857','#1d4ed8','#7c3aed','#be185d'];
+                    function avatarColor(name){ return AVATARS[Math.abs(name.split('').reduce((a,c)=>a+c.charCodeAt(0),0))%AVATARS.length]; }
+                    function initials(name){ return name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2); }
+                    function timeAgo(ts){
+                        const m=Math.floor((Date.now()-ts)/60000);
+                        if(m<1)return'just now';if(m<60)return m+'m ago';
+                        const h=Math.floor(m/60);if(h<24)return h+'h ago';
+                        return Math.floor(h/24)+'d ago';
+                    }
+
+                    const threads = [
+                        {
+                            id:1, topic:'What does a typical day in the Novitiate look like?',
+                            msgs:[
+                                {id:1,sender:'Br. Jerome Santos',text:'Great question! A novitiate day starts with Morning Prayer around 5:30 AM, followed by Mass and community breakfast. Mornings are for study — Scripture, Marist spirituality, rule of life.',own:false,reactions:[{e:'🙏',count:5},{e:'❤️',count:3}],ts:Date.now()-7200000},
+                                {id:2,sender:'Mark Reyes',text:'Thank you, Brother! Is there personal prayer time as well, or is everything communal?',own:false,reactions:[{e:'👍',count:2}],ts:Date.now()-6900000},
+                                {id:3,sender:'Br. Jerome Santos',text:'We have Lectio Divina and personal reflection every afternoon — usually 45 minutes to an hour. Community prayer is in the evening. Balance of both is essential.',own:false,reactions:[{e:'🙏',count:7},{e:'🌟',count:4}],ts:Date.now()-6600000},
+                                {id:4,sender:'Ana Santos',text:'This is so inspiring. The structure sounds like it really helps you grow spiritually.',own:false,reactions:[{e:'❤️',count:6}],ts:Date.now()-6300000},
+                            ]
+                        },
+                        {
+                            id:2, topic:'How do you know if religious life is really for you?',
+                            msgs:[
+                                {id:1,sender:'Br. Michael Tan',text:'Discernment is a journey, not a single moment. I always ask: Do you find deep joy serving young people? Do you feel drawn to community life and prayer? If yes, explore further — you don\'t need certainty yet.',own:false,reactions:[{e:'🙏',count:9},{e:'💙',count:5}],ts:Date.now()-86400000},
+                                {id:2,sender:'Joshua Lim',text:'I\'ve been feeling a pull toward vocation but also unsure about giving up so much. Is that fear normal?',own:false,reactions:[{e:'❤️',count:4}],ts:Date.now()-82000000},
+                                {id:3,sender:'Br. Michael Tan',text:'Absolutely normal, Joshua. Every Brother I know felt that tension. Champagnat himself was uncertain. The key is to stay in conversation — with God, with a spiritual director, and with communities like ours.',own:false,reactions:[{e:'🙏',count:11},{e:'🌿',count:3}],ts:Date.now()-79000000},
+                            ]
+                        },
+                        {
+                            id:3, topic:'Can I visit a Marist community before deciding?',
+                            msgs:[
+                                {id:1,sender:'Vocation Team',text:'Yes! We actively encourage come-and-see visits. You can spend a weekend with one of our communities — joining prayer, meals, and ministry activities. No commitment required.',own:false,reactions:[{e:'🎉',count:8},{e:'👍',count:6}],ts:Date.now()-172800000},
+                                {id:2,sender:'Liza Cruz',text:'How do I arrange a visit? I\'m from Davao.',own:false,reactions:[{e:'🙋',count:2}],ts:Date.now()-169000000},
+                                {id:3,sender:'Vocation Team',text:'Email us at vocations@maristeastasia.org or call (083) 552-5994. We\'ll coordinate with the nearest community and find a date that works for you.',own:false,reactions:[{e:'❤️',count:5}],ts:Date.now()-165000000},
+                                {id:4,sender:'Carlos Mendoza',text:'I did a come-and-see last year. Best decision I ever made. The Brothers were so welcoming.',own:false,reactions:[{e:'🙏',count:7},{e:'🌟',count:4}],ts:Date.now()-162000000},
+                            ]
+                        },
+                        {
+                            id:4, topic:'What is the Champagnat spirit in daily life?',
+                            msgs:[
+                                {id:1,sender:'Br. David Kim',text:'The Champagnat spirit is essentially: presence, simplicity, and family spirit. It means being fully there for young people — not just in class but in their joys and struggles.',own:false,reactions:[{e:'❤️',count:10},{e:'🌿',count:6}],ts:Date.now()-259200000},
+                                {id:2,sender:'Paolo Reyes',text:'I love that. "Presence" really resonates. I feel that even as a lay teacher — just being available matters so much.',own:false,reactions:[{e:'🙏',count:7}],ts:Date.now()-255000000},
+                                {id:3,sender:'Br. David Kim',text:'Exactly, Paolo. That\'s the beauty of the Marist charism — it\'s not exclusive to vowed members. Lay Marists live it powerfully too.',own:false,reactions:[{e:'💙',count:9},{e:'🌟',count:5}],ts:Date.now()-251000000},
+                            ]
+                        },
+                        {
+                            id:5, topic:'What happens after the Novitiate?',
+                            msgs:[
+                                {id:1,sender:'Formation Team',text:'After Novitiate, a Brother moves into the Scholasticate — a period of professional and theological formation, usually lasting several years. He takes his first temporary vows and begins teaching ministry.',own:false,reactions:[{e:'📚',count:5},{e:'🙏',count:4}],ts:Date.now()-345600000},
+                                {id:2,sender:'Ray Santos',text:'Are temporary vows renewable? Or is there a set timeline?',own:false,reactions:[{e:'❓',count:3}],ts:Date.now()-342000000},
+                                {id:3,sender:'Formation Team',text:'Temporary vows are typically renewed annually for up to 9 years before perpetual profession. This gives Brothers time to mature in their calling and for the Institute to accompany them well.',own:false,reactions:[{e:'💙',count:6},{e:'🌿',count:3}],ts:Date.now()-338000000},
+                            ]
+                        },
+                    ];
+
+                    let activeThread = null;
+                    let reactedMap = {}; // reactedMap[threadId][msgId][emojiIdx] = true
+
+                    /* ---- Render Thread List ---- */
+                    function renderThreadList(){
+                        const list = document.getElementById('vtThreadList');
+                        list.innerHTML = '';
+                        threads.forEach(t=>{
+                            const last = t.msgs[t.msgs.length-1];
+                            const el = document.createElement('div');
+                            el.className = 'vt-thread-item'+(activeThread&&activeThread.id===t.id?' active':'');
+                            el.innerHTML = `
+                                <div class="vt-thread-topic">${t.topic}</div>
+                                <div class="vt-thread-meta">
+                                    <span class="vt-thread-count"><i class="fas fa-comment" style="font-size:9px;"></i> ${t.msgs.length}</span>
+                                    <span>${timeAgo(last.ts)}</span>
+                                </div>`;
+                            el.onclick = ()=>{ activeThread=t; renderThreadList(); renderChat(); };
+                            list.appendChild(el);
+                        });
+                    }
+
+                    /* ---- Render Chat ---- */
+                    function renderChat(){
+                        if(!activeThread) return;
+                        document.getElementById('vtChatTitle').textContent = activeThread.topic;
+                        document.getElementById('vtChatAvatar').textContent = 'VT';
+                        document.getElementById('vtInputArea').style.display = 'flex';
+                        document.getElementById('vtHint').style.display = 'block';
+
+                        if(!reactedMap[activeThread.id]) reactedMap[activeThread.id]={};
+
+                        const container = document.getElementById('vtMessages');
+                        container.innerHTML = '';
+                        activeThread.msgs.forEach(msg=>{
+                            if(!reactedMap[activeThread.id][msg.id]) reactedMap[activeThread.id][msg.id]={};
+                            const msgDiv = document.createElement('div');
+                            msgDiv.className = 'vt-msg'+(msg.own?' own':'');
+
+                            const reactionHTML = msg.reactions.map((r,ri)=>{
+                                const reacted = reactedMap[activeThread.id][msg.id][ri]?'reacted':'';
+                                return `<button class="vt-reaction-btn ${reacted}" onclick="vtReact(${activeThread.id},${msg.id},${ri},this)">${r.e} <span class="count">${r.count}</span></button>`;
+                            }).join('');
+
+                            const avatarBg = avatarColor(msg.sender);
+                            msgDiv.innerHTML = `
+                                <div class="vt-msg-avatar" style="background:${avatarBg};">${initials(msg.sender)}</div>
+                                <div class="vt-msg-body">
+                                    <span class="vt-msg-sender">${msg.sender.toUpperCase()}</span>
+                                    <div class="vt-msg-bubble">${msg.text}</div>
+                                    <div class="vt-reactions">${reactionHTML}</div>
+                                    <span class="vt-msg-time">${timeAgo(msg.ts)}</span>
+                                </div>`;
+                            container.appendChild(msgDiv);
+                        });
+                        container.scrollTop = container.scrollHeight;
+                    }
+
+                    /* ---- React ---- */
+                    window.vtReact = function(tid, mid, ri, btn){
+                        const t = threads.find(x=>x.id===tid);
+                        const m = t.msgs.find(x=>x.id===mid);
+                        if(!reactedMap[tid]) reactedMap[tid]={};
+                        if(!reactedMap[tid][mid]) reactedMap[tid][mid]={};
+                        if(reactedMap[tid][mid][ri]){
+                            reactedMap[tid][mid][ri]=false;
+                            m.reactions[ri].count--;
+                            btn.classList.remove('reacted');
+                        } else {
+                            reactedMap[tid][mid][ri]=true;
+                            m.reactions[ri].count++;
+                            btn.classList.add('reacted');
+                        }
+                        btn.querySelector('.count').textContent = m.reactions[ri].count;
+                    };
+
+                    /* ========================================================
+                       REPLY via MODAL (not inline – requires moderation)
+                    ======================================================== */
+                    let replyTargetThreadId = null;
+
+                    /* Open reply modal when Send button clicked */
+                    document.getElementById('vtSendBtn').onclick = function(){
+                        if(!activeThread) return;
+                        replyTargetThreadId = activeThread.id;
+                        /* Pre-fill name from username input if provided */
+                        const prefilledName = document.getElementById('vtUsername').value.trim();
+                        if(prefilledName) document.getElementById('vtReplyName').value = prefilledName;
+                        /* Reset and open reply modal */
+                        document.getElementById('vtReplyBody').value = document.getElementById('vtTextInput').value;
+                        document.getElementById('vtTextInput').value = '';
+                        refreshReplyCaptcha();
+                        document.getElementById('vtReplyModalForm').style.display='flex';
+                        document.getElementById('vtReplyModalForm').style.flexDirection='column';
+                        document.getElementById('vtReplyModalSuccess').classList.remove('show');
+                        document.getElementById('vtReplyModalBackdrop').classList.add('open');
+                    };
+
+                    /* Also trigger reply modal on Enter in textarea */
+                    document.getElementById('vtTextInput').addEventListener('keydown',function(e){
+                        if(e.key==='Enter'&&!e.shiftKey){
+                            e.preventDefault();
+                            document.getElementById('vtSendBtn').click();
+                        }
+                    });
+
+                    /* Reply modal cancel */
+                    function closeReplyModal(){
+                        document.getElementById('vtReplyModalBackdrop').classList.remove('open');
+                        document.getElementById('vtReplyCheckTerms').checked=false;
+                        document.getElementById('vtReplyCheckIP').checked=false;
+                    }
+                    document.getElementById('vtReplyModalCancel').onclick = closeReplyModal;
+                    document.getElementById('vtReplySuccessClose').onclick = closeReplyModal;
+                    document.getElementById('vtReplyModalBackdrop').onclick = function(e){ if(e.target===this) closeReplyModal(); };
+                    document.getElementById('vtReplyCaptchaRefresh').onclick = refreshReplyCaptcha;
+
+                    /* Reply submit */
+                    document.getElementById('vtReplySendBtn').onclick = async function(){
+                        const nameEl  = document.getElementById('vtReplyName');
+                        const emailEl = document.getElementById('vtReplyEmail');
+                        const bodyEl  = document.getElementById('vtReplyBody');
+                        const capEl   = document.getElementById('vtReplyCaptchaAnswer');
+                        const chkT    = document.getElementById('vtReplyCheckTerms');
+                        const chkIP   = document.getElementById('vtReplyCheckIP');
+
+                        [nameEl,emailEl,bodyEl,capEl].forEach(clearError);
+
+                        if(!nameEl.value.trim()){ markError(nameEl); return; }
+                        if(!isValidEmail(emailEl.value.trim())){ markError(emailEl); emailEl.focus(); return; }
+                        if(!bodyEl.value.trim()){ markError(bodyEl); return; }
+                        if(parseInt(capEl.value) !== replyCaptchaQ.ans){ markError(capEl); capEl.focus(); return; }
+                        if(!chkT.checked){ chkT.closest('.vt-check-row').style.borderColor='rgba(239,68,68,.5)'; return; }
+                        if(!chkIP.checked){ chkIP.closest('.vt-check-row').style.borderColor='rgba(239,68,68,.5)'; return; }
+
+                        const btn = document.getElementById('vtReplySendBtn');
+                        btn.disabled = true;
+                        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting…';
+
+                        const ok = await sbInsert('vocatalk_replies', {
+                            thread_seed_id: replyTargetThreadId,
+                            sender_name:    nameEl.value.trim(),
+                            email:          emailEl.value.trim(),
+                            message:        bodyEl.value.trim(),
+                            ip_address:     clientIP,
+                            status:         'pending',
+                            terms_agreed:   true,
+                            ip_consent:     true
+                        });
+
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Reply';
+
+                        if(ok){
+                            document.getElementById('vtReplyModalForm').style.display='none';
+                            document.getElementById('vtReplyModalSuccess').classList.add('show');
+                            refreshReplyCaptcha();
+                            bodyEl.value=''; emailEl.value=''; nameEl.value='';
+                            chkT.checked=false; chkIP.checked=false;
+                        } else {
+                            alert('Submission failed. Please check your connection and try again.');
+                        }
+                    };
+
+                    /* ========================================================
+                       NEW THREAD MODAL
+                    ======================================================== */
+                    function openNewThreadModal(){
+                        document.getElementById('vtModalForm').style.display='flex';
+                        document.getElementById('vtModalForm').style.flexDirection='column';
+                        document.getElementById('vtModalSuccess').classList.remove('show');
+                        document.getElementById('vtCheckTerms').checked=false;
+                        document.getElementById('vtCheckIP').checked=false;
+                        refreshCaptcha();
+                        document.getElementById('vtModalBackdrop').classList.add('open');
+                    }
+
+                    function closeNewThreadModal(){
+                        document.getElementById('vtModalBackdrop').classList.remove('open');
+                    }
+
+                    document.getElementById('vtNewThreadBtn').onclick = openNewThreadModal;
+                    document.getElementById('vtModalCancel').onclick  = closeNewThreadModal;
+                    document.getElementById('vtSuccessClose').onclick  = closeNewThreadModal;
+                    document.getElementById('vtModalBackdrop').onclick = function(e){ if(e.target===this) closeNewThreadModal(); };
+                    document.getElementById('vtCaptchaRefresh').onclick = refreshCaptcha;
+
+                    document.getElementById('vtModalPost').onclick = async function(){
+                        const titleEl = document.getElementById('vtNewThreadTitle');
+                        const nameEl  = document.getElementById('vtNewThreadName');
+                        const emailEl = document.getElementById('vtNewThreadEmail');
+                        const bodyEl  = document.getElementById('vtNewThreadBody');
+                        const capEl   = document.getElementById('vtCaptchaAnswer');
+                        const chkT    = document.getElementById('vtCheckTerms');
+                        const chkIP   = document.getElementById('vtCheckIP');
+
+                        [titleEl,nameEl,emailEl,bodyEl,capEl].forEach(clearError);
+                        /* Reset checkbox border */
+                        document.querySelectorAll('.vt-check-row').forEach(r=>r.style.borderColor='');
+
+                        let valid = true;
+                        if(!titleEl.value.trim()){ markError(titleEl); valid=false; }
+                        if(!nameEl.value.trim()){ markError(nameEl); valid=false; }
+                        if(!isValidEmail(emailEl.value.trim())){ markError(emailEl); valid=false; }
+                        if(!bodyEl.value.trim()){ markError(bodyEl); valid=false; }
+                        if(!valid){ titleEl.focus(); return; }
+
+                        if(parseInt(capEl.value) !== captchaQ.ans){
+                            markError(capEl);
+                            capEl.focus();
+                            return;
+                        }
+                        if(!chkT.checked){ chkT.closest('.vt-check-row').style.borderColor='rgba(239,68,68,.5)'; return; }
+                        if(!chkIP.checked){ chkIP.closest('.vt-check-row').style.borderColor='rgba(239,68,68,.5)'; return; }
+
+                        const btn = document.getElementById('vtModalPost');
+                        btn.disabled = true;
+                        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting…';
+
+                        const ok = await sbInsert('vocatalk_submissions', {
+                            topic:        titleEl.value.trim(),
+                            sender_name:  nameEl.value.trim(),
+                            email:        emailEl.value.trim(),
+                            message:      bodyEl.value.trim(),
+                            ip_address:   clientIP,
+                            status:       'pending',
+                            terms_agreed: true,
+                            ip_consent:   true
+                        });
+
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit for Review';
+
+                        if(ok){
+                            /* Show success screen — do NOT add to local thread list */
+                            document.getElementById('vtModalForm').style.display='none';
+                            document.getElementById('vtModalSuccess').classList.add('show');
+                            /* Clear inputs */
+                            [titleEl,nameEl,emailEl,bodyEl,capEl].forEach(el=>{ el.value=''; clearError(el); });
+                            chkT.checked=false; chkIP.checked=false;
+                            refreshCaptcha();
+                        } else {
+                            alert('Submission failed. Please check your connection and try again.');
+                        }
+                    };
+
+                    /* ---- Init ---- */
+                    refreshCaptcha();
+                    refreshReplyCaptcha();
+                    renderThreadList();
+                })();
+                </script>
+                <!-- ===== END VOCATALK ===== -->
+
+                <div class="bg-zinc-900 border border-white/5 p-12 rounded-3xl text-center max-w-4xl mx-auto">
+                    <h2 class="text-4xl font-black mb-6">Request a Vocation Talk</h2>
+                    <p class="text-xl text-zinc-400 mb-12 font-medium">
+                        Are you a teacher, priest, or youth minister? We would be happy to arrange for a Marist Brother to speak at your school, parish, or event.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div class="bg-zinc-950 p-8 rounded-2xl border border-white/5">
+                            <h3 class="text-lg font-bold mb-4 flex items-center gap-3 text-red-500">
+                                <i class="fas fa-envelope"></i>
+                                Email Us
+                            </h3>
+                            <a href="mailto:vocations@maristeastasia.org" class="text-xl font-bold hover:text-red-500 transition-colors">vocations@maristeastasia.org</a>
+                        </div>
+                        <div class="bg-zinc-950 p-8 rounded-2xl border border-white/5">
+                            <h3 class="text-lg font-bold mb-4 flex items-center gap-3 text-red-500">
+                                <i class="fas fa-phone"></i>
+                                Call Us
+                            </h3>
+                            <a href="tel:(083) 552-5994" class="text-xl font-bold hover:text-red-500 transition-colors">(083) 552-5994</a>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <a href="../pages/contact.html" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all">
+                            Send Us a Message
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="../pages/about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="../pages/vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="../pages/news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../pages/champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="../pages/calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-red-600 text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-red-600"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-red-600"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-red-600"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const statusAnnouncer = document.getElementById('status-announcer');
+
+        function updateStatus(message) {
+            statusAnnouncer.textContent = message;
+        }
+
+        function toggleMobileMenu(isOpen) {
+            if (isOpen) {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                updateStatus("Navigation menu opened");
+            } else {
+                mobileMenuOverlay.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                updateStatus("Navigation menu closed");
+                document.querySelectorAll('.mobile-accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                    h.nextElementSibling.style.maxHeight = null;
+                });
+            }
+        }
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close other accordions
+            document.querySelectorAll('.mobile-accordion-header').forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                    h.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            if (isActive) {
+                header.classList.remove('active');
+                content.style.maxHeight = null;
+                updateStatus(header.textContent.trim() + " section collapsed");
+            } else {
+                header.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+                updateStatus(header.textContent.trim() + " section expanded");
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.onclick = () => toggleMobileMenu(true);
+        if (closeMenuBtn) closeMenuBtn.onclick = () => toggleMobileMenu(false);
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+                link.onclick = () => toggleMobileMenu(false);
+            });
+        }
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

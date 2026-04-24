@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marist Mission — Marist Brothers of East Asia</title>
+    <meta name="description" content="Discover the Marist Mission across East Asia — transforming lives through faith-based education in the Philippines, China, Korea, Japan, and beyond.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        border: "var(--border)",
+                        background: "var(--background)",
+                        foreground: "var(--foreground)",
+                        primary: {
+                            DEFAULT: "var(--primary-color)",
+                            foreground: "var(--primary-foreground)",
+                        },
+                    }
+                },
+                keyframes: {
+                    'slide-up': {
+                        '0%': { transform: 'translateY(20px)', opacity: '0' },
+                        '100%': { transform: 'translateY(0)', opacity: '1' }
+                    },
+                    'fade-in': {
+                        '0%': { opacity: '0' },
+                        '100%': { opacity: '1' }
+                    }
+                },
+                animation: {
+                    'slide-up': 'slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    'fade-in': 'fade-in 1s ease-out forwards'
+                }
+            }
+        }
+    </script>
+    <script>
+        // Critical Anti-Flash Theme Script
+        (function() {
+            const savedTheme = localStorage.getItem('marist-theme') || 'system';
+            const isDark = savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ====================================================
+           MARIST MISSION — Charity Theme Design System
+           Inspired by: Dribbble #21145904
+           Primary: #FF5C00 (vibrant orange)
+           Secondary: #1a1a1a (near-black)
+           Light BG: #fff / Dark BG: #0f0f0f
+        ==================================================== */
+
+        :root {
+            --mm-orange: #FF5C00;
+            --mm-orange-light: #FF7A2E;
+            --mm-orange-pale: #FFF3ED;
+            --mm-dark: #1a1a1a;
+            --mm-muted: #6b7280;
+            --mm-card-bg: #ffffff;
+            --mm-section-alt: #F9F5F2;
+        }
+
+        .dark {
+            --mm-card-bg: #1c1c1c;
+            --mm-section-alt: #111111;
+        }
+
+        /* Brush stroke accent underline */
+        .brush-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .brush-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 8px;
+            background: var(--mm-orange);
+            border-radius: 4px 2px 6px 2px;
+            transform: rotate(-1deg);
+            clip-path: polygon(0% 30%, 2% 0%, 20% 10%, 40% 0%, 60% 15%, 80% 5%, 100% 20%, 98% 100%, 80% 90%, 60% 100%, 40% 88%, 20% 98%, 0% 85%);
+        }
+
+        /* Section label pill */
+        .mm-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--mm-orange-pale);
+            color: var(--mm-orange);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 92, 0, 0.2);
+        }
+
+        .dark .mm-label {
+            background: rgba(255,92,0,0.12);
+            border-color: rgba(255,92,0,0.3);
+        }
+
+        /* Stat card */
+        .stat-card {
+            background: var(--mm-orange);
+            color: #fff;
+            border-radius: 20px;
+            padding: 28px 32px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(255,92,0,0.3); }
+        .stat-card.alt {
+            background: var(--mm-dark);
+        }
+        .dark .stat-card.alt { background: #2a2a2a; }
+
+        /* Mission focus card */
+        .focus-card {
+            background: var(--mm-card-bg);
+            border-radius: 20px;
+            padding: 36px 32px;
+            border: 1px solid rgba(0,0,0,0.07);
+            transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+            position: relative;
+            overflow: hidden;
+        }
+        .dark .focus-card { border-color: rgba(255,255,255,0.07); }
+        .focus-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 3px;
+            background: var(--mm-orange);
+            transition: width 0.4s ease;
+            border-radius: 0 3px 3px 0;
+        }
+        .focus-card:hover::before { width: 100%; }
+        .focus-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.10); }
+        .dark .focus-card:hover { box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+
+        .focus-icon {
+            width: 56px; height: 56px;
+            background: var(--mm-orange-pale);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+            color: var(--mm-orange);
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        .dark .focus-icon { background: rgba(255,92,0,0.15); }
+        .focus-card:hover .focus-icon { background: var(--mm-orange); color: #fff; }
+
+        /* Sector tab card */
+        .sector-card {
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sector-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.15); }
+
+        /* Big number stat */
+        .big-stat {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--mm-orange);
+        }
+
+        /* Orange CTA button */
+        .mm-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--mm-orange);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 14px 28px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .mm-btn:hover { background: var(--mm-orange-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,92,0,0.35); }
+
+        .mm-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--mm-orange);
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 13px 28px;
+            border-radius: 100px;
+            border: 2px solid var(--mm-orange);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .mm-btn-outline:hover { background: var(--mm-orange); color: #fff; transform: translateY(-2px); }
+
+        /* Global presence map country pill */
+        .country-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--mm-card-bg);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 100px;
+            padding: 10px 18px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--mm-dark);
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .dark .country-pill { border-color: rgba(255,255,255,0.1); color: #e4e4e4; }
+        .country-pill:hover { background: var(--mm-orange); color: #fff; border-color: var(--mm-orange); transform: scale(1.05); }
+        .country-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mm-orange); flex-shrink: 0; }
+
+        /* Scroll fade-in */
+        .mm-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .mm-fade.in { opacity: 1; transform: none; }
+
+        /* Province stat bar */
+        .stat-bar-fill {
+            height: 8px;
+            border-radius: 100px;
+            background: var(--mm-orange);
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        /* Quote pullout */
+        .mm-quote {
+            border-left: 4px solid var(--mm-orange);
+            padding: 20px 28px;
+            background: var(--mm-orange-pale);
+            border-radius: 0 12px 12px 0;
+        }
+        .dark .mm-quote { background: rgba(255,92,0,0.08); }
+
+        /* Shape blob decoration */
+        .blob-orange {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,92,0,0.08);
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        /* Tab navigation for sectors */
+        .sector-tab {
+            padding: 10px 22px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 2px solid transparent;
+            background: transparent;
+            color: var(--mm-muted);
+        }
+        .sector-tab.active, .sector-tab:hover {
+            background: var(--mm-orange);
+            color: #fff;
+            border-color: var(--mm-orange);
+        }
+
+        /* Timeline for sector details */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 6px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--mm-orange);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--mm-orange);
+        }
+        .dark .timeline-item::before { border-color: #1c1c1c; }
+
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 400px;
+            background: #18181b;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 32px;
+            padding: 32px 0;
+            z-index: 5000;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            display: none;
+            animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 font-sans text-zinc-900 dark:text-white transition-colors duration-300">
+
+    <!-- Theme Selection Modal -->
+    <div id="theme-selection-modal">
+        <div class="modal-backdrop" onclick="ThemeManager.toggleModal(false)"></div>
+        <div class="modal-card">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-sm font-black tracking-[0.3em] text-[#c41e3a]">Visual Experience</h2>
+                <button onclick="ThemeManager.toggleModal(false)" class="text-zinc-400 hover:text-white transition-colors" aria-label="Close Modal">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <h3 class="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white mb-8 tracking-tighter">Choose Your Theme</h3>
+            <p class="text-zinc-500 dark:text-zinc-400 font-medium mb-12">Select how you'd like to explore the Marist East Asia mission.</p>
+            <div class="theme-grid">
+                <div class="theme-option" data-theme="light" onclick="ThemeManager.setTheme('light')">
+                    <div class="icon-box"><i class="fas fa-sun"></i></div>
+                    <h4>Light</h4>
+                </div>
+                <div class="theme-option" data-theme="system" onclick="ThemeManager.setTheme('system')">
+                    <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                    <h4>System</h4>
+                </div>
+                <div class="theme-option" data-theme="dark" onclick="ThemeManager.setTheme('dark')">
+                    <div class="icon-box"><i class="fas fa-moon"></i></div>
+                    <h4>Dark</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main-content"
+       class="absolute left-4 top-4 z-[2000] -translate-y-20 bg-red-600 text-white px-6 py-3 rounded-md font-bold transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-red-300">
+       Skip to Main Content
+    </a>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-[3000] bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-white/5 transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-8 py-2">
+            <div class="logo flex items-center gap-3">
+                <img src="../assets/images/maristlogo.png" alt="marist east asia logo" class="h-12 w-auto sm:h-14 object-contain dark:brightness-125 dark:contrast-125">
+                <div class="flex flex-col">
+                    <div class="logo-text text-xl font-bold dark:text-white leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6 ml-auto">
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center gap-6 text-[13px] font-bold tracking-tight">
+                        <li><a href="../index.html" class="nav-link whitespace-nowrap">Home</a></li>
+                        <li><a href="about.html" class="nav-link">Identity</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Vocation <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="vocation.html">Formation Stages</a>
+                            <a href="../vocation/formationteam.html">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html">Scholasticate Formation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn active">Ministry <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="maristmission.html" class="active">Marist Mission</a>
+                            <a href="ministry.html">School Ministry</a>
+                            <a href="../youthministry/youthministry.html">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html">Ecology Ministry</a>
+                        </div>
+                    </div>
+
+                    <li><a href="news.html" class="nav-link">News</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Champagnat <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="champagnat.html">Charism</a>
+                            <a href="#">Marist Spirituality</a>
+                            <a href="#">Founding the Marist Brothers</a>
+                            <a href="#">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Presence <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="maristcommunities.html">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html">Marist Laity</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Media <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="media.html">Videos</a>
+                            <a href="../resources/documents.html">Documents</a>
+                            <a href="calendar.html">Calendar</a>
+                            <a href="../resources/newsletter.html">Newsletter</a>
+                            <a href="../resources/archives.html">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Links <i class="fas fa-chevron-down text-[10px] opacity-50"></i></button>
+                        <div class="dropdown-content">
+                            <a href="../maristlinks/philippines.html">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html">Marist Singapore</a>
+                            <a href="../maristlinks/china.html">Marist China</a>
+                        </div>
+                    </div>
+                    </ul>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button onclick="ThemeManager.toggleModal(true)" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="theme-toggle-icon fas fa-moon"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false"
+                        class="lg:hidden w-12 h-12 flex items-center justify-center text-[var(--nav-text)] active:bg-zinc-100 dark:active:bg-zinc-800 rounded-full transition-all focus:ring-2 focus:ring-[#1e3a5f]">
+                        <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation" class="fixed inset-0 z-[4000] bg-zinc-950/98 backdrop-blur-3xl translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <div class="logo flex items-center gap-3">
+                    <img src="../assets/images/maristlogo.png" alt="logo" class="h-10 w-auto sm:h-12 object-contain">
+                    <div class="flex flex-col">
+                    <div class="text-xl font-bold dark:text-white leading-tight">MaristEastAsia</div>
+                    <div class="text-[10px] sm:text-xs font-bold text-[#c41e3a] tracking-[0.2em] uppercase">Marists of Champagnat</div>
+                </div>
+                </div>
+                <button id="closeMenuBtn" class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto no-scrollbar space-y-2">
+                <a href="../index.html" class="block py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5">Home</a>
+                <a href="about.html" class="block py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5">Identity</a>
+
+                <!-- Vocation Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Vocation</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="vocation.html" class="hover:text-[#c41e3a] transition-colors py-2">Formation Stages</a>
+                            <a href="../vocation/formationteam.html" class="hover:text-[#c41e3a] transition-colors py-2">Formation Team</a>
+                            <a href="../vocation/vocationtalks.html" class="hover:text-[#c41e3a] transition-colors py-2">Vocation Talks</a>
+                            <a href="../vocation/vocationmaterials.html" class="hover:text-[#c41e3a] transition-colors py-2">Vocation Materials</a>
+                            <a href="../vocation/aspirancy.html" class="hover:text-[#c41e3a] transition-colors py-2">Aspirancy Formation</a>
+                            <a href="../vocation/novitiate.html" class="hover:text-[#c41e3a] transition-colors py-2">Novitiate Formation</a>
+                            <a href="../vocation/scholasticate.html" class="hover:text-[#c41e3a] transition-colors py-2">Scholasticate Formation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ministry Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-[#FF5C00] border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Ministry</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="maristmission.html" class="text-[#FF5C00] py-2">Marist Mission</a>
+                            <a href="ministry.html" class="hover:text-[#c41e3a] transition-colors py-2">School Ministry</a>
+                            <a href="../youthministry/youthministry.html" class="hover:text-[#c41e3a] transition-colors py-2">Youth Ministry</a>
+                            <a href="../maristvolunteer/maristvolunteer.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Volunteer</a>
+                            <a href="../ecologyministry/ecologyministry.html" class="hover:text-[#c41e3a] transition-colors py-2">Ecology Ministry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="news.html" class="block py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5">News</a>
+
+                <!-- Champagnat Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Champagnat</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="champagnat.html" class="hover:text-[#c41e3a] transition-colors py-2">Charism</a>
+                            <a href="#" class="hover:text-[#c41e3a] transition-colors py-2">Marist Spirituality</a>
+                            <a href="#" class="hover:text-[#c41e3a] transition-colors py-2">Founding the Marist Brothers</a>
+                            <a href="#" class="hover:text-[#c41e3a] transition-colors py-2">Champagnat's Vocation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presence Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Presence</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="maristcommunities.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Communities</a>
+                            <a href="../childsrights/childrensrights.html" class="hover:text-[#c41e3a] transition-colors py-2">Child Rights</a>
+                            <a href="../maristlaity/maristlaity.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Laity</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Media</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="media.html" class="hover:text-[#c41e3a] transition-colors py-2">Videos</a>
+                            <a href="../resources/documents.html" class="hover:text-[#c41e3a] transition-colors py-2">Documents</a>
+                            <a href="calendar.html" class="hover:text-[#c41e3a] transition-colors py-2">Calendar</a>
+                            <a href="../resources/newsletter.html" class="hover:text-[#c41e3a] transition-colors py-2">Newsletter</a>
+                            <a href="../resources/archives.html" class="hover:text-[#c41e3a] transition-colors py-2">Archives</a>
+                            <a href="../resources/writingsogmarcellin.html" class="hover:text-[#c41e3a] transition-colors py-2">Writings of St. Marcellin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Links Accordion -->
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-header w-full flex justify-between items-center py-4 text-2xl font-black tracking-tighter text-white border-b border-white/5" onclick="toggleAccordion(this)">
+                        <span>Related Links</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300 bg-white/5 rounded-2xl">
+                        <div class="p-6 flex flex-col gap-4 text-zinc-100 font-bold">
+                            <a href="../maristlinks/philippines.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Philippines</a>
+                            <a href="../maristlinks/southkorea.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist South Korea</a>
+                            <a href="../maristlinks/japan.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Japan</a>
+                            <a href="../maristlinks/malaysia.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Malaysia</a>
+                            <a href="../maristlinks/singapore.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist Singapore</a>
+                            <a href="../maristlinks/china.html" class="hover:text-[#c41e3a] transition-colors py-2">Marist China</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="block py-4 text-2xl font-black tracking-tighter text-zinc-500 hover:text-white transition-colors">Contact Us</a>
+            </div>
+
+            <div class="pt-8 mt-auto border-t border-white/10">
+                <button onclick="ThemeManager.toggleModal(true)" class="w-full py-4 bg-white/5 rounded-2xl text-white font-black tracking-widest text-xs flex items-center justify-center gap-3">
+                    <i class="fas fa-circle-half-stroke"></i> Appearance Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         MAIN CONTENT
+    ════════════════════════════════════════ -->
+    <main id="main-content" tabindex="-1">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb bg-zinc-950 border-b border-white/5 py-4">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <ul class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                    <li><a href="../index.html" class="hover:text-red-500 transition-colors">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li><a href="../pages/ministry.html" class="hover:text-red-500 transition-colors">Ministry</a></li>
+                    <li><i class="fas fa-chevron-right text-[8px] opacity-30"></i></li>
+                    <li class="text-[#FF5C00]">Marist Mission</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ══ HERO SECTION ══ -->
+        <section class="relative overflow-hidden bg-white dark:bg-zinc-950 pt-20 pb-24 lg:pt-28 lg:pb-32">
+            <!-- Decorative blobs -->
+            <div class="blob-orange w-[600px] h-[600px] -top-32 -right-32 opacity-60 dark:opacity-30"></div>
+            <div class="blob-orange w-[300px] h-[300px] bottom-0 left-0 opacity-40 dark:opacity-20"></div>
+
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left: Text -->
+                    <div class="mm-fade">
+                        <span class="mm-label mb-6"><i class="fas fa-globe-asia"></i> East Asia Province</span>
+                        <h1 class="text-5xl md:text-7xl font-display font-black leading-tight tracking-tight text-zinc-900 dark:text-white mt-6 mb-6">
+                            The <span class="brush-underline text-[#FF5C00]">Marist</span> Mission in East Asia
+                        </h1>
+                        <p class="text-lg text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed mb-10 max-w-lg">
+                            Rooted in the charism of St. Marcellin Champagnat, the Marist Brothers of East Asia have been transforming lives through integral, faith-based education for over a century — making Jesus known and loved through schools, mission communities, and pastoral service across the Asia-Pacific region.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="ministry.html" class="mm-btn">
+                                <i class="fas fa-school text-sm"></i> Our Schools
+                            </a>
+                            <a href="maristcommunities.html" class="mm-btn-outline">
+                                <i class="fas fa-map-marker-alt text-sm"></i> Our Communities
+                            </a>
+                        </div>
+
+                        <!-- Impact quick stats -->
+                        <div class="grid grid-cols-3 gap-4 mt-14 pt-10 border-t border-zinc-200 dark:border-white/10">
+                            <div>
+                                <div class="text-3xl font-display font-black text-[#FF5C00]">200+</div>
+                                <div class="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mt-1">Years of Mission</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-display font-black text-[#FF5C00]">40k+</div>
+                                <div class="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mt-1">Students Served</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-display font-black text-[#FF5C00]">79</div>
+                                <div class="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mt-1">Countries Globally</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Cards Stack -->
+                    <div class="relative mm-fade" style="transition-delay:0.2s;">
+                        <!-- Main image card -->
+                        <div class="relative rounded-[32px] overflow-hidden bg-gradient-to-br from-[#FF5C00] to-[#ff8c42] p-1 shadow-2xl">
+                            <div class="rounded-[28px] overflow-hidden bg-zinc-900 aspect-[4/3] flex items-center justify-center relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900"></div>
+                                <!-- Decorative pattern inside -->
+                                <div class="relative z-10 text-center p-12">
+                                    <div class="w-24 h-24 bg-[#FF5C00]/20 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-[#FF5C00]/40">
+                                        <i class="fas fa-cross text-4xl text-[#FF5C00]"></i>
+                                    </div>
+                                    <p class="text-white/90 text-xl font-black leading-tight tracking-tight mb-2">"Touch the hearts of<br>young people and you<br>change the world."</p>
+                                    <p class="text-[#FF5C00] text-sm font-bold tracking-widest mt-4">— ST. MARCELLIN CHAMPAGNAT</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating stat badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white dark:bg-zinc-800 rounded-2xl p-5 shadow-xl border border-zinc-100 dark:border-white/10">
+                            <div class="text-3xl font-display font-black text-[#FF5C00]">85+</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Brothers in East Asia</div>
+                        </div>
+
+                        <!-- Floating badge 2 -->
+                        <div class="absolute -top-4 -right-4 bg-[#FF5C00] rounded-2xl p-5 shadow-xl text-white">
+                            <div class="text-2xl font-display font-black">1817</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">Founded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SCHOOL MINISTRIES SECTION ══ -->
+        <section class="py-24 bg-[#F9F5F2] dark:bg-[#111111]">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="text-center mb-16 mm-fade">
+                    <span class="mm-label mb-4"><i class="fas fa-school"></i> School Ministries</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-black tracking-tight text-zinc-900 dark:text-white mt-5 mb-5">
+                        Education as <span class="text-[#FF5C00]">Mission</span>
+                    </h2>
+                    <p class="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+                        The Marist Brothers define education not merely as schooling, but as an act of faith — a lived encounter with the Gospel that forms the whole person in virtue, knowledge, and compassion.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <!-- Card 1 -->
+                    <div class="focus-card mm-fade">
+                        <div class="focus-icon"><i class="fas fa-pray"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Faith Formation</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">Every Marist school is a community of faith. Students encounter Christ through liturgy, service projects, religious instruction, and the lived witness of dedicated brothers and lay educators.</p>
+                        <a href="#" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="focus-card mm-fade" style="transition-delay:0.1s;">
+                        <div class="focus-icon"><i class="fas fa-book-open"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Academic Excellence</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">From primary schools to universities, Marist institutions uphold rigorous academic standards while nurturing creativity, critical thinking, and a lifelong love of learning inspired by Mary's example.</p>
+                        <a href="ministry.html" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="focus-card mm-fade" style="transition-delay:0.2s;">
+                        <div class="focus-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Solidarity with the Poor</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">Following Champagnat's option for the poor, Marist schools prioritize access for marginalized youth, running scholarship programs, evening schools, and community outreach initiatives across all sectors.</p>
+                        <a href="../maristvolunteer/maristvolunteer.html" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="focus-card mm-fade" style="transition-delay:0.3s;">
+                        <div class="focus-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Youth Accompaniment</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">Beyond academics, Marist educators walk alongside young people in their personal, spiritual, and vocational journeys — embodying the maternal spirit of Mary through pastoral care and mentorship.</p>
+                        <a href="../youthministry/youthministry.html" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="focus-card mm-fade" style="transition-delay:0.4s;">
+                        <div class="focus-icon"><i class="fas fa-leaf"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Ecology & Integral Care</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">Inspired by Laudato Si', Marist schools integrate ecological literacy into their curriculum — forming students as responsible stewards of creation for tomorrow's world.</p>
+                        <a href="../ecologyministry/ecologyministry.html" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="focus-card mm-fade" style="transition-delay:0.5s;">
+                        <div class="focus-icon"><i class="fas fa-globe-asia"></i></div>
+                        <h3 class="text-xl font-black text-zinc-900 dark:text-white mb-3">Lay Collaboration</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium mb-5">Today's Marist school thrives through the partnership of Brothers and laypersons sharing a common charism. Lay Marists, parents, alumni, and volunteers co-create a vibrant Marist educational community.</p>
+                        <a href="../maristlaity/maristlaity.html" class="text-[#FF5C00] text-sm font-black tracking-wide flex items-center gap-2 hover:gap-3 transition-all">See More <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quote banner -->
+                <div class="mm-quote mm-fade">
+                    <p class="text-zinc-700 dark:text-zinc-300 font-bold text-lg leading-relaxed italic">
+                        "The Marist school is a community of Gospel values where young people grow in wisdom, age, and grace — nurtured by educators who see in every child the face of Christ."
+                    </p>
+                    <p class="text-[#FF5C00] text-sm font-black tracking-widest mt-3">— MARIST BROTHERS EDUCATIONAL CHARTER</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SECTOR SCHOOLS SECTION ══ -->
+        <section class="py-24 bg-white dark:bg-zinc-950" id="sectors">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="text-center mb-12 mm-fade">
+                    <span class="mm-label mb-4"><i class="fas fa-map-marked-alt"></i> Regional Sectors</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-black tracking-tight text-zinc-900 dark:text-white mt-5 mb-5">
+                        Three Sectors, <span class="text-[#FF5C00]">One Mission</span>
+                    </h2>
+                    <p class="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+                        The East Asia Province is organized into three geographical sectors, each bringing the Marist charism to life within its unique cultural and ecclesial context.
+                    </p>
+                </div>
+
+                <!-- Sector tabs -->
+                <div class="flex flex-wrap gap-3 justify-center mb-12 mm-fade">
+                    <button class="sector-tab active" onclick="showSector('china', this)">
+                        <i class="fas fa-yin-yang mr-2"></i> China Sector
+                    </button>
+                    <button class="sector-tab" onclick="showSector('korea', this)">
+                        <i class="fas fa-torii-gate mr-2"></i> Korea-Japan Sector
+                    </button>
+                    <button class="sector-tab" onclick="showSector('philippines', this)">
+                        <i class="fas fa-sun mr-2"></i> Philippine Sector
+                    </button>
+                </div>
+
+                <!-- Sector: China -->
+                <div id="sector-china" class="sector-panel mm-fade">
+                    <div class="grid lg:grid-cols-2 gap-10 items-start">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 bg-[#FF5C00] rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fas fa-yin-yang"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-3xl font-display font-black text-zinc-900 dark:text-white">China Sector Schools</h3>
+                                    <p class="text-[#FF5C00] font-bold text-sm tracking-widest">Hong Kong · Malaysia · Singapore</p>
+                                </div>
+                            </div>
+                            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium mb-8">
+                                The China Sector represents the Marist Brothers' century-long presence in the Chinese-speaking world and Southeast Asia. Rooted in Hong Kong since the early 20th century, the sector continues the Marist mission through quality Catholic schooling and pastoral service.
+                            </p>
+                            <div class="space-y-6 relative pl-8 border-l-2 border-zinc-200 dark:border-white/10">
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">St. Francis Xavier's College</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Located in Sham Shui Po, Hong Kong — one of the region's flagship Marist secondary schools serving thousands of students with rigorous Catholic education since 1931.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">St. Francis Xavier's School</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">A primary feeder school in Hong Kong continuing the Marist tradition of nurturing young learners in a safe, faith-filled environment from their earliest years of schooling.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Malaysia & Singapore Communities</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Marist Brothers serve in schools and communities across Penang and Kuala Lumpur (Malaysia) and Singapore, extending the charism into multicultural Southeast Asian societies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card col-span-2">
+                                <div class="text-4xl font-display font-black mb-1">4+</div>
+                                <div class="text-sm font-bold opacity-80 tracking-widest uppercase">Schools in China Sector</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">1931</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Est. HK Schools</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">3</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Countries</div>
+                            </div>
+                            <div class="focus-card col-span-2 !bg-[#FFF3ED] dark:!bg-[#2a1a0f]">
+                                <p class="text-zinc-700 dark:text-zinc-300 text-sm font-medium leading-relaxed italic">
+                                    "In Hong Kong and throughout Southeast Asia, the Marist Brothers have been pioneers of Catholic education — forming generations of leaders shaped by Gospel values."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector: Korea-Japan -->
+                <div id="sector-korea" class="sector-panel hidden mm-fade">
+                    <div class="grid lg:grid-cols-2 gap-10 items-start">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 bg-[#FF5C00] rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fas fa-torii-gate"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-3xl font-display font-black text-zinc-900 dark:text-white">Korea-Japan Sector</h3>
+                                    <p class="text-[#FF5C00] font-bold text-sm tracking-widest">South Korea · Japan</p>
+                                </div>
+                            </div>
+                            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium mb-8">
+                                Operating in two of Asia's most developed societies, the Korea-Japan Sector brings the Marist charism to minority Catholic communities through education, youth ministry, and social outreach — serving with humility in contexts where Christians are few but faith shines brightly.
+                            </p>
+                            <div class="space-y-6 relative pl-8 border-l-2 border-zinc-200 dark:border-white/10">
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Jechon Community, Korea</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Based in Jecheon, North Chungcheong Province, the Korean Marist community accompanies youth through pastoral programs, school chaplaincy, and formation activities aligned with the Marist charism.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Kumamoto Community, Japan</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">In Kumamoto, Japan, Marist Brothers engage in school ministry and youth accompaniment, offering a Marian witness of faith in one of Asia's most pluralistic and technologically advanced societies.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Youth Ministry Focus</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">The sector prioritizes youth evangelization, retreat programs, and social service — reaching out to the marginalized and building vibrant young Church communities in Korea and Japan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card col-span-2">
+                                <div class="text-4xl font-display font-black mb-1">2</div>
+                                <div class="text-sm font-bold opacity-80 tracking-widest uppercase">Countries in Korea-Japan Sector</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">&lt;1%</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Catholic Pop. Japan</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">10%</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Catholic Pop. Korea</div>
+                            </div>
+                            <div class="focus-card col-span-2 !bg-[#FFF3ED] dark:!bg-[#2a1a0f]">
+                                <p class="text-zinc-700 dark:text-zinc-300 text-sm font-medium leading-relaxed italic">
+                                    "In Korea and Japan, we are seeds planted in soil that is challenging but filled with potential. The Marist presence is a sign of quiet, persistent hope."
+                                </p>
+                                <p class="text-[#FF5C00] text-xs font-black tracking-widest mt-3">— MARIST BROTHERS EAST ASIA PROVINCE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector: Philippines -->
+                <div id="sector-philippines" class="sector-panel hidden mm-fade">
+                    <div class="grid lg:grid-cols-2 gap-10 items-start">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 bg-[#FF5C00] rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-3xl font-display font-black text-zinc-900 dark:text-white">Philippine Sector</h3>
+                                    <p class="text-[#FF5C00] font-bold text-sm tracking-widest">Luzon · Visayas · Mindanao</p>
+                                </div>
+                            </div>
+                            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium mb-8">
+                                The Philippine Sector is the heartbeat of the East Asia Province — home to the Province Center, the largest concentration of Brothers, and an extensive educational network spanning the archipelago from Marikina in Metro Manila to General Santos City in Mindanao.
+                            </p>
+                            <div class="space-y-6 relative pl-8 border-l-2 border-zinc-200 dark:border-white/10">
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Marist School Marikina</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Located in Metro Manila, Marist School Marikina offers quality Marist education from Grade School to Senior High School, including the cherished Marikina Evening High School serving 400+ underprivileged youth.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Notre Dame of Marbel University (NDMU)</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">A Marist-founded university in General Santos City, NDMU offers undergraduate and graduate programs in a deeply Catholic and Marian academic environment in Mindanao.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Notre Dame of Dadiangas University (NDDU)</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Also in General Santos City and home to the Province Center, NDDU-IBED is one of the largest Marist-run educational institutions in the Philippines, serving thousands of students at all levels.</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Marist Learning Centre (Myanmar Students)</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Serving 460+ displaced Myanmar students, the Marist Learning Centre embodies the Brothers' option for the poor and their response to humanitarian crises through education.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card col-span-2">
+                                <div class="text-4xl font-display font-black mb-1">30k+</div>
+                                <div class="text-sm font-bold opacity-80 tracking-widest uppercase">Students in Philippine Sector</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">2</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Universities</div>
+                            </div>
+                            <div class="stat-card alt">
+                                <div class="text-3xl font-display font-black mb-1">460+</div>
+                                <div class="text-xs font-bold opacity-60 tracking-widest uppercase">Myanmar Scholars</div>
+                            </div>
+                            <div class="stat-card col-span-2" style="background: linear-gradient(135deg,#FF5C00,#c41e3a);">
+                                <div class="text-xl font-black mb-1">Province Center</div>
+                                <div class="text-sm opacity-80 font-medium">NDDU-IBED Campus, General Santos City<br>Lagao, South Cotabato, Philippines 9500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ MARIST GLOBAL MISSION ══ -->
+        <section class="py-24 bg-[#F9F5F2] dark:bg-[#111111]">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left: Decorative big stat -->
+                    <div class="mm-fade">
+                        <div class="bg-gradient-to-br from-[#FF5C00] to-[#c41e3a] rounded-[32px] p-12 text-white relative overflow-hidden">
+                            <div class="blob-orange w-64 h-64 -top-10 -right-10 opacity-30" style="background:rgba(255,255,255,0.1);"></div>
+                            <span class="mm-label !bg-white/10 !text-white !border-white/20 mb-8 inline-flex">
+                                <i class="fas fa-globe"></i> Global Reach
+                            </span>
+                            <div class="text-8xl font-display font-black leading-none mb-2">79</div>
+                            <div class="text-2xl font-black mb-4 opacity-90">Countries Worldwide</div>
+                            <p class="opacity-80 font-medium leading-relaxed mb-8">
+                                The Marist Brothers operate in 79 countries across 5 continents — one of the Catholic Church's largest educational congregations, united by the charism of Marcellin Champagnat.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 rounded-2xl p-5">
+                                    <div class="text-3xl font-black">5</div>
+                                    <div class="text-xs font-bold tracking-widest opacity-70 mt-1">CONTINENTS</div>
+                                </div>
+                                <div class="bg-white/10 rounded-2xl p-5">
+                                    <div class="text-3xl font-black">600k+</div>
+                                    <div class="text-xs font-bold tracking-widest opacity-70 mt-1">STUDENTS</div>
+                                </div>
+                                <div class="bg-white/10 rounded-2xl p-5">
+                                    <div class="text-3xl font-black">3,200+</div>
+                                    <div class="text-xs font-bold tracking-widest opacity-70 mt-1">BROTHERS</div>
+                                </div>
+                                <div class="bg-white/10 rounded-2xl p-5">
+                                    <div class="text-3xl font-black">1817</div>
+                                    <div class="text-xs font-bold tracking-widest opacity-70 mt-1">FOUNDED</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Text -->
+                    <div class="mm-fade" style="transition-delay:0.2s;">
+                        <span class="mm-label mb-6"><i class="fas fa-hands-helping"></i> Universal Mission</span>
+                        <h2 class="text-4xl md:text-5xl font-display font-black tracking-tight text-zinc-900 dark:text-white mt-5 mb-6">
+                            Marist <span class="text-[#FF5C00]">Global Mission</span>
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed mb-6">
+                            Founded in 1817 in La Valla, France, by St. Marcellin Champagnat, the Congregation of the Marist Brothers was born with a single, urgent mission: to make Jesus known and loved among the poor and uneducated youth of rural France. That same fire now burns on every continent.
+                        </p>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed mb-8">
+                            The Marist Brothers' global mission is animated by the <strong class="text-zinc-900 dark:text-white">Champagnat Global</strong> vision — a worldwide family committed to transforming lives, promoting justice, and educating the whole person. In East Asia, this mission finds expression in schools, non-formal education centers, formation houses, and community missions reaching some of the most vulnerable populations in the region.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#FF5C00]/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-heart text-[#FF5C00]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Option for the Poor & Vulnerable</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Marist Brothers preferentially serve the marginalized — from displaced refugees to impoverished rural communities — in fidelity to Champagnat's founding vision.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#FF5C00]/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-cross text-[#FF5C00]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Evangelization through Education</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Schools are not merely academic institutions but instruments of the New Evangelization — spaces where young people encounter the living Gospel of Jesus Christ.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#FF5C00]/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-star text-[#FF5C00]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-zinc-900 dark:text-white mb-1">Marian Spirituality</h4>
+                                    <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">As Marists, the Brothers live and minister under Mary's maternal guidance — modeling the simplicity, humility, and loving care she showed in nurturing the infant Jesus.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://champagnat.org/en/" target="_blank" rel="noopener noreferrer" class="mm-btn">
+                            <i class="fas fa-external-link-alt text-xs"></i> Visit Champagnat Global
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ MARIST GLOBAL PRESENCE — SCHOOLS ══ -->
+        <section class="py-24 bg-white dark:bg-zinc-950">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="text-center mb-16 mm-fade">
+                    <span class="mm-label mb-4"><i class="fas fa-university"></i> Worldwide Schools</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-black tracking-tight text-zinc-900 dark:text-white mt-5 mb-5">
+                        Marist Global<br><span class="text-[#FF5C00]">Presence of Schools</span>
+                    </h2>
+                    <p class="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+                        The Champagnat Global network spans six continents with hundreds of schools, universities, and non-formal education centers — each a living expression of the Marist charism in its unique cultural context.
+                    </p>
+                </div>
+
+                <!-- Continent grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 mm-fade">
+                    <!-- Africa -->
+                    <div class="focus-card">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-sun"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Africa</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">20+ Countries</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">From Ethiopia to South Africa, Marist Brothers run schools, social centres, and mission communities across sub-Saharan Africa — prioritizing the education of the rural poor.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>Kenya</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Nigeria</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>S. Africa</span>
+                        </div>
+                    </div>
+
+                    <!-- Americas -->
+                    <div class="focus-card" style="transition-delay:0.1s;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-anchor"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Americas</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">USA · Brazil · Mexico · More</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">From the USA to Argentina, the Americas host some of the Marist Brothers' largest educational institutions and most dynamic vocational communities in the Champagnat network.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>USA</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Brazil</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Mexico</span>
+                        </div>
+                    </div>
+
+                    <!-- Asia-Pacific -->
+                    <div class="focus-card" style="transition-delay:0.2s;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-globe-asia"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Asia-Pacific</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">Philippines · Australia · India</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">The Asia-Pacific is a key growth region for the Marist Brothers, with the East Asia Province — including the Philippines, Hong Kong, Korea, Japan, Malaysia, and Singapore — at its heart.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>Philippines</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Australia</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>India</span>
+                        </div>
+                    </div>
+
+                    <!-- Europe -->
+                    <div class="focus-card" style="transition-delay:0.3s;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-monument"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Europe</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">France · Spain · Ireland</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">Europe is the birthplace of the Marist Brotherhood. France (La Valla, Hermitage), Spain, Ireland, and Italy remain centers of Marist history, spirituality, and educational innovation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>France</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Spain</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Ireland</span>
+                        </div>
+                    </div>
+
+                    <!-- Middle East & N. Africa -->
+                    <div class="focus-card" style="transition-delay:0.4s;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-mosque"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Middle East & N. Africa</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">Israel · Lebanon · Egypt</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">In the Holy Land and across the Arab world, Marist Brothers serve as bridge-builders — educators and missionaries bridging cultures, religions, and historic divides through daily service.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>Israel</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Lebanon</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Egypt</span>
+                        </div>
+                    </div>
+
+                    <!-- Oceania / Pacific Islands -->
+                    <div class="focus-card" style="transition-delay:0.5s;">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="focus-icon !mb-0"><i class="fas fa-water"></i></div>
+                            <div>
+                                <h3 class="text-lg font-black text-zinc-900 dark:text-white">Oceania & Pacific</h3>
+                                <p class="text-[#FF5C00] text-xs font-bold tracking-widest">PNG · Pacific Islands</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed mb-4">In Papua New Guinea and across the Pacific Islands, the Marist Brothers serve isolated and marginalized communities — bringing education, healthcare, and hope to remote island populations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="country-pill text-xs"><span class="dot"></span>PNG</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Fiji</span>
+                            <span class="country-pill text-xs"><span class="dot"></span>Samoa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global summary banner -->
+                <div class="bg-zinc-950 dark:bg-[#1a1a1a] rounded-[32px] py-12 px-10 md:px-24 mm-fade">
+                    <div class="flex flex-wrap justify-center md:justify-between items-center gap-y-12 gap-x-8 text-white text-center">
+                        <div class="min-w-[120px]">
+                            <div class="big-stat counter" data-target="79">0</div>
+                            <div class="text-xs font-bold tracking-widest text-zinc-400 mt-2 uppercase">Countries</div>
+                        </div>
+                        <div class="min-w-[120px]">
+                            <div class="big-stat counter" data-target="600">0</div>
+                            <div class="text-xs font-bold tracking-widest text-zinc-400 mt-2 uppercase">Schools Globally</div>
+                        </div>
+                        <div class="min-w-[120px]">
+                            <div class="big-stat counter" data-target="3200">0</div>
+                            <div class="text-xs font-bold tracking-widest text-zinc-400 mt-2 uppercase">Brothers Worldwide</div>
+                        </div>
+                        <div class="min-w-[120px]">
+                            <div class="big-stat counter" data-target="600000">0</div>
+                            <div class="text-[10px] font-bold tracking-widest text-zinc-400 mt-2 uppercase">Students Served</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ EAST ASIA PROVINCE STATISTICS ══ -->
+        <section class="py-24 bg-[#F9F5F2] dark:bg-[#111111]">
+            <div class="max-w-[1400px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left: Text & Bars -->
+                    <div class="mm-fade">
+                        <span class="mm-label mb-6"><i class="fas fa-chart-bar"></i> Province Data</span>
+                        <h2 class="text-4xl md:text-5xl font-display font-black tracking-tight text-zinc-900 dark:text-white mt-5 mb-6">
+                            East Asia Province<br><span class="text-[#FF5C00]">Statistics</span>
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed mb-10">
+                            The Marist Brothers of East Asia Province encompasses the Philippines, Hong Kong, Malaysia, Singapore, South Korea, and Japan. Here is a snapshot of our educational and formational impact as of 2025:
+                        </p>
+
+                        <div class="space-y-7">
+                            <!-- Stat bar 1 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">Philippine Sector Students</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">30,000+</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="75%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat bar 2 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">China Sector Students</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">8,000+</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="20%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat bar 3 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">Korea-Japan Students</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">2,000+</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="5%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat bar 4 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">Brothers in Formation (Scholastics)</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">29</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="35%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat bar 5 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">Myanmar Students (Marist Learning Centre)</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">460</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="1%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat bar 6 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-black text-zinc-900 dark:text-white">Evening HS (Underserved Youth — Marikina)</span>
+                                    <span class="text-sm font-black text-[#FF5C00]">400+</span>
+                                </div>
+                                <div class="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div class="stat-bar-fill" data-width="1%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Summary Cards -->
+                    <div class="grid grid-cols-2 gap-5 mm-fade" style="transition-delay:0.2s;">
+                        <div class="stat-card col-span-2 flex items-center gap-6">
+                            <div class="text-5xl font-display font-black">40k+</div>
+                            <div>
+                                <div class="text-sm font-black tracking-widest opacity-90">TOTAL STUDENTS</div>
+                                <div class="text-xs opacity-70 font-medium mt-1">Across all schools and programs in the East Asia Province</div>
+                            </div>
+                        </div>
+
+                        <div class="focus-card !bg-white dark:!bg-[#1c1c1c]">
+                            <div class="text-3xl font-display font-black text-[#FF5C00] mb-1">85+</div>
+                            <div class="text-xs font-black uppercase tracking-widest text-zinc-500">Brothers in Province</div>
+                            <p class="text-zinc-400 text-xs font-medium mt-2 leading-relaxed">Professed Brothers serving across all sectors as of 2025.</p>
+                        </div>
+
+                        <div class="focus-card !bg-white dark:!bg-[#1c1c1c]">
+                            <div class="text-3xl font-display font-black text-[#FF5C00] mb-1">29</div>
+                            <div class="text-xs font-black uppercase tracking-widest text-zinc-500">Scholastics</div>
+                            <p class="text-zinc-400 text-xs font-medium mt-2 leading-relaxed">Young Brothers in initial formation, studying theology &amp; Marist charism.</p>
+                        </div>
+
+                        <div class="focus-card !bg-white dark:!bg-[#1c1c1c]">
+                            <div class="text-3xl font-display font-black text-[#FF5C00] mb-1">6</div>
+                            <div class="text-xs font-black uppercase tracking-widest text-zinc-500">Countries</div>
+                            <p class="text-zinc-400 text-xs font-medium mt-2 leading-relaxed">Philippines, Hong Kong, Malaysia, Singapore, Korea, Japan.</p>
+                        </div>
+
+                        <div class="focus-card !bg-white dark:!bg-[#1c1c1c]">
+                            <div class="text-3xl font-display font-black text-[#FF5C00] mb-1">2</div>
+                            <div class="text-xs font-black uppercase tracking-widest text-zinc-500">Universities</div>
+                            <p class="text-zinc-400 text-xs font-medium mt-2 leading-relaxed">NDMU and NDDU in General Santos City, Philippines.</p>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="col-span-2 bg-gradient-to-r from-[#FF5C00] to-[#c41e3a] rounded-2xl p-6 text-white text-center">
+                            <p class="font-black text-lg mb-1">Interested in our Mission?</p>
+                            <p class="text-sm opacity-80 font-medium mb-4">Explore formation, volunteer, or partnership opportunities.</p>
+                            <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-[#FF5C00] font-black text-sm px-6 py-3 rounded-full hover:bg-zinc-100 transition-colors">
+                                <i class="fas fa-envelope"></i> Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ CALL TO ACTION BANNER ══ -->
+        <section class="py-24 bg-zinc-950 relative overflow-hidden">
+            <div class="blob-orange w-96 h-96 top-0 right-0 opacity-20"></div>
+            <div class="blob-orange w-64 h-64 bottom-0 left-16 opacity-10"></div>
+            <div class="max-w-[1400px] mx-auto px-8 relative z-10 text-center mm-fade">
+                <span class="mm-label !bg-white/10 !text-[#FF5C00] !border-[#FF5C00]/30 mb-6 inline-flex">
+                    <i class="fas fa-hands"></i> Join the Mission
+                </span>
+                <h2 class="text-4xl md:text-6xl font-display font-black tracking-tight text-white mt-6 mb-6">
+                    Be a Part of<br>Something <span class="text-[#FF5C00]">Greater</span>
+                </h2>
+                <p class="text-zinc-400 max-w-xl mx-auto font-medium leading-relaxed mb-10 text-lg">
+                    Whether you feel called to religious life, volunteer service, or partnership in our schools — the Marist Mission has a place for you. Together, we make Jesus known and loved.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="../vocation/vocationtalks.html" class="mm-btn text-base px-8 py-4">
+                        <i class="fas fa-microphone"></i> Request a Vocation Talk
+                    </a>
+                    <a href="../maristvolunteer/maristvolunteer.html" class="mm-btn-outline !text-white !border-white hover:!bg-white hover:!text-zinc-900 text-base px-8 py-4">
+                        <i class="fas fa-hand-holding-heart"></i> Become a Volunteer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-16 border-b border-white/10 pb-16">
+                <!-- About Section -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">About Us</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-medium">
+                        The Marist Brothers of East Asia serve through education and pastoral ministry, continuing the legacy of St. Marcellin Champagnat, our Founder.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100083355408027" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#c41e3a] transition-all duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="../index.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Home Portal</a></li>
+                        <li><a href="about.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">About Our Mission</a></li>
+                        <li><a href="vocation.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Vocations</a></li>
+                        <li><a href="news.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Latest News</a></li>
+                        <li><a href="ministry.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Ministry</a></li>
+                        <li><a href="calendar.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="champagnat.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">St. Marcellin Champagnat</a></li>
+                        <li><a href="https://champagnat.org/en/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">General House - Rome</a></li>
+                        <li><a href="../resources/documents.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Public Documents</a></li>
+                        <li><a href="../resources/newsletter.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Regional Newsletter</a></li>
+                        <li><a href="presence.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Our Presence</a></li>
+                        <li><a href="links.html" class="text-zinc-400 hover:text-white text-sm font-bold transition-colors">Related Links</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-[#c41e3a] text-sm font-black uppercase tracking-widest">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-map-marker-alt pt-1 text-[#c41e3a]"></i>
+                            <span>Marist Brothers Province Center, NDDU-IBED Campus, Lagao, General Santos City, 9500 Philippines</span>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-envelope pt-1 text-[#c41e3a]"></i>
+                            <a href="mailto:info@maristeastasia.org" class="hover:text-white transition-colors">info@maristeastasia.org</a>
+                        </li>
+                        <li class="flex gap-3 text-zinc-400 text-sm font-medium">
+                            <i class="fas fa-phone pt-1 text-[#c41e3a]"></i>
+                            <a href="tel:(083) 552-5994" class="hover:text-white transition-colors">(083) 552-5994</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 text-center md:text-left">
+                    &copy; 2026 Marist Brothers of East Asia. All rights reserved. No part of this website may be reproduced without prior written permission.
+                </p>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <a href="../websitedocumentations/dataprivacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="../websitedocumentations/termsofservice.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="../websitedocumentations/sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Popup -->
+    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-labelledby="consentTitle" aria-describedby="consentDesc">
+        <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-4 px-8">
+                <div class="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-cookie-bite text-red-600 text-xl"></i>
+                </div>
+                <h4 id="consentTitle" class="text-xl font-black text-white uppercase tracking-tighter">Respecting Your Privacy</h4>
+            </div>
+            
+            <p id="consentDesc" class="text-zinc-400 text-sm font-bold leading-relaxed px-8">
+                This website uses cookies to enhance your experience. By continuing, you agree to our 
+                <a href="../websitedocumentations/dataprivacypolicy.html" class="text-red-500 hover:underline">Data Privacy Policy</a>.
+            </p>
+            
+            <div class="flex gap-4 px-8">
+                <button id="acceptCookies" class="flex-grow bg-red-600 text-white py-4 rounded-full font-black hover:bg-red-700 transition-all active:scale-95 text-xs uppercase tracking-widest">
+                    Accept All
+                </button>
+                <a href="../websitedocumentations/cookieconsent.html" class="bg-zinc-800 text-white border border-white/5 px-8 py-4 rounded-full font-black hover:bg-zinc-700 transition-all active:scale-95 text-[10px] uppercase tracking-widest flex items-center">
+                    Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="status-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script>
+        // High-Performance Scroll Manager
+        window.ScrollManager = {
+            locks: new Set(),
+            lock(id) { this.locks.add(id); document.body.style.overflow = 'hidden'; },
+            unlock(id) {
+                this.locks.delete(id);
+                if (this.locks.size === 0) document.body.style.overflow = '';
+            }
+        };
+
+        const ScrollManager = window.ScrollManager;
+
+        // Navigation Controller
+        const NavController = {
+            mobileMenu: document.getElementById('mobileMenuOverlay'),
+            btn: document.getElementById('mobileMenuBtn'),
+            closeBtn: document.getElementById('closeMenuBtn'),
+            isOpen: false,
+            toggle(open) {
+                this.isOpen = open;
+                this.mobileMenu.classList.toggle('translate-x-full', !open);
+                if (open) ScrollManager.lock('nav-menu');
+                else ScrollManager.unlock('nav-menu');
+                this.btn.setAttribute('aria-expanded', open);
+            }
+        };
+
+        window.toggleMobileMenu = (open) => NavController.toggle(open);
+        if (NavController.btn) NavController.btn.onclick = () => NavController.toggle(true);
+        if (NavController.closeBtn) NavController.closeBtn.onclick = () => NavController.toggle(false);
+
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = btn.classList.toggle('active');
+            if (isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+                content.style.opacity = '1';
+                content.style.visibility = 'visible';
+            } else {
+                content.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0)';
+                content.style.opacity = '0';
+                content.style.visibility = 'hidden';
+            }
+        }
+
+        // Sector tab switcher
+        function showSector(sector, btn) {
+            document.querySelectorAll('.sector-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.sector-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('sector-' + sector).classList.remove('hidden');
+            btn.classList.add('active');
+        }
+
+        // Scroll fade-in observer
+        const mmFadeEls = document.querySelectorAll('.mm-fade');
+        const mmObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    mmObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        mmFadeEls.forEach(el => mmObs.observe(el));
+
+        // Stat bar animation
+        const bars = document.querySelectorAll('.stat-bar-fill');
+        const barObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.dataset.width;
+                    barObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        bars.forEach(b => barObs.observe(b));
+
+        // Counter animation
+        (function() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const countText = counter.innerText.replace(/[^0-9]/g, '');
+                const count = countText === '' ? 0 : +countText;
+                const inc = target / speed;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc).toLocaleString();
+                    setTimeout(() => animateCounter(counter), 1);
+                } else {
+                    counter.innerText = target.toLocaleString() + (target >= 100 ? '+' : '');
+                }
+            };
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(counter => scrollObserver.observe(counter));
+        })();
+
+        // Cookie Consent Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const consent = document.getElementById('cookieConsent');
+            const acceptBtn = document.getElementById('acceptCookies');
+            if (localStorage.getItem('cookie-consent') !== 'accepted') {
+                setTimeout(() => {
+                    consent.style.display = 'block';
+                }, 2000);
+            }
+            if (acceptBtn) {
+                acceptBtn.onclick = () => {
+                    localStorage.setItem('cookie-consent', 'accepted');
+                    consent.style.opacity = '0';
+                    setTimeout(() => consent.style.display = 'none', 600);
+                };
+            }
+        });
+
+        // Theme initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.ThemeManager) ThemeManager.updateActiveUI();
+        });
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
