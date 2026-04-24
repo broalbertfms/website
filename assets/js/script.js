@@ -118,6 +118,7 @@ function validateLoginForm(event) {
     let calcScrollValue = () => {
 
         let scrollProgress = document.getElementById("progress");
+        if (!scrollProgress) return;
         let progressValue = document.getElementById("progress-value");
         let pos = document.documentElement.scrollTop;
         let calcHeight = 
