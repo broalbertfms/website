@@ -85,11 +85,7 @@ The Admin Panel is a complete content management system (CMS) for the Marist Bro
    http://localhost:3000/admin/login.html
    ```
 
-2. **Login with Credentials**
-   - Email: `admin@maristeastasia.org`
-   - Password: `Admin@123`
-
-3. **Dashboard Access**
+2. **Dashboard Access**
    - After successful login, you'll see the admin dashboard
    - Use the sidebar to navigate between different sections
 
