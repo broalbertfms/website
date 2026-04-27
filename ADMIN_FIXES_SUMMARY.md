@@ -60,13 +60,7 @@
    # or with nodemon for development: npm run dev
    ```
 
-2. **Access Admin Panel:**
-   - Open `admin/login.html` in a browser
-   - Use demo credentials:
-     - Email: `admin@maristeastasia.org`
-     - Password: `Admin@123`
-
-3. **Features Available:**
+2. **Features Available:**
    - Dashboard with statistics
    - News & Posts management with rich text editor
    - Event management
